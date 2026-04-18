@@ -37,9 +37,9 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-lg text-foreground mb-4">Contato</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex gap-3"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /> Av. Paulista, 1000 — São Paulo, SP</li>
-              <li className="flex gap-3"><Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" /> +55 (11) 3000-0000</li>
-              <li className="flex gap-3"><Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" /> contato@mouragalindo.adv.br</li>
+              <li className="flex gap-3"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>Av. Paulista, 1000 — São Paulo, SP</span></li>
+              <li className="flex gap-3"><Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>+55 (11) 3000-0000</span></li>
+              <li className="flex gap-3"><Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>contato@mouragalindo.adv.br</span></li>
             </ul>
           </div>
         </div>
