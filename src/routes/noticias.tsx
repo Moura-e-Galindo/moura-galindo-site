@@ -73,7 +73,7 @@ function Noticias() {
         <div className="mx-auto max-w-7xl px-6">
           {/* Destaque */}
           <article className="grid lg:grid-cols-2 gap-12 items-center bg-card border border-border p-10 md:p-14 mb-20 hover:border-gold/60 transition-colors group cursor-pointer">
-            <div className="aspect-[4/3] gradient-hero flex items-center justify-center">
+            <div className="surface-dark aspect-[4/3] gradient-hero flex items-center justify-center">
               <span className="font-serif text-7xl text-gold/80">M&G</span>
             </div>
             <div>
