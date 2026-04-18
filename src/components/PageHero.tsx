@@ -6,7 +6,7 @@ interface Props {
 
 export function PageHero({ eyebrow, title, subtitle }: Props) {
   return (
-    <section className="relative gradient-hero text-foreground overflow-hidden -mt-20 md:-mt-24 pt-32 md:pt-40">
+    <section className="surface-dark relative gradient-hero overflow-hidden -mt-20 md:-mt-24 pt-32 md:pt-40">
       <div className="absolute inset-0 opacity-[0.04]" style={{
         backgroundImage: "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
         backgroundSize: "32px 32px",
