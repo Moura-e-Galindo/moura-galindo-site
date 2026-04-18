@@ -1,80 +1,72 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Logo } from "./Logo";
+import { Menu, X, Home } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { to: "/", label: "Início" },
-  { to: "/institucional", label: "Institucional" },
+  { to: "/institucional", label: "Escritório" },
+  { to: "/areas", label: "Núcleos" },
   { to: "/equipe", label: "Equipe" },
-  { to: "/areas", label: "Áreas" },
   { to: "/noticias", label: "Notícias" },
+  { to: "/contato", label: "Contato" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Logo />
-
-        <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              activeProps={{ className: "text-gold" }}
-              activeOptions={{ exact: item.to === "/" }}
-              className="px-4 py-2 text-sm font-medium tracking-wide text-foreground/80 transition-colors hover:text-gold"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <Link to="/contato" className="hidden lg:inline-flex">
-            <Button variant="outline" className="border-gold/60 text-foreground hover:bg-gold hover:text-gold-foreground hover:border-gold">
-              Contato
-            </Button>
-          </Link>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden h-9 w-9"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
+    <header className="sticky top-4 md:top-6 z-50 w-full px-4">
+      <div className="mx-auto max-w-5xl">
+        <div className="flex items-center justify-between gap-4 rounded-full border border-border bg-card/95 backdrop-blur-md pl-3 pr-3 py-2 shadow-card">
+          <Link
+            to="/"
+            aria-label="Início"
+            className="flex h-9 w-9 items-center justify-center rounded-full text-gold hover:bg-gold/10 transition-colors"
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
-      </div>
+            <Home className="h-4 w-4" strokeWidth={1.75} />
+          </Link>
 
-      {open && (
-        <nav className="lg:hidden border-t border-border bg-background">
-          <div className="mx-auto flex max-w-7xl flex-col px-6 py-4">
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                activeProps={{ className: "text-gold" }}
+                className="px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-gold"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <button
+              className="md:hidden flex h-9 w-9 items-center justify-center rounded-full hover:bg-accent transition-colors"
+              onClick={() => setOpen(!open)}
+              aria-label="Menu"
+            >
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
+        </div>
+
+        {open && (
+          <nav className="md:hidden mt-2 rounded-2xl border border-border bg-card p-2 shadow-card">
             {navItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                activeProps={{ className: "text-gold" }}
-                activeOptions={{ exact: item.to === "/" }}
-                className="py-3 text-sm font-medium border-b border-border/60 last:border-0"
+                activeProps={{ className: "text-gold bg-accent" }}
+                className="block px-4 py-3 text-sm font-medium rounded-xl hover:bg-accent transition-colors"
               >
                 {item.label}
               </Link>
             ))}
-            <Link to="/contato" onClick={() => setOpen(false)} className="py-3 text-sm font-medium text-gold">
-              Contato
-            </Link>
-          </div>
-        </nav>
-      )}
+          </nav>
+        )}
+      </div>
     </header>
   );
 }
