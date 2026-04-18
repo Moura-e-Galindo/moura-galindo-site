@@ -69,7 +69,7 @@
 
   /* Gold: dourado mostarda forte (Figma) */
   --gold: oklch(0.66 0.14 78);
-  --gold-foreground: oklch(0.99 0.005 75);
+  --gold-foreground: oklch(0.16 0.01 60);
 
   --destructive: oklch(0.50 0.18 25);
   --destructive-foreground: oklch(0.98 0 0);
@@ -154,5 +154,22 @@
     height: 2px;
     width: 60px;
     background: var(--gradient-gold);
+  }
+
+  /* Superfície sempre escura: força tokens claros para texto sobre fundo escuro,
+     independentemente do tema do site. Use em seções com gradient-hero ou imagens escuras. */
+  .surface-dark {
+    --background: oklch(0.14 0.005 60);
+    --foreground: oklch(0.95 0.01 80);
+    --card: oklch(0.18 0.005 60);
+    --card-foreground: oklch(0.95 0.01 80);
+    --muted: oklch(0.22 0.005 60);
+    --muted-foreground: oklch(0.78 0.01 80);
+    --border: oklch(0.30 0.005 60);
+    --primary: oklch(0.95 0.01 80);
+    --primary-foreground: oklch(0.14 0.005 60);
+    --gold: oklch(0.78 0.14 80);
+    --gold-foreground: oklch(0.14 0.005 60);
+    color: var(--foreground);
   }
 }

@@ -173,8 +173,8 @@ function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="py-20 gradient-hero text-primary-foreground dark:text-foreground">
-        <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <section className="surface-dark py-20 gradient-hero">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-foreground">
           {[
             { n: "28+", l: "Anos de atuação" },
             { n: "1.200+", l: "Casos conduzidos" },
@@ -183,7 +183,7 @@ function HomePage() {
           ].map((s) => (
             <div key={s.l}>
               <div className="font-serif text-5xl md:text-6xl font-medium text-gold">{s.n}</div>
-              <div className="mt-2 text-xs uppercase tracking-widest opacity-70">{s.l}</div>
+              <div className="mt-2 text-xs uppercase tracking-widest opacity-80">{s.l}</div>
             </div>
           ))}
         </div>
