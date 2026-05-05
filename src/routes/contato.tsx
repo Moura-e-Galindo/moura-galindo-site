@@ -27,8 +27,7 @@ function Contato() {
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-5 gap-16">
           <div className="lg:col-span-2 space-y-10">
             {[
-              { icon: MapPin, title: "São Paulo", lines: ["Av. Paulista, 1000 — 18º andar", "Bela Vista, São Paulo / SP", "CEP 01310-100"] },
-              { icon: MapPin, title: "Brasília", lines: ["SCN Quadra 2, Bloco A — Sala 1502", "Asa Norte, Brasília / DF", "CEP 70712-900"] },
+              { icon: MapPin, title: "Caruaru", lines: ["Av. Aracati, 1000 — 18º andar", "Bela Vista, São Paulo / SP", "CEP 01310-100"] },
               { icon: Phone, title: "Telefone", lines: ["+55 (11) 3000-0000", "+55 (61) 3000-0000"] },
               { icon: Mail, title: "E-mail", lines: ["contato@mouragalindo.adv.br"] },
               { icon: Clock, title: "Atendimento", lines: ["Segunda a sexta, 9h às 19h"] },

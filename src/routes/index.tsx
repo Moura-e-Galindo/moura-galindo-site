@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronLeft, ChevronRight, Scale, Building2, Users2, Gavel, Home as HomeIcon, Briefcase } from "lucide-react";
-import { useState } from "react";
+import {
+  ArrowRight,
+  Scale,
+  Users2,
+  Gavel,
+  Home as HomeIcon,
+  Briefcase,
+  Shirt,
+  Handshake,
+  Syringe,
+} from "lucide-react";
 import heroImage from "@/assets/hero-office.jpg";
 import teamImage from "@/assets/team-news.jpg";
 import justiceImage from "@/assets/justice.jpg";
@@ -9,46 +18,54 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Moura & Galindo — Advocacia com tradição e excelência" },
-      { name: "description", content: "Sociedade de advogados com mais de 20 anos de atuação. Defesa com excelência, ética e experiência jurídica." },
+      {
+        name: "description",
+        content:
+          "Sociedade de advogados com mais de 20 anos de atuação. Defesa com excelência, ética e experiência jurídica.",
+      },
       { property: "og:title", content: "Moura & Galindo — Advocacia com tradição e excelência" },
-      { property: "og:description", content: "Soluções jurídicas estratégicas com solidez e proximidade." },
+      {
+        property: "og:description",
+        content: "Soluções jurídicas estratégicas com solidez e proximidade.",
+      },
     ],
   }),
   component: HomePage,
 });
 
-const noticias = [
-  {
-    tag: "Últimas Notícias",
-    title: "Perpétua Dantas assume coordenação da área penal no Moura & Galindo",
-    image: teamImage,
-  },
-  {
-    tag: "Tributário",
-    title: "Reforma Tributária: o que muda para empresas do Lucro Real em 2026",
-    image: heroImage,
-  },
-  {
-    tag: "Empresarial",
-    title: "M&A no setor de saúde: tendências do primeiro trimestre",
-    image: justiceImage,
-  },
-];
+// const noticias = [
+//   {
+//     tag: "Últimas Notícias",
+//     title: "Perpétua Dantas assume coordenação da área penal no Moura & Galindo",
+//     image: teamImage,
+//   },
+//   {
+//     tag: "Tributário",
+//     title: "Reforma Tributária: o que muda para empresas do Lucro Real em 2026",
+//     image: heroImage,
+//   },
+//   {
+//     tag: "Empresarial",
+//     title: "M&A no setor de saúde: tendências do primeiro trimestre",
+//     image: justiceImage,
+//   },
+// ];
 
 const nucleos = [
-  { icon: Briefcase, title: "Direito do Trabalho Empresarial" },
-  { icon: Scale, title: "Direito Previdenciário" },
-  { icon: Users2, title: "Direito de Família e Criança e Adolescente" },
-  { icon: Building2, title: "Direito Empresarial e Tributário" },
-  { icon: Gavel, title: "Direito Penal Empresarial" },
-  { icon: HomeIcon, title: "Direito Cível e Imobiliário" },
+  { icon: Scale, title: "Direito Civil e Contratual" },
+  { icon: HomeIcon, title: "Direito Imobiliário" },
+  { icon: Briefcase, title: "Direito Trabalhista Empresarial" },
+  { icon: Syringe, title: "Direito Médico" },
+  { icon: Users2, title: "Direito de Família e Sucessório" },
+  { icon: Handshake, title: "Direito Empresarial e Societário" },
+  { icon: Gavel, title: "Direito Tributário" },
+  { icon: Shirt, title: "Direito da Moda" },
 ];
 
 function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative -mt-20 md:-mt-24 min-h-[100vh] flex items-center overflow-hidden">
+      <section className="relative -mt-20 md:-mt-24 min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImage}
@@ -57,12 +74,12 @@ function HomePage() {
             height={1280}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background dark:from-black/80 dark:via-black/70 dark:to-background" />
+          <div className="absolute inset-0 bg-linear-to-b from-background/70 via-background/60 to-background dark:from-black/80 dark:via-black/70 dark:to-background" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 py-32 w-full text-center">
           <div className="gold-divider mx-auto mb-10" />
-          <h1 className="font-serif text-5xl md:text-7xl font-medium leading-[1.05] text-gold italic">
+          <h1 className="font-serif text-5xl md:text-7xl font-medium leading-[1.05] text-gold">
             Defesa com excelência,<br />ética e 28 anos<br />de experiência jurídica.
           </h1>
           <p className="mt-10 max-w-xl mx-auto text-base md:text-lg leading-relaxed text-foreground/80">
@@ -78,8 +95,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Últimas Notícias */}
-      <NoticiasCarousel items={noticias} />
+      {/* Últimas Notícias
+      <NoticiasCarousel items={noticias} /> */}
 
       {/* Escritório */}
       <section className="relative py-24 md:py-32 overflow-hidden">
@@ -102,7 +119,7 @@ function HomePage() {
 
           <div>
             <h2 className="font-serif text-5xl md:text-6xl font-medium text-foreground text-right">
-              Escritório
+              O Escritório
             </h2>
             <div className="gold-divider mt-4 ml-auto" />
 
@@ -110,10 +127,9 @@ function HomePage() {
               Tradição, técnica e proximidade em cada relação jurídica.
             </h3>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              O Moura & Galindo é uma sociedade de advogados que combina
-              experiência consolidada com uma abordagem moderna do Direito.
-              Atendemos empresas e indivíduos em demandas que exigem
-              estratégia, profundidade técnica e responsabilidade.
+              Somos um escritório dinâmico, cuja principal marca é a atuação moderna, compromissada com a ética e soluções jurídicas responsáveis, adaptadas aos anseios e as necessidades dos nossos clientes.
+              <br/><br />
+              Nosso diferencial está na qualificação constante e no profissionalismo que desenvolvemos, tendo em vista que os advogados responsáveis possuem mais de 20 anos de experiência. São docentes pós-graduados, que atuam e lecionam nas áreas de suas especialidades, proporcionando a todos que fazem parte do escritório a frequente qualificação, crescimento intelectual e experiência.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -154,7 +170,7 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {nucleos.map(({ icon: Icon, title }) => (
               <article key={title} className="group bg-background border border-border p-8 hover:border-gold transition-colors">
                 <div className="flex h-14 w-14 items-center justify-center bg-muted group-hover:bg-gold/10 transition-colors">
@@ -212,72 +228,72 @@ function HomePage() {
   );
 }
 
-function NoticiasCarousel({ items }: { items: typeof noticias }) {
-  const [index, setIndex] = useState(0);
-  const total = items.length;
-  const go = (d: number) => setIndex((i) => (i + d + total) % total);
-  const current = items[index];
+// function NoticiasCarousel({ items }: { items: typeof noticias }) {
+//   const [index, setIndex] = useState(0);
+//   const total = items.length;
+//   const go = (d: number) => setIndex((i) => (i + d + total) % total);
+//   const current = items[index];
 
-  return (
-    <section className="py-20 bg-background">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-end justify-between border-t border-gold/40 pt-8">
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground">Últimas Notícias</h2>
-          <Link to="/noticias" className="text-sm font-medium text-gold inline-flex items-center gap-2 hover:gap-4 transition-all">
-            Ver tudo <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+//   return (
+//     <section className="py-20 bg-background">
+//       <div className="mx-auto max-w-7xl px-6">
+//         <div className="flex items-end justify-between border-t border-gold/40 pt-8">
+//           <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground">Últimas Notícias</h2>
+//           <Link to="/noticias" className="text-sm font-medium text-gold inline-flex items-center gap-2 hover:gap-4 transition-all">
+//             Ver tudo <ArrowRight className="h-4 w-4" />
+//           </Link>
+//         </div>
 
-        <div className="relative mt-10 group">
-          <div className="relative aspect-[16/8] md:aspect-[16/6] bg-muted overflow-hidden">
-            <img
-              src={current.image}
-              alt={current.title}
-              loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
-              key={index}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <span className="inline-block bg-gold px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gold-foreground">
-                {current.tag}
-              </span>
-              <h3 className="mt-4 font-serif text-2xl md:text-3xl font-medium text-white max-w-3xl leading-snug">
-                {current.title}
-              </h3>
-            </div>
+//         <div className="relative mt-10 group">
+//           <div className="relative aspect-[16/8] md:aspect-[16/6] bg-muted overflow-hidden">
+//             <img
+//               src={current.image}
+//               alt={current.title}
+//               loading="lazy"
+//               className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
+//               key={index}
+//             />
+//             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+//             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+//               <span className="inline-block bg-gold px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gold-foreground">
+//                 {current.tag}
+//               </span>
+//               <h3 className="mt-4 font-serif text-2xl md:text-3xl font-medium text-white max-w-3xl leading-snug">
+//                 {current.title}
+//               </h3>
+//             </div>
 
-            <button
-              onClick={() => go(-1)}
-              aria-label="Anterior"
-              className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={() => go(1)}
-              aria-label="Próximo"
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
+//             <button
+//               onClick={() => go(-1)}
+//               aria-label="Anterior"
+//               className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold"
+//             >
+//               <ChevronLeft className="h-5 w-5" />
+//             </button>
+//             <button
+//               onClick={() => go(1)}
+//               aria-label="Próximo"
+//               className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold"
+//             >
+//               <ChevronRight className="h-5 w-5" />
+//             </button>
+//           </div>
 
-          <div className="mt-5 flex justify-center gap-2">
-            {items.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setIndex(i)}
-                aria-label={`Ir para slide ${i + 1}`}
-                className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-gold" : "w-2 bg-muted-foreground/40"}`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+//           <div className="mt-5 flex justify-center gap-2">
+//             {items.map((_, i) => (
+//               <button
+//                 key={i}
+//                 onClick={() => setIndex(i)}
+//                 aria-label={`Ir para slide ${i + 1}`}
+//                 className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-gold" : "w-2 bg-muted-foreground/40"}`}
+//               />
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function DecorativeShapes() {
   return (

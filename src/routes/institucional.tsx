@@ -42,19 +42,14 @@ function Institucional() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              Fundado em 2001 pelos sócios <span className="text-foreground">Dr. Ricardo Moura</span> e
-              <span className="text-foreground"> Dra. Helena Galindo</span>, o escritório nasceu da convicção
-              de que a advocacia precisa unir rigor técnico, sensibilidade humana e visão de negócio.
+              Somos um escritório dinâmico, cuja principal marca é a atuação moderna, compromissada com a ética e soluções jurídicas responsáveis, adaptadas aos anseios e as necessidades dos nossos clientes.
+              Nosso diferencial está na qualificação constante e no profissionalismo que desenvolvemos, tendo em vista que os advogados responsáveis possuem mais de 20 anos de experiência. São docentes pós-graduados, que atuam e lecionam nas áreas de suas especialidades, proporcionando a todos que fazem parte do escritório a frequente qualificação, crescimento intelectual e experiência.
             </p>
             <p>
-              Ao longo dos anos, expandimos nossa atuação para oito áreas de prática, sempre mantendo a
-              assinatura dos sócios em cada caso conduzido. Essa estrutura combina a profundidade de um
-              escritório boutique com a capacidade operacional necessária às demandas mais complexas.
+              O Escritório Moura & Galindo Advogados Associados atua no ramo jurídico, atendendo pessoas físicas e jurídicas, principalmente empresas regionais e o terceiro setor, prestando serviços jurídicos em várias áreas do Direito.
             </p>
             <p>
-              Hoje, somos 45 profissionais distribuídos entre São Paulo e Brasília, atendendo grupos
-              empresariais nacionais e multinacionais, instituições financeiras, fundos de investimento
-              e indivíduos de alto patrimônio.
+              Graças ao seu alto grau de profissionalismo e organização, a equipe Moura & Galindo nunca se afasta de seu propósito e compromisso de proporcionar soluções jurídicas eficazes, por meio da atuação preventiva, consultiva ou contenciosa, judicial ou extrajudicial, proporcionada por profissionais altamente qualificados, mediante análise criteriosa sobre a melhor estratégia para o atendimento das necessidades de seus clientes.
             </p>
           </div>
         </div>
@@ -84,8 +79,9 @@ function Institucional() {
           <div className="border-l-2 border-gold pl-8">
             <span className="text-xs font-medium uppercase tracking-[0.3em] text-gold">Missão</span>
             <p className="mt-6 font-serif text-2xl leading-snug text-foreground">
-              Oferecer soluções jurídicas que protejam, viabilizem e impulsionem os
-              objetivos de nossos clientes, com integridade e profundidade técnica.
+              Atuar na advocacia preventiva e contenciosa com ética; <br/>
+              Proporcionar a prestação de serviços jurídicos com alto nível de conhecimento, qualificação e especialização; <br/>
+              Fornecer soluções jurídicas para garantir a segurança e defesa dos interesses dos nossos clientes.
             </p>
           </div>
           <div className="border-l-2 border-gold pl-8">
