@@ -7,7 +7,7 @@ export const Route = createFileRoute("/institucional")({
   head: () => ({
     meta: [
       { title: "Institucional — Moura & Galindo" },
-      { name: "description", content: "Conheça a história, missão e valores do escritório Moura & Galindo, sociedade de advogados com mais de 20 anos de tradição." },
+      { name: "description", content: "Conheça a história, missão e valores do escritório Moura & Galindo, Advogados Associados com mais de 20 anos de tradição." },
       { property: "og:title", content: "Institucional — Moura & Galindo" },
       { property: "og:description", content: "História, missão e valores do escritório Moura & Galindo." },
     ],
@@ -28,7 +28,7 @@ function Institucional() {
       <PageHero
         eyebrow="Institucional"
         title="Tradição construída a cada caso."
-        subtitle="Desde 2001, Moura & Galindo se consolidou como referência em soluções jurídicas estratégicas, unindo a solidez de uma tradição centenária ao dinamismo das demandas contemporâneas."
+        subtitle="Somos um escritório dinâmico, cuja principal marca é a atuação moderna, compromissada com a ética e soluções jurídicas responsáveis, adaptadas aos anseios e as necessidades dos nossos clientes."
       />
 
       <section className="py-24 md:py-32">

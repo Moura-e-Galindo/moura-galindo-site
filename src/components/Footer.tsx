@@ -20,9 +20,9 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { to: "/institucional" as const, label: "Institucional" },
+                { to: "/areas" as const, label: "Núcleos" },
                 { to: "/equipe" as const, label: "Equipe" },
-                { to: "/areas" as const, label: "Áreas de Atuação" },
-                { to: "/noticias" as const, label: "Notícias" },
+                // { to: "/noticias" as const, label: "Notícias" },
                 { to: "/contato" as const, label: "Contato" },
               ].map((l) => (
                 <li key={l.to}>
@@ -37,16 +37,15 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-lg text-foreground mb-4">Contato</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex gap-3"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>Av. Paulista, 1000 — São Paulo, SP</span></li>
-              <li className="flex gap-3"><Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>+55 (11) 3000-0000</span></li>
-              <li className="flex gap-3"><Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>contato@mouragalindo.adv.br</span></li>
+              <li className="flex gap-3"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>Av. Aracati, nº 382, Bairro Universitário, Caruaru / PE, CEP 55016-590</span></li>
+              <li className="flex gap-3"><Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>+55 (81) 99929-0552</span></li>
+              <li className="flex gap-3"><Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>atendimento@mouraegalindoadvogados.com.br</span></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Moura & Galindo Sociedade de Advogados. Todos os direitos reservados.</p>
-          <p className="tracking-wider uppercase">OAB/SP nº 00.000</p>
+          <p>© {new Date().getFullYear()} Moura & Galindo Advogados Associados. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

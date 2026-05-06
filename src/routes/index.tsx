@@ -1,18 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Scale,
-  Users2,
-  Gavel,
-  Home as HomeIcon,
-  Briefcase,
-  Shirt,
-  Handshake,
-  Syringe,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-office.jpg";
 import teamImage from "@/assets/team-news.jpg";
 import justiceImage from "@/assets/justice.jpg";
+import { nucleos } from "@/data/nucleos";
+import { buildWhatsAppUrl } from "@/lib/contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sociedade de advogados com mais de 20 anos de atuação. Defesa com excelência, ética e experiência jurídica.",
+          "Advogados Associados com mais de 20 anos de atuação. Defesa com excelência, ética e experiência jurídica.",
       },
       { property: "og:title", content: "Moura & Galindo — Advocacia com tradição e excelência" },
       {
@@ -51,17 +43,6 @@ export const Route = createFileRoute("/")({
 //   },
 // ];
 
-const nucleos = [
-  { icon: Scale, title: "Direito Civil e Contratual" },
-  { icon: HomeIcon, title: "Direito Imobiliário" },
-  { icon: Briefcase, title: "Direito Trabalhista Empresarial" },
-  { icon: Syringe, title: "Direito Médico" },
-  { icon: Users2, title: "Direito de Família e Sucessório" },
-  { icon: Handshake, title: "Direito Empresarial e Societário" },
-  { icon: Gavel, title: "Direito Tributário" },
-  { icon: Shirt, title: "Direito da Moda" },
-];
-
 function HomePage() {
   return (
     <>
@@ -74,24 +55,26 @@ function HomePage() {
             height={1280}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-background/70 via-background/60 to-background dark:from-black/80 dark:via-black/70 dark:to-background" />
+          {/* Overlay escuro consistente em ambos os temas — garante contraste do título */}
+          <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/70 to-background" />
         </div>
 
         <div className="relative mx-auto max-w-4xl px-6 py-32 w-full text-center">
           <div className="gold-divider mx-auto mb-10" />
-          <h1 className="font-serif text-5xl md:text-7xl font-medium leading-[1.05] text-gold">
-            Defesa com excelência,<br />ética e 28 anos<br />de experiência jurídica.
+          <h1 className="font-serif text-5xl md:text-7xl font-medium leading-[1.05] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
+            Defesa com excelência,<br />ética e mais de <span className="text-gold">20 anos</span><br />de experiência jurídica.
           </h1>
-          <p className="mt-10 max-w-xl mx-auto text-base md:text-lg leading-relaxed text-foreground/80">
-            Atuamos nas áreas Cível, Empresarial e Tributária, oferecendo
-            soluções estratégicas e personalizadas para cada cliente.
+          <p className="mt-10 max-w-xl mx-auto text-base md:text-lg leading-relaxed text-white/85">
+            Somos um escritório dinâmico, cuja principal marca é a atuação moderna, compromissada com a ética e soluções jurídicas responsáveis, adaptadas aos anseios e as necessidades dos nossos clientes.
           </p>
-          <Link
-            to="/contato"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-card border border-border px-8 py-3.5 text-sm font-medium text-foreground hover:bg-gold hover:text-gold-foreground hover:border-gold transition-all shadow-card"
+          <a
+            href={buildWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/25 px-8 py-3.5 text-sm font-medium text-white hover:bg-gold hover:text-gold-foreground hover:border-gold transition-all shadow-card"
           >
             Agendar Atendimento
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -128,7 +111,7 @@ function HomePage() {
             </h3>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               Somos um escritório dinâmico, cuja principal marca é a atuação moderna, compromissada com a ética e soluções jurídicas responsáveis, adaptadas aos anseios e as necessidades dos nossos clientes.
-              <br/><br />
+              <br /><br />
               Nosso diferencial está na qualificação constante e no profissionalismo que desenvolvemos, tendo em vista que os advogados responsáveis possuem mais de 20 anos de experiência. São docentes pós-graduados, que atuam e lecionam nas áreas de suas especialidades, proporcionando a todos que fazem parte do escritório a frequente qualificação, crescimento intelectual e experiência.
             </p>
 
@@ -171,15 +154,19 @@ function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {nucleos.map(({ icon: Icon, title }) => (
-              <article key={title} className="group bg-background border border-border p-8 hover:border-gold transition-colors">
+            {nucleos.map(({ slug, icon: Icon, title }) => (
+              <article key={slug} className="group bg-background border border-border p-8 hover:border-gold transition-colors">
                 <div className="flex h-14 w-14 items-center justify-center bg-muted group-hover:bg-gold/10 transition-colors">
                   <Icon className="h-6 w-6 text-gold" strokeWidth={1.25} />
                 </div>
                 <h3 className="mt-6 font-serif text-xl font-medium text-foreground min-h-[3.5rem] leading-snug">
                   {title}
                 </h3>
-                <Link to="/areas" className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2 text-xs font-medium uppercase tracking-wider text-gold-foreground hover:bg-foreground hover:text-background transition-colors">
+                <Link
+                  to="/areas/$slug"
+                  params={{ slug }}
+                  className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2 text-xs font-medium uppercase tracking-wider text-gold-foreground hover:bg-foreground hover:text-background transition-colors"
+                >
                   Saiba +
                 </Link>
               </article>
@@ -192,10 +179,10 @@ function HomePage() {
       <section className="surface-dark py-20 gradient-hero">
         <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-foreground">
           {[
-            { n: "28+", l: "Anos de atuação" },
+            { n: "20+", l: "Anos de atuação" },
             { n: "1.200+", l: "Casos conduzidos" },
-            { n: "45", l: "Profissionais" },
-            { n: "8", l: "Áreas de prática" },
+            { n: "20", l: "Profissionais" },
+            { n: "8", l: "Núcleos" },
           ].map((s) => (
             <div key={s.l}>
               <div className="font-serif text-5xl md:text-6xl font-medium text-gold">{s.n}</div>
@@ -216,12 +203,14 @@ function HomePage() {
           <p className="mt-6 text-base md:text-lg leading-relaxed text-muted-foreground">
             Nossa equipe está pronta para uma conversa preliminar e confidencial sobre sua demanda jurídica.
           </p>
-          <Link
-            to="/contato"
+          <a
+            href={buildWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-10 inline-flex items-center gap-2 bg-foreground px-8 py-4 text-sm font-medium uppercase tracking-wider text-background transition-all hover:bg-gold hover:text-gold-foreground shadow-elegant"
           >
             Agende um contato <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
     </>

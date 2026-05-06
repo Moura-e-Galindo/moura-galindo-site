@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Home } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { Logo } from "./Logo";
 
 const navItems = [
   { to: "/institucional", label: "Escritório" },
@@ -23,7 +24,7 @@ export function Header() {
             aria-label="Início"
             className="flex h-9 w-9 items-center justify-center rounded-full text-gold hover:bg-gold/10 transition-colors"
           >
-            <Home className="h-4 w-4" strokeWidth={1.75} />
+            <Logo compact height={30} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
