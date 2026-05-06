@@ -12,7 +12,7 @@ export const WHATSAPP_DISPLAY = "+55 (81) 99929-0552";
 
 /** Mensagem padrão pré-preenchida ao abrir a conversa via site. */
 export const WHATSAPP_DEFAULT_MESSAGE =
-  "Olá! Vim pelo site do escritório e gostaria de receber um atendimento";
+  "Olá! Vi o site do escritório e me interessei pelos serviços. Gostaria de receber um atendimento para mais informações.";
 
 /**
  * Monta a URL de abertura do WhatsApp (api.whatsapp.com/send) com o número
