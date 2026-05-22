@@ -3,15 +3,15 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import { cloudflare } from "@cloudflare/vite-plugin";
+import { nitro } from "nitro/vite";
 
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   plugins: [
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart(),
-    react(),
-    ...(command === "build" ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : [])
+    nitro(),
+    react()
   ],
   resolve: {
     alias: {
@@ -29,4 +29,4 @@ export default defineConfig(({ command }) => ({
   preview: {
     allowedHosts: ["mouraegalindoadvogados.com.br"]
   }
-}));
+});

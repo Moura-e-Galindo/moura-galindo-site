@@ -7,6 +7,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "start": "node .output/server/index.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -73,6 +74,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "nitro": "^2.0.0",
     "@lovable.dev/vite-tanstack-config": "^1.4.0",
     "@stylistic/eslint-plugin": "^2.13.0",
     "@types/node": "^22.16.5",
