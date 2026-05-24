@@ -8,33 +8,33 @@ export const Route = createFileRoute("/contato")({
       { title: "Contato — Moura & Galindo" },
       { name: "description", content: "Entre em contato com o escritório Moura & Galindo. Atendimento em São Paulo e Brasília." },
       { property: "og:title", content: "Contato — Moura & Galindo" },
-      { property: "og:description", content: "Fale com nossa equipe. Atendimento em São Paulo e Brasília." },
-    ],
+      { property: "og:description", content: "Fale com nossa equipe. Atendimento em São Paulo e Brasília." }
+    ]
   }),
-  component: Contato,
+  component: Contato
 });
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Caruaru",
-    lines: ["Av. Aracati, nº 382", "Bairro Universitário, Caruaru / PE", "CEP 55016-590"],
+    lines: ["Av. Aracati, nº 382", "Bairro Universitário, Caruaru / PE", "CEP 55016-590"]
   },
   {
     icon: Phone,
     title: "Telefone",
-    lines: ["+55 (81) 99929-0552", "+55 (81) 2103-4353"],
+    lines: ["+55 (81) 99929-0552"]
   },
   {
     icon: Mail,
     title: "E-mail",
-    lines: ["atendimento@mouraegalindoadvogados.com.br"],
+    lines: ["mouraegalindoadv@gmail.com"]
   },
   {
     icon: Clock,
     title: "Atendimento",
-    lines: ["Segunda a sexta, 9h às 19h"],
-  },
+    lines: ["Segunda a sexta, 9h às 19h"]
+  }
 ];
 
 function Contato() {

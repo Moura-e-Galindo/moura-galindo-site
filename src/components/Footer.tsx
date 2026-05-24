@@ -39,7 +39,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-3"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>Av. Aracati, nº 382, Bairro Universitário, Caruaru / PE, CEP 55016-590</span></li>
               <li className="flex gap-3"><Phone className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>+55 (81) 99929-0552</span></li>
-              <li className="flex gap-3"><Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>atendimento@mouraegalindoadvogados.com.br</span></li>
+              <li className="flex gap-3"><Mail className="h-4 w-4 text-gold shrink-0 mt-0.5" /><span>mouraegalindoadv@gmail.com</span></li>
             </ul>
           </div>
         </div>
