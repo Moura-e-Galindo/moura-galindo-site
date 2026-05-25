@@ -33,7 +33,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Atendimento",
-    lines: ["Segunda a sexta, 9h às 19h"]
+    lines: ["Segunda a sexta, 8h às 18h"]
   }
 ];
 
