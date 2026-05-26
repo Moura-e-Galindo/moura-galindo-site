@@ -5,6 +5,8 @@ import teamImage from "@/assets/team-news.jpg";
 import justiceImage from "@/assets/justice.jpg";
 import { nucleos } from "@/data/nucleos";
 import { buildWhatsAppUrl } from "@/lib/contact";
+import { BrandBand } from "@/components/BrandBand";
+import { CompromissoOds } from "@/components/CompromissoOds";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -140,6 +142,9 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Faixa de marca */}
+      <BrandBand />
+
       {/* Núcleos */}
       <section className="py-24 md:py-32 bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6">
@@ -191,6 +196,9 @@ function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Compromisso Social — ODS */}
+      <CompromissoOds />
 
       {/* CTA */}
       <section className="py-24 md:py-32 bg-background">
