@@ -1,15 +1,5 @@
-import logoBrand from "@/assets/logo-brand.jpeg";
+import logoBrand from "@/assets/logo-brand.png";
 
-/**
- * Faixa de marca.
- *
- * Exibe a logo do escritório sobre fundo escuro, funcionando como um
- * respiro visual entre as seções "O Escritório" e "Núcleos" da home.
- *
- * A logo possui fundo escuro embutido; o `mix-blend-mode: screen` faz
- * com que esse fundo se funda à seção, deixando visível apenas o brasão
- * dourado — sem depender de um PNG com transparência.
- */
 export function BrandBand() {
   return (
     <section className="surface-dark gradient-hero relative overflow-hidden py-20 md:py-28">

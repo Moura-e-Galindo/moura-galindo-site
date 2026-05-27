@@ -1,4 +1,4 @@
-import odsSelo from "@/assets/ods-selo.jpeg";
+import odsSelo from "@/assets/selo-ods.png";
 
 /**
  * Seção de compromisso social.
@@ -17,7 +17,7 @@ export function CompromissoOds() {
             src={odsSelo}
             alt="Selo Juntos pelos ODS — Moura & Galindo, signatário desde 2024"
             loading="lazy"
-            className="w-[300px] md:w-[400px] rounded-2xl shadow-elegant"
+            className="w-[300px] md:w-[400px] rounded-full"
           />
         </div>
 
