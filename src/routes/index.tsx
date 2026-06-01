@@ -180,14 +180,13 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
       <section className="surface-dark py-20 gradient-hero">
         <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-foreground">
           {[
             { n: "20+", l: "Anos de atuação" },
             { n: "1.200+", l: "Casos conduzidos" },
             { n: "20", l: "Profissionais" },
-            { n: "8", l: "Núcleos" },
+            { n: "18", l: "Núcleos" }
           ].map((s) => (
             <div key={s.l}>
               <div className="font-serif text-5xl md:text-6xl font-medium text-gold">{s.n}</div>
@@ -200,7 +199,6 @@ function HomePage() {
       {/* Compromisso Social — ODS */}
       <CompromissoOds />
 
-      {/* CTA */}
       <section className="py-24 md:py-32 bg-background">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <span className="text-xs font-medium uppercase tracking-[0.3em] text-gold">Vamos Conversar</span>
