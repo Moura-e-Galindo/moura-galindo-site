@@ -2,11 +2,21 @@ import {
   Scale,
   HomeIcon,
   Briefcase,
-  Syringe,
+  Stethoscope,
   Users2,
   Handshake,
   Gavel,
   Shirt,
+  Baby,
+  ScrollText,
+  Landmark,
+  ShoppingCart,
+  PiggyBank,
+  Building2,
+  Leaf,
+  Banknote,
+  HardHat,
+  Vote,
   type LucideIcon,
 } from "lucide-react";
 
@@ -77,67 +87,154 @@ export const nucleos: Nucleo[] = [
     ],
   },
   {
+    slug: "direito-criminal",
+    icon: Gavel,
+    title: "Direito Criminal",
+    shortDesc:
+      "Defesa técnica e estratégica em todas as fases da persecução penal, com sigilo absoluto e respeito às garantias fundamentais.",
+    subtitle:
+      "Defesa criminal qualificada em inquéritos, ações penais e medidas cautelares, em todas as instâncias.",
+    description: [
+      "O Núcleo de Direito Criminal do escritório Moura & Galindo Advogados Associados atua em defesa de pessoas físicas e jurídicas investigadas ou processadas criminalmente, com foco na preservação das garantias constitucionais, da presunção de inocência e da ampla defesa.",
+      "A atuação compreende desde a fase pré-processual — em investigações, inquéritos policiais e procedimentos administrativos — até o acompanhamento integral da ação penal, recursos em tribunais superiores e execução penal, sempre com sigilo absoluto e estratégia técnica orientada ao caso concreto.",
+    ],
+    services: [
+      "Defesa em inquéritos policiais e investigações",
+      "Acompanhamento de audiências de custódia",
+      "Defesa em ações penais e recursos",
+      "Habeas corpus e medidas cautelares",
+      "Crimes contra a ordem econômica e tributária",
+      "Crimes empresariais e compliance criminal",
+      "Execução penal e progressão de regime",
+    ],
+  },
+  {
     slug: "direito-trabalhista-empresarial",
     icon: Briefcase,
     title: "Direito Trabalhista Empresarial",
     shortDesc:
-      "Defesa estratégica de empregadores em litígios trabalhistas e consultoria preventiva em gestão de pessoas.",
+      "Consultoria preventiva e estratégica para empregadores em rotinas trabalhistas, compliance e relações sindicais.",
     subtitle:
-      "Assessoria e defesa de empresas em todas as relações de trabalho — da prevenção ao contencioso.",
+      "Assessoria jurídica preventiva voltada à gestão de pessoas e à adequação das empresas à legislação trabalhista.",
     description: [
-      "O Núcleo de Direito Trabalhista Empresarial atua na defesa dos interesses de empregadores, oferecendo soluções jurídicas que conciliam a observância da legislação trabalhista com as necessidades operacionais e estratégicas das empresas.",
-      "O escritório presta consultoria preventiva em rotinas de Recursos Humanos, elaboração de políticas internas, análise de riscos e adequação à legislação trabalhista, sindical e previdenciária, além de atuar com excelência no contencioso judicial, em todas as instâncias da Justiça do Trabalho.",
+      "O Núcleo de Direito Trabalhista Empresarial atua na assessoria de empregadores, oferecendo soluções jurídicas que conciliam a observância da legislação trabalhista com as necessidades operacionais e estratégicas das empresas.",
+      "Prestamos consultoria preventiva em rotinas de Recursos Humanos, elaboração de políticas internas, análise de riscos, adequação à legislação trabalhista, sindical e previdenciária, além de apoio em negociações coletivas e em processos de reestruturação organizacional.",
     ],
     services: [
-      "Defesa em reclamações trabalhistas",
-      "Auditoria e compliance trabalhista",
-      "Negociação coletiva e relações sindicais",
+      "Consultoria preventiva e auditoria trabalhista",
       "Elaboração de contratos e políticas internas",
-      "Assessoria em demissões e acordos",
+      "Compliance trabalhista e LGPD aplicada ao RH",
+      "Negociação coletiva e relações sindicais",
+      "Assessoria em demissões, acordos e PDVs",
       "Treinamentos e consultoria em SST",
     ],
   },
   {
-    slug: "direito-medico",
-    icon: Syringe,
-    title: "Direito Médico",
+    slug: "direito-da-crianca-e-adolescente",
+    icon: Baby,
+    title: "Direito da Criança e Adolescente",
     shortDesc:
-      "Consultoria e defesa para profissionais e instituições da saúde em questões éticas, contratuais e judiciais.",
+      "Atuação especializada na proteção integral de crianças e adolescentes, com base no ECA e em tratados internacionais.",
     subtitle:
-      "Atuação especializada na proteção jurídica de médicos, clínicas, hospitais e operadoras de saúde.",
+      "Defesa dos direitos de crianças e adolescentes, com atuação humanizada e em estrita observância ao princípio da proteção integral.",
     description: [
-      "O Núcleo de Direito Médico do escritório Moura & Galindo presta assessoria a profissionais e instituições da área da saúde, com olhar técnico voltado tanto à prevenção de litígios quanto à defesa qualificada em processos administrativos e judiciais.",
-      "Atuamos em demandas de responsabilidade civil médica, processos ético-disciplinares perante os Conselhos Regionais e Federal de Medicina, elaboração de termos de consentimento informado, contratos hospitalares e auditorias documentais, sempre com sigilo absoluto e profundo respeito ao exercício da medicina.",
+      "O Núcleo de Direito da Criança e Adolescente atua na defesa dos direitos fundamentais previstos na Constituição Federal e no Estatuto da Criança e do Adolescente (ECA), assegurando a proteção integral em todas as suas dimensões — pessoal, familiar, social e patrimonial.",
+      "Conduzimos demandas envolvendo guarda, adoção, medidas protetivas, atos infracionais, alienação parental, regulamentação de convivência e questões relacionadas à educação e à saúde de menores, sempre com sensibilidade, sigilo e respeito ao melhor interesse da criança.",
     ],
     services: [
-      "Defesa em ações de erro médico",
-      "Processos ético-disciplinares (CRM/CFM)",
-      "Termos de consentimento informado",
-      "Contratos hospitalares e de plantão",
-      "Consultoria a clínicas e hospitais",
-      "Defesa em demandas de planos de saúde",
+      "Processos de adoção nacional e internacional",
+      "Guarda e regulamentação de convivência",
+      "Defesa em atos infracionais",
+      "Medidas protetivas e judiciais",
+      "Alienação parental",
+      "Acompanhamento em conselhos tutelares e Varas da Infância",
     ],
   },
   {
-    slug: "direito-de-familia-e-sucessorio",
-    icon: Users2,
-    title: "Direito de Família e Sucessório",
+    slug: "direito-sucessorio",
+    icon: ScrollText,
+    title: "Direito Sucessório",
     shortDesc:
-      "Atuação humanizada em questões de família e sucessões, com cuidado, sigilo e estratégia em cada caso.",
+      "Planejamento sucessório e condução de inventários, partilhas e testamentos com técnica, sigilo e segurança patrimonial.",
     subtitle:
-      "Cuidado, técnica e sensibilidade em cada relação familiar e em cada partilha de patrimônio.",
+      "Soluções jurídicas para a transmissão de patrimônio entre gerações, com foco em prevenção de litígios e eficiência fiscal.",
     description: [
-      "O Núcleo de Direito de Família e Sucessório do escritório é coordenado por profissionais com sólida formação acadêmica e ampla experiência prática, e atua com sensibilidade às particularidades de cada núcleo familiar.",
-      "Conduzimos demandas envolvendo divórcio, dissolução de união estável, guarda e regulamentação de visitas, alimentos, partilha de bens, inventários, planejamento sucessório e testamentos — sempre com foco em preservar relações e patrimônio, priorizando soluções consensuais sempre que possível.",
+      "O Núcleo de Direito Sucessório atua no planejamento e na execução da transmissão de patrimônio entre gerações, oferecendo soluções que aliam segurança jurídica, redução de carga tributária e preservação do interesse familiar.",
+      "Conduzimos inventários judiciais e extrajudiciais, partilhas, testamentos, doações e estruturações patrimoniais — sempre com a preocupação de antecipar conflitos e proteger o legado dos clientes ao longo do tempo.",
+    ],
+    services: [
+      "Inventários judiciais e extrajudiciais",
+      "Partilha de bens e sobrepartilha",
+      "Testamentos e codicilos",
+      "Planejamento sucessório familiar",
+      "Doações e usufrutos",
+      "Holding patrimonial e proteção de bens",
+    ],
+  },
+  {
+    slug: "direito-medico-e-da-saude",
+    icon: Stethoscope,
+    title: "Direito Médico e da Saúde",
+    shortDesc:
+      "Consultoria e defesa para profissionais e instituições da saúde em questões éticas, contratuais e judiciais.",
+    subtitle:
+      "Atuação especializada na proteção jurídica de médicos, clínicas, hospitais, operadoras e pacientes.",
+    description: [
+      "O Núcleo de Direito Médico e da Saúde do escritório Moura & Galindo presta assessoria a profissionais e instituições da área da saúde, com olhar técnico voltado tanto à prevenção de litígios quanto à defesa qualificada em processos administrativos e judiciais.",
+      "Atuamos em demandas de responsabilidade civil médica, processos ético-disciplinares perante os Conselhos Regionais e Federal de Medicina, elaboração de termos de consentimento informado, contratos hospitalares, demandas contra planos de saúde e auditorias documentais — sempre com sigilo absoluto e profundo respeito ao exercício das profissões da saúde.",
+    ],
+    services: [
+      "Defesa em ações de erro médico",
+      "Processos ético-disciplinares (CRM/CFM e demais conselhos)",
+      "Termos de consentimento informado",
+      "Contratos hospitalares e de plantão",
+      "Consultoria a clínicas, hospitais e operadoras",
+      "Demandas contra planos de saúde",
+      "Judicialização de medicamentos e tratamentos",
+    ],
+  },
+  {
+    slug: "direito-da-familia",
+    icon: Users2,
+    title: "Direito da Família",
+    shortDesc:
+      "Atuação humanizada em questões familiares, com cuidado, sigilo e estratégia em cada caso.",
+    subtitle:
+      "Cuidado, técnica e sensibilidade em cada relação familiar e em cada decisão que envolve o núcleo afetivo.",
+    description: [
+      "O Núcleo de Direito da Família é conduzido por profissionais com sólida formação acadêmica e ampla experiência prática, atuando com sensibilidade às particularidades de cada núcleo familiar.",
+      "Conduzimos demandas envolvendo divórcio, dissolução de união estável, guarda e regulamentação de convivência, alimentos, partilha de bens, reconhecimento de paternidade e mediação familiar — sempre com foco em preservar relações e patrimônio, priorizando soluções consensuais sempre que possível.",
     ],
     services: [
       "Divórcio e dissolução de união estável",
-      "Guarda, visitas e alimentos",
+      "Guarda, convivência e alimentos",
       "Partilha de bens e meações",
-      "Inventários judiciais e extrajudiciais",
-      "Planejamento sucessório e testamentos",
+      "Reconhecimento e dissolução de uniões",
       "Reconhecimento de paternidade",
+      "Pactos antenupciais e contratos de convivência",
       "Mediação familiar",
+    ],
+  },
+  {
+    slug: "direito-tributario",
+    icon: Landmark,
+    title: "Direito Tributário",
+    shortDesc:
+      "Consultoria preventiva e defesa em discussões tributárias administrativas e judiciais.",
+    subtitle:
+      "Planejamento tributário e defesa em todas as esferas — federal, estadual e municipal.",
+    description: [
+      "O Núcleo de Direito Tributário atua na consultoria preventiva e no contencioso administrativo e judicial em todas as esferas, oferecendo soluções para reduzir a carga tributária e mitigar riscos fiscais dentro dos limites da legislação.",
+      "Acompanhamos de perto as constantes alterações da legislação tributária, em especial as decorrentes da Reforma Tributária, e oferecemos pareceres, planejamentos e teses tributárias adaptadas à realidade de cada cliente.",
+    ],
+    services: [
+      "Planejamento tributário",
+      "Defesa em execuções fiscais",
+      "Recuperação de créditos tributários",
+      "Consultoria em ICMS, ISS, PIS, COFINS, IRPJ e CSLL",
+      "Acompanhamento em processos administrativos",
+      "Pareceres e teses tributárias",
+      "Adequação à Reforma Tributária",
     ],
   },
   {
@@ -163,25 +260,24 @@ export const nucleos: Nucleo[] = [
     ],
   },
   {
-    slug: "direito-tributario",
-    icon: Gavel,
-    title: "Direito Tributário",
+    slug: "direito-do-consumidor",
+    icon: ShoppingCart,
+    title: "Direito do Consumidor",
     shortDesc:
-      "Consultoria preventiva e defesa em discussões tributárias administrativas e judiciais.",
+      "Atuação na defesa de consumidores e fornecedores, com foco em relações equilibradas e na prevenção de litígios.",
     subtitle:
-      "Planejamento tributário e defesa em todas as esferas — federal, estadual e municipal.",
+      "Soluções jurídicas para todas as relações de consumo — judiciais, extrajudiciais e administrativas.",
     description: [
-      "O Núcleo de Direito Tributário atua na consultoria preventiva e no contencioso administrativo e judicial em todas as esferas, oferecendo soluções para reduzir a carga tributária e mitigar riscos fiscais dentro dos limites da legislação.",
-      "Acompanhamos de perto as constantes alterações da legislação tributária, em especial as decorrentes da Reforma Tributária, e oferecemos pareceres, planejamentos e teses tributárias adaptadas à realidade de cada cliente.",
+      "O Núcleo de Direito do Consumidor atua tanto na defesa de consumidores quanto na assessoria de fornecedores de produtos e serviços, sempre orientado pelos princípios do Código de Defesa do Consumidor e pela busca de soluções equilibradas e eficientes.",
+      "Conduzimos demandas envolvendo cobranças indevidas, vícios e defeitos em produtos e serviços, contratos de adesão, práticas abusivas, planos de saúde, transporte aéreo e responsabilidade civil — além de prestar consultoria preventiva para empresas que desejam adequar suas práticas comerciais.",
     ],
     services: [
-      "Planejamento tributário",
-      "Defesa em execuções fiscais",
-      "Recuperação de créditos tributários",
-      "Consultoria em ICMS, ISS, PIS, COFINS, IRPJ e CSLL",
-      "Acompanhamento em processos administrativos",
-      "Pareceres e teses tributárias",
-      "Adequação à Reforma Tributária",
+      "Ações por vícios e defeitos em produtos e serviços",
+      "Cobranças indevidas e negativações",
+      "Revisão de contratos de adesão",
+      "Defesa em PROCON e órgãos administrativos",
+      "Indenizações por danos morais e materiais",
+      "Compliance consumerista para empresas",
     ],
   },
   {
@@ -204,6 +300,138 @@ export const nucleos: Nucleo[] = [
       "Contratos com fornecedores e franquias",
       "Assessoria em e‑commerce e marketplaces",
       "Sustentabilidade e moda circular",
+    ],
+  },
+  {
+    slug: "direito-previdenciario",
+    icon: PiggyBank,
+    title: "Direito Previdenciário",
+    shortDesc:
+      "Assessoria em benefícios previdenciários, revisões e planejamento da aposentadoria nos regimes geral e próprio.",
+    subtitle:
+      "Atuação técnica em benefícios do INSS, regimes próprios e planejamento previdenciário.",
+    description: [
+      "O Núcleo de Direito Previdenciário atua na orientação de segurados do Regime Geral de Previdência Social (RGPS) e dos Regimes Próprios (RPPS), tanto na via administrativa quanto na judicial, com foco na obtenção e revisão de benefícios e na elaboração de planejamentos previdenciários personalizados.",
+      "Acompanhamos as constantes mudanças legislativas — em especial as Reformas da Previdência — para oferecer ao cliente a melhor estratégia de concessão, revisão ou complementação de benefícios.",
+    ],
+    services: [
+      "Aposentadoria por idade, tempo de contribuição e especial",
+      "Benefícios por incapacidade (auxílio-doença e aposentadoria)",
+      "Pensão por morte e auxílio-reclusão",
+      "Revisão de benefícios e RMI",
+      "Planejamento previdenciário personalizado",
+      "Recursos administrativos junto ao INSS",
+      "Ações judiciais previdenciárias",
+    ],
+  },
+  {
+    slug: "direito-publico-administrativo",
+    icon: Building2,
+    title: "Direito Público/Administrativo",
+    shortDesc:
+      "Atuação em licitações, contratos administrativos e demandas contra o Poder Público, com técnica e celeridade.",
+    subtitle:
+      "Defesa de direitos e interesses em relações com a Administração Pública direta e indireta.",
+    description: [
+      "O Núcleo de Direito Público e Administrativo atua na defesa de pessoas físicas, empresas privadas e entes públicos em suas relações com a Administração Pública, abrangendo procedimentos licitatórios, contratos administrativos, servidores públicos, processos disciplinares e responsabilização do Estado.",
+      "Oferecemos atuação consultiva e contenciosa pautada pela observância dos princípios constitucionais que regem a Administração — legalidade, impessoalidade, moralidade, publicidade e eficiência — e pela busca de soluções tecnicamente sólidas.",
+    ],
+    services: [
+      "Licitações e contratos administrativos",
+      "Mandado de segurança e ações contra o Poder Público",
+      "Direitos de servidores públicos",
+      "Processos administrativos disciplinares (PAD)",
+      "Responsabilidade civil do Estado",
+      "Improbidade administrativa (defesa)",
+      "Concursos públicos",
+    ],
+  },
+  {
+    slug: "direito-ambiental",
+    icon: Leaf,
+    title: "Direito Ambiental",
+    shortDesc:
+      "Consultoria e defesa em licenciamento, responsabilidade ambiental e compliance, com olhar técnico e estratégico.",
+    subtitle:
+      "Assessoria preventiva e contenciosa em todas as dimensões do Direito Ambiental, com foco em sustentabilidade e conformidade legal.",
+    description: [
+      "O Núcleo de Direito Ambiental atua na consultoria preventiva e na defesa em processos administrativos e judiciais envolvendo licenciamento, responsabilidade civil ambiental, infrações e termos de ajustamento de conduta (TACs).",
+      "Auxiliamos empresas, produtores rurais e empreendimentos a se adequarem às normas ambientais aplicáveis, mitigando riscos regulatórios e estruturando políticas internas de sustentabilidade alinhadas às melhores práticas de ESG.",
+    ],
+    services: [
+      "Licenciamento ambiental",
+      "Defesa em autos de infração ambiental",
+      "Termos de ajustamento de conduta (TAC)",
+      "Responsabilidade civil ambiental",
+      "Compliance ambiental e ESG",
+      "Consultoria para o agronegócio",
+      "Defesa em ações civis públicas",
+    ],
+  },
+  {
+    slug: "direito-bancario",
+    icon: Banknote,
+    title: "Direito Bancário",
+    shortDesc:
+      "Atuação em revisões contratuais, defesa em execuções e relações com instituições financeiras.",
+    subtitle:
+      "Defesa qualificada em discussões com instituições financeiras e consultoria em operações bancárias.",
+    description: [
+      "O Núcleo de Direito Bancário atua na defesa de clientes pessoa física e jurídica em discussões envolvendo contratos bancários, financiamentos, cédulas de crédito, execuções de dívida e relações com instituições financeiras.",
+      "Oferecemos análise técnica de cláusulas contratuais, revisão de juros e encargos abusivos, defesa em ações de busca e apreensão, execuções e renegociação de dívidas — sempre orientados pela busca de soluções equilibradas e juridicamente sustentáveis.",
+    ],
+    services: [
+      "Revisão de contratos bancários e financiamentos",
+      "Defesa em ações de busca e apreensão",
+      "Defesa em execuções de cédulas de crédito",
+      "Discussão de juros e encargos abusivos",
+      "Renegociação e repactuação de dívidas",
+      "Recuperação de crédito (lado credor)",
+      "Consultoria em operações bancárias",
+    ],
+  },
+  {
+    slug: "contencioso-trabalhista",
+    icon: HardHat,
+    title: "Contencioso Trabalhista",
+    shortDesc:
+      "Defesa estratégica de empresas em reclamações trabalhistas, em todas as instâncias da Justiça do Trabalho.",
+    subtitle:
+      "Atuação contenciosa qualificada em todas as fases e instâncias do processo do trabalho.",
+    description: [
+      "O Núcleo de Contencioso Trabalhista atua exclusivamente na defesa de empresas em reclamações trabalhistas, conduzindo audiências, recursos e execuções com técnica processual aprofundada e visão estratégica sobre cada demanda.",
+      "Acompanhamos os processos desde a fase inicial até os tribunais superiores, com elaboração de defesas, recursos ordinários e extraordinários, embargos e ações rescisórias, sempre alinhados à política de gestão de passivo trabalhista do cliente.",
+    ],
+    services: [
+      "Defesa em reclamações trabalhistas",
+      "Acompanhamento de audiências em todo o país",
+      "Recursos ordinários, de revista e extraordinários",
+      "Execuções trabalhistas e cálculos",
+      "Ações rescisórias",
+      "Gestão de passivo e provisionamento",
+      "Acordos judiciais e extrajudiciais",
+    ],
+  },
+  {
+    slug: "direito-eleitoral",
+    icon: Vote,
+    title: "Direito Eleitoral",
+    shortDesc:
+      "Assessoria a candidatos, partidos e coligações em todas as fases do processo eleitoral.",
+    subtitle:
+      "Atuação técnica e estratégica em campanhas, prestação de contas e contencioso eleitoral.",
+    description: [
+      "O Núcleo de Direito Eleitoral presta assessoria a candidatos, partidos políticos, coligações e federações partidárias em todas as fases do processo eleitoral, atuando de forma preventiva e contenciosa perante a Justiça Eleitoral.",
+      "Conduzimos prestações de contas, registros de candidatura, propaganda eleitoral, ações de impugnação, investigações judiciais eleitorais (AIJE), ações de investigação de mandato eletivo (AIME) e recursos junto aos Tribunais Regionais Eleitorais e ao Tribunal Superior Eleitoral.",
+    ],
+    services: [
+      "Registro de candidatura e propaganda eleitoral",
+      "Prestação de contas de campanha e partidária",
+      "Ações de impugnação de candidatura",
+      "AIJE e AIME",
+      "Recursos eleitorais",
+      "Consultoria a partidos e coligações",
+      "Defesa em ações por captação ilícita de sufrágio",
     ],
   },
 ];

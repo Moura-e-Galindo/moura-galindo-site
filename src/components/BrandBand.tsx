@@ -3,7 +3,6 @@ import logoBrand from "@/assets/logo-brand.png";
 export function BrandBand() {
   return (
     <section className="surface-dark gradient-hero relative overflow-hidden py-20 md:py-28">
-      {/* Textura sutil de pontos */}
       <div
         className="absolute inset-0 opacity-[0.05]"
         style={{

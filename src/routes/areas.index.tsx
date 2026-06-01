@@ -15,13 +15,13 @@ export const Route = createFileRoute("/areas/")({
       {
         name: "description",
         content:
-          "Conheça as áreas de prática do escritório Moura & Galindo: civil, imobiliário, trabalhista, médico, família, empresarial, tributário e direito da moda.",
+          "Conheça as áreas de prática do escritório Moura & Galindo: civil, imobiliário, criminal, trabalhista, família, sucessório, médico, tributário, empresarial, consumidor, moda, previdenciário, público, ambiental, bancário, eleitoral e mais.",
       },
       { property: "og:title", content: "Núcleos — Moura & Galindo" },
       {
         property: "og:description",
         content:
-          "Atuação multidisciplinar com profundidade técnica em oito áreas do Direito.",
+          "Atuação multidisciplinar com profundidade técnica em diversas áreas do Direito.",
       },
     ],
   }),
