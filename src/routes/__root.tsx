@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -68,6 +68,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  const { location } = useRouterState();
+  const isAdminOrLogin =
+    location.pathname.startsWith("/admin") || location.pathname === "/login";
+
+  if (isAdminOrLogin) {
+    return (
+      <ThemeProvider>
+        <Outlet />
+      </ThemeProvider>
+    );
+  }
+
   return (
     <ThemeProvider>
       <div className="flex min-h-screen flex-col bg-background">

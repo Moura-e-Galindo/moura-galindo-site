@@ -7,45 +7,32 @@ import { nucleos } from "@/data/nucleos";
 import { buildWhatsAppUrl } from "@/lib/contact";
 import { BrandBand } from "@/components/BrandBand";
 import { CompromissoOds } from "@/components/CompromissoOds";
+import { LatestNews } from "@/components/LatestNews";
+import { fetchLatestNoticias } from "@/lib/noticias-api";
 
 export const Route = createFileRoute("/")({
+  loader: () => fetchLatestNoticias(3),
   head: () => ({
     meta: [
       { title: "Moura & Galindo — Advocacia com tradição e excelência" },
       {
         name: "description",
         content:
-          "Advogados Associados com mais de 20 anos de atuação. Defesa com excelência, ética e experiência jurídica.",
+          "Advogados Associados com mais de 20 anos de atuação. Defesa com excelência, ética e experiência jurídica."
       },
       { property: "og:title", content: "Moura & Galindo — Advocacia com tradição e excelência" },
       {
         property: "og:description",
-        content: "Soluções jurídicas estratégicas com solidez e proximidade.",
-      },
-    ],
+        content: "Soluções jurídicas estratégicas com solidez e proximidade."
+      }
+    ]
   }),
-  component: HomePage,
+  component: HomePage
 });
 
-// const noticias = [
-//   {
-//     tag: "Últimas Notícias",
-//     title: "Perpétua Dantas assume coordenação da área penal no Moura & Galindo",
-//     image: teamImage,
-//   },
-//   {
-//     tag: "Tributário",
-//     title: "Reforma Tributária: o que muda para empresas do Lucro Real em 2026",
-//     image: heroImage,
-//   },
-//   {
-//     tag: "Empresarial",
-//     title: "M&A no setor de saúde: tendências do primeiro trimestre",
-//     image: justiceImage,
-//   },
-// ];
-
 function HomePage() {
+  const latestNoticias = Route.useLoaderData();
+
   return (
     <>
       <section className="relative -mt-20 md:-mt-24 min-h-screen flex items-center overflow-hidden">
@@ -79,9 +66,6 @@ function HomePage() {
           </a>
         </div>
       </section>
-
-      {/* Últimas Notícias
-      <NoticiasCarousel items={noticias} /> */}
 
       {/* Escritório */}
       <section className="relative py-24 md:py-32 overflow-hidden">
@@ -121,7 +105,7 @@ function HomePage() {
               {[
                 "Atendimento estratégico e personalizado",
                 "Sócios atuando diretamente em cada caso",
-                "Mais de duas décadas de tradição jurídica",
+                "Mais de duas décadas de tradição jurídica"
               ].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-sm text-foreground">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/20 border border-gold">
@@ -199,6 +183,9 @@ function HomePage() {
       {/* Compromisso Social — ODS */}
       <CompromissoOds />
 
+      {/* Últimas Notícias */}
+      <LatestNews noticias={latestNoticias} />
+
       <section className="py-24 md:py-32 bg-background">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <span className="text-xs font-medium uppercase tracking-[0.3em] text-gold">Vamos Conversar</span>
@@ -222,73 +209,6 @@ function HomePage() {
     </>
   );
 }
-
-// function NoticiasCarousel({ items }: { items: typeof noticias }) {
-//   const [index, setIndex] = useState(0);
-//   const total = items.length;
-//   const go = (d: number) => setIndex((i) => (i + d + total) % total);
-//   const current = items[index];
-
-//   return (
-//     <section className="py-20 bg-background">
-//       <div className="mx-auto max-w-7xl px-6">
-//         <div className="flex items-end justify-between border-t border-gold/40 pt-8">
-//           <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground">Últimas Notícias</h2>
-//           <Link to="/noticias" className="text-sm font-medium text-gold inline-flex items-center gap-2 hover:gap-4 transition-all">
-//             Ver tudo <ArrowRight className="h-4 w-4" />
-//           </Link>
-//         </div>
-
-//         <div className="relative mt-10 group">
-//           <div className="relative aspect-[16/8] md:aspect-[16/6] bg-muted overflow-hidden">
-//             <img
-//               src={current.image}
-//               alt={current.title}
-//               loading="lazy"
-//               className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
-//               key={index}
-//             />
-//             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-//             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-//               <span className="inline-block bg-gold px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-gold-foreground">
-//                 {current.tag}
-//               </span>
-//               <h3 className="mt-4 font-serif text-2xl md:text-3xl font-medium text-white max-w-3xl leading-snug">
-//                 {current.title}
-//               </h3>
-//             </div>
-
-//             <button
-//               onClick={() => go(-1)}
-//               aria-label="Anterior"
-//               className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold"
-//             >
-//               <ChevronLeft className="h-5 w-5" />
-//             </button>
-//             <button
-//               onClick={() => go(1)}
-//               aria-label="Próximo"
-//               className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold"
-//             >
-//               <ChevronRight className="h-5 w-5" />
-//             </button>
-//           </div>
-
-//           <div className="mt-5 flex justify-center gap-2">
-//             {items.map((_, i) => (
-//               <button
-//                 key={i}
-//                 onClick={() => setIndex(i)}
-//                 aria-label={`Ir para slide ${i + 1}`}
-//                 className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-gold" : "w-2 bg-muted-foreground/40"}`}
-//               />
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 function DecorativeShapes() {
   return (

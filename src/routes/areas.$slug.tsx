@@ -20,24 +20,23 @@ export const Route = createFileRoute("/areas/$slug")({
           name: "description",
           content:
             loaderData?.nucleo?.shortDesc ??
-            "Conheça a área de atuação do escritório Moura & Galindo.",
+            "Conheça a área de atuação do escritório Moura & Galindo."
         },
         { property: "og:title", content: `${title} — Moura & Galindo` },
         {
           property: "og:description",
-          content: loaderData?.nucleo?.shortDesc ?? "",
-        },
-      ],
+          content: loaderData?.nucleo?.shortDesc ?? ""
+        }
+      ]
     };
   },
-  component: NucleoPage,
+  component: NucleoPage
 });
 
 function NucleoPage() {
   const { nucleo } = Route.useLoaderData();
   const Icon = nucleo.icon;
 
-  // Sugestoes: outros nucleos (excluindo o atual), no maximo 3
   const sugestoes = nucleos.filter((n) => n.slug !== nucleo.slug).slice(0, 3);
 
   return (
@@ -87,7 +86,7 @@ function NucleoPage() {
               <div className="gold-divider mt-6" />
 
               <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
-                {nucleo.description.map((paragraph, index) => (
+                {nucleo.description.map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -102,7 +101,7 @@ function NucleoPage() {
                     Principais serviços
                   </h4>
                   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                    {nucleo.services.map((item) => (
+                    {nucleo.services.map((item: string) => (
                       <li
                         key={item}
                         className="flex items-start gap-3 border border-border bg-background px-5 py-4 hover:border-gold transition-colors"

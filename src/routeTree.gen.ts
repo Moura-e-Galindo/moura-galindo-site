@@ -10,17 +10,29 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as NoticiasRouteImport } from './routes/noticias'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as InstitucionalRouteImport } from './routes/institucional'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as AreasRouteImport } from './routes/areas'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as AreasSlugRouteImport } from './routes/areas.$slug'
+import { Route as AdminNovaRouteImport } from './routes/admin.nova'
+import { Route as AdminEditarIdRouteImport } from './routes/admin.editar.$id'
 
 const NoticiasRoute = NoticiasRouteImport.update({
   id: '/noticias',
   path: '/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InstitucionalRoute = InstitucionalRouteImport.update({
@@ -43,91 +55,161 @@ const AreasRoute = AreasRouteImport.update({
   path: '/areas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => NoticiasRoute,
 } as any)
 const AreasIndexRoute = AreasIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AreasRoute,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => NoticiasRoute,
+} as any)
 const AreasSlugRoute = AreasSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => AreasRoute,
 } as any)
+const AdminNovaRoute = AdminNovaRouteImport.update({
+  id: '/nova',
+  path: '/nova',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEditarIdRoute = AdminEditarIdRouteImport.update({
+  id: '/editar/$id',
+  path: '/editar/$id',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/areas': typeof AreasRouteWithChildren
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
-  '/noticias': typeof NoticiasRoute
+  '/login': typeof LoginRoute
+  '/noticias': typeof NoticiasRouteWithChildren
+  '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
+  '/admin/editar/$id': typeof AdminEditarIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
-  '/noticias': typeof NoticiasRoute
+  '/login': typeof LoginRoute
+  '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/admin': typeof AdminIndexRoute
   '/areas': typeof AreasIndexRoute
+  '/noticias': typeof NoticiasIndexRoute
+  '/admin/editar/$id': typeof AdminEditarIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/areas': typeof AreasRouteWithChildren
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
-  '/noticias': typeof NoticiasRoute
+  '/login': typeof LoginRoute
+  '/noticias': typeof NoticiasRouteWithChildren
+  '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
+  '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
+  '/admin/editar/$id': typeof AdminEditarIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/areas'
     | '/contato'
     | '/equipe'
     | '/institucional'
+    | '/login'
     | '/noticias'
+    | '/admin/nova'
     | '/areas/$slug'
+    | '/noticias/$slug'
+    | '/admin/'
     | '/areas/'
+    | '/noticias/'
+    | '/admin/editar/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contato'
     | '/equipe'
     | '/institucional'
-    | '/noticias'
+    | '/login'
+    | '/admin/nova'
     | '/areas/$slug'
+    | '/noticias/$slug'
+    | '/admin'
     | '/areas'
+    | '/noticias'
+    | '/admin/editar/$id'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/areas'
     | '/contato'
     | '/equipe'
     | '/institucional'
+    | '/login'
     | '/noticias'
+    | '/admin/nova'
     | '/areas/$slug'
+    | '/noticias/$slug'
+    | '/admin/'
     | '/areas/'
+    | '/noticias/'
+    | '/admin/editar/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
   AreasRoute: typeof AreasRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   EquipeRoute: typeof EquipeRoute
   InstitucionalRoute: typeof InstitucionalRoute
-  NoticiasRoute: typeof NoticiasRoute
+  LoginRoute: typeof LoginRoute
+  NoticiasRoute: typeof NoticiasRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -137,6 +219,13 @@ declare module '@tanstack/react-router' {
       path: '/noticias'
       fullPath: '/noticias'
       preLoaderRoute: typeof NoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/institucional': {
@@ -167,12 +256,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof NoticiasRoute
     }
     '/areas/': {
       id: '/areas/'
@@ -181,6 +284,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasIndexRouteImport
       parentRoute: typeof AreasRoute
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof NoticiasRoute
+    }
     '/areas/$slug': {
       id: '/areas/$slug'
       path: '/$slug'
@@ -188,8 +305,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasSlugRouteImport
       parentRoute: typeof AreasRoute
     }
+    '/admin/nova': {
+      id: '/admin/nova'
+      path: '/nova'
+      fullPath: '/admin/nova'
+      preLoaderRoute: typeof AdminNovaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/editar/$id': {
+      id: '/admin/editar/$id'
+      path: '/editar/$id'
+      fullPath: '/admin/editar/$id'
+      preLoaderRoute: typeof AdminEditarIdRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
+
+interface AdminRouteChildren {
+  AdminNovaRoute: typeof AdminNovaRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  AdminEditarIdRoute: typeof AdminEditarIdRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminNovaRoute: AdminNovaRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  AdminEditarIdRoute: AdminEditarIdRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface AreasRouteChildren {
   AreasSlugRoute: typeof AreasSlugRoute
@@ -203,13 +348,29 @@ const AreasRouteChildren: AreasRouteChildren = {
 
 const AreasRouteWithChildren = AreasRoute._addFileChildren(AreasRouteChildren)
 
+interface NoticiasRouteChildren {
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
+}
+
+const NoticiasRouteChildren: NoticiasRouteChildren = {
+  NoticiasSlugRoute: NoticiasSlugRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
+}
+
+const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(
+  NoticiasRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
   AreasRoute: AreasRouteWithChildren,
   ContatoRoute: ContatoRoute,
   EquipeRoute: EquipeRoute,
   InstitucionalRoute: InstitucionalRoute,
-  NoticiasRoute: NoticiasRoute,
+  LoginRoute: LoginRoute,
+  NoticiasRoute: NoticiasRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

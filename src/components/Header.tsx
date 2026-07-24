@@ -8,8 +8,8 @@ const navItems = [
   { to: "/institucional", label: "Escritório" },
   { to: "/areas", label: "Núcleos" },
   { to: "/equipe", label: "Equipe" },
-  // { to: "/noticias", label: "Notícias" },
-  { to: "/contato", label: "Contato" },
+  { to: "/noticias", label: "Notícias" },
+  { to: "/contato", label: "Contato" }
 ] as const;
 
 export function Header() {

@@ -156,6 +156,57 @@
     background: var(--gradient-gold);
   }
 
+  /* ── Editor de texto rico (TipTap) ── */
+  .rich-editor .ProseMirror {
+    min-height: inherit;
+  }
+
+  .rich-editor .ProseMirror p {
+    margin-bottom: 1rem;
+  }
+
+  .rich-editor .ProseMirror p:last-child {
+    margin-bottom: 0;
+  }
+
+  .rich-editor .ProseMirror ul,
+  .rich-editor .ProseMirror ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .rich-editor .ProseMirror ul { list-style-type: disc; }
+  .rich-editor .ProseMirror ol { list-style-type: decimal; }
+
+  .rich-editor .ProseMirror a.rich-link {
+    color: var(--color-gold);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .rich-editor .ProseMirror .ProseMirror-focused { outline: none; }
+
+  /* ── Renderização de conteúdo rico nas páginas públicas ── */
+  .rich-content p { margin-bottom: 1.5rem; }
+  .rich-content p:last-child { margin-bottom: 0; }
+  .rich-content strong { font-weight: 600; color: var(--color-foreground); }
+  .rich-content em { font-style: italic; }
+  .rich-content a {
+    color: var(--color-gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.15s;
+  }
+  .rich-content a:hover { opacity: 0.75; text-decoration: none; }
+  .rich-content ul,
+  .rich-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .rich-content ul { list-style-type: disc; }
+  .rich-content ol { list-style-type: decimal; }
+  .rich-content li { margin-bottom: 0.375rem; }
+
   /* Superfície sempre escura: força tokens claros para texto sobre fundo escuro,
      independentemente do tema do site. Use em seções com gradient-hero ou imagens escuras. */
   .surface-dark {

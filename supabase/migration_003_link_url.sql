@@ -1,0 +1,5 @@
+-- =============================================================
+-- Migration 003 — CANCELADA
+-- A feature de link_url foi substituída por links inline no editor de texto.
+-- NÃO execute este script.
+-- =============================================================
