@@ -26,7 +26,7 @@ export function LandingImage({
   alt = "",
   aspectClassName = "aspect-[4/5]",
   placeholderLabel = "Adicione uma imagem aqui",
-  className = "",
+  className = ""
 }: LandingImageProps) {
   const shape = `${aspectClassName} w-full overflow-hidden rounded-3xl`;
 
@@ -42,12 +42,12 @@ export function LandingImage({
 
   return (
     <div
-      className={`${shape} flex flex-col items-center justify-center gap-3 border-2 border-dashed border-[#e0aeba] bg-gradient-to-br from-[#fbecef] to-[#f4d7df] text-center shadow-sm ${className}`.trim()}
+      className={`${shape} flex flex-col items-center justify-center gap-3 border-2 border-dashed border-[#e0aeba] bg-linear-to-br from-[#fbecef] to-[#f4d7df] text-center shadow-sm ${className}`.trim()}
     >
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/70">
         <ImagePlus className="h-6 w-6 text-[#c06a85]" strokeWidth={1.5} />
       </span>
-      <span className="px-6 text-sm font-medium text-[#a05a72]">
+      <span className="px-6 text-sm font-medium text-[#8a3f5a]">
         {placeholderLabel}
       </span>
     </div>

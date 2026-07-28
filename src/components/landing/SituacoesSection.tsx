@@ -12,8 +12,8 @@ const SITUACOES: Situacao[] = [
   { icon: Heart, text: "Natimorto" },
   {
     icon: Stethoscope,
-    text: "Aborto espontâneo ou nas hipóteses previstas em lei",
-  },
+    text: "Aborto espontâneo ou nas hipóteses previstas em lei"
+  }
 ];
 
 /** Seção "Em quais situações o benefício pode ser concedido?". */
@@ -25,7 +25,7 @@ export function SituacoesSection() {
           Em quais situações o benefício pode ser concedido?
         </h2>
         <div className="gold-divider mx-auto mt-6" />
-        <p className="mx-auto mt-8 max-w-2xl text-center text-[#7a5560]">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-[#5f3a48]">
           O Salário-Maternidade pode ser solicitado nos casos de:
         </p>
 

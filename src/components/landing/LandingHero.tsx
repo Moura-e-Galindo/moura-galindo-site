@@ -1,4 +1,5 @@
 import logoLightFull from "@/assets/footer-light-full.png";
+import heroImage from "@/assets/mae-erguendo-bebe.jpg";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { LandingImage } from "./LandingImage";
 
@@ -31,7 +32,7 @@ export function LandingHero() {
             ao benefício do INSS
           </h1>
 
-          <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-[#7a5560] md:mx-0 md:text-lg">
+          <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-[#5f3a48] md:mx-0 md:text-lg">
             Nossa equipe pode analisar seu caso e orientar você sobre o
             recebimento do Salário-Maternidade, com atendimento rápido e
             especializado.
@@ -44,8 +45,9 @@ export function LandingHero() {
 
         <div className="mx-auto w-full max-w-sm md:max-w-none">
           <LandingImage
+            src={heroImage}
+            alt="Mãe erguendo o bebê com alegria"
             aspectClassName="aspect-[4/5]"
-            placeholderLabel="Foto 1"
           />
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import porQueImage from "@/assets/recem-nascido-pb.jpg";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { LandingImage } from "./LandingImage";
 
@@ -27,7 +28,7 @@ export function PorQueSection() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e8b5c4]">
                   <Check className="h-4 w-4 text-[#5e2a3f]" strokeWidth={2.5} />
                 </span>
-                <span className="text-sm leading-relaxed text-white/90 md:text-base">
+                <span className="text-sm leading-relaxed text-white md:text-base">
                   {item}
                 </span>
               </li>
@@ -41,8 +42,9 @@ export function PorQueSection() {
 
         <div className="mx-auto w-full max-w-sm md:max-w-none">
           <LandingImage
+            src={porQueImage}
+            alt="Recém-nascido dormindo no colo da mãe"
             aspectClassName="aspect-[4/5]"
-            placeholderLabel="Foto 4"
           />
         </div>
       </div>

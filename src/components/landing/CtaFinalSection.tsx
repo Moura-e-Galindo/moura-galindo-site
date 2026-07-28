@@ -1,3 +1,4 @@
+import ctaImage from "@/assets/mae-bebe-por-do-sol.jpg";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { LandingImage } from "./LandingImage";
 
@@ -8,8 +9,9 @@ export function CtaFinalSection() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div className="mx-auto w-full max-w-sm md:max-w-none">
           <LandingImage
+            src={ctaImage}
+            alt="Mãe erguendo o bebê ao pôr do sol"
             aspectClassName="aspect-[4/3]"
-            placeholderLabel="Foto 5"
           />
         </div>
 
@@ -18,7 +20,7 @@ export function CtaFinalSection() {
             Não deixe de exercer um direito que pode ser seu.
           </h2>
           <div className="gold-divider mx-auto mt-6 md:mx-0" />
-          <p className="mt-6 text-[#7a5560]">
+          <p className="mt-6 text-[#5f3a48]">
             Nossa equipe está preparada para avaliar sua situação e orientar
             você sobre a melhor forma de solicitar o Salário-Maternidade.
           </p>
@@ -27,7 +29,7 @@ export function CtaFinalSection() {
             <WhatsAppButton label="Fale conosco agora" />
           </div>
 
-          <p className="mt-5 text-sm text-[#9a7680]">
+          <p className="mt-5 text-sm text-[#6e4a56]">
             Clicando no botão verde para o WhatsApp, o atendimento é imediato.
           </p>
         </div>

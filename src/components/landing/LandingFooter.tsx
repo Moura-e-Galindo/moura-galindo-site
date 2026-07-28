@@ -20,7 +20,7 @@ export function LandingFooter() {
 
         <div className="mx-auto my-8 h-0.5 w-16 bg-gold" />
 
-        <ul className="mx-auto flex max-w-xl flex-col items-center gap-4 text-sm text-white/85">
+        <ul className="mx-auto flex max-w-xl flex-col items-center gap-4 text-sm text-white/90">
           <li className="flex items-start gap-3 text-left">
             <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#e8b5c4]" strokeWidth={1.5} />
             <span>
@@ -50,7 +50,7 @@ export function LandingFooter() {
           <WhatsAppButton />
         </div>
 
-        <p className="mt-12 text-xs text-white/50">
+        <p className="mt-12 text-xs text-white/70">
           © {new Date().getFullYear()} Moura &amp; Galindo Advogados Associados.
           Todos os direitos reservados.
         </p>

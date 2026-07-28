@@ -1,3 +1,4 @@
+import comoAjudarImage from "@/assets/mae-lendo-bebe.jpg";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { LandingImage } from "./LandingImage";
 
@@ -40,8 +41,9 @@ export function ComoAjudarSection() {
         <div className="mt-14 grid items-center gap-12 md:grid-cols-2">
           <div className="md:sticky md:top-12">
             <LandingImage
+              src={comoAjudarImage}
+              alt="Mãe lendo um livro para o bebê"
               aspectClassName="aspect-[4/5]"
-              placeholderLabel="Foto 3"
             />
           </div>
 
@@ -58,7 +60,7 @@ export function ComoAjudarSection() {
                   <h3 className="font-serif text-lg font-medium text-[#5e2a3f]">
                     {etapa.titulo}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-[#7a5560]">
+                  <p className="mt-1 text-sm leading-relaxed text-[#5f3a48]">
                     {etapa.descricao}
                   </p>
                 </div>

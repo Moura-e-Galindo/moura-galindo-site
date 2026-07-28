@@ -53,7 +53,7 @@ export function FaqSection() {
               <AccordionTrigger className="text-left font-serif text-base text-[#5e2a3f] md:text-lg">
                 {duvida.pergunta}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-[#7a5560]">
+              <AccordionContent className="text-sm leading-relaxed text-[#5f3a48]">
                 {duvida.resposta}
               </AccordionContent>
             </AccordionItem>

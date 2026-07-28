@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import quemPodeImage from "@/assets/bebe-lendo.jpg";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { LandingImage } from "./LandingImage";
 
@@ -8,7 +9,7 @@ const SEGURADAS = [
   "Microempreendedoras Individuais (MEI)",
   "Contribuintes individuais e facultativas",
   "Trabalhadoras rurais",
-  "Mulheres no período de graça, desde que preencham os requisitos legais",
+  "Mulheres no período de graça, desde que preencham os requisitos legais"
 ];
 
 /** Seção "Quem pode solicitar o Salário-Maternidade?" — imagem + lista. */
@@ -18,8 +19,9 @@ export function QuemPodeSection() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div className="order-2 md:order-1">
           <LandingImage
+            src={quemPodeImage}
+            alt="Mãe e bebê olhando um livro juntos"
             aspectClassName="aspect-square"
-            placeholderLabel="Foto 2"
           />
         </div>
 
@@ -28,7 +30,7 @@ export function QuemPodeSection() {
             Quem pode solicitar o Salário-Maternidade?
           </h2>
           <div className="gold-divider mt-6" />
-          <p className="mt-6 text-[#7a5560]">
+          <p className="mt-6 text-[#5f3a48]">
             O benefício pode ser devido às seguradas do INSS, como:
           </p>
 
