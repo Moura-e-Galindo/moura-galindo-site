@@ -9,30 +9,30 @@ import { LandingImage } from "./LandingImage";
  */
 export function LandingHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#fdf7f4] via-[#fbecef] to-[#f6dde4]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-cream via-blush-soft to-rosewater">
       {/* Brilhos decorativos */}
-      <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[#e8b5c4]/40 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-blush/40 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
+      <div className="relative mx-auto grid max-w-6xl items-start gap-12 px-6 pt-8 pb-16 md:grid-cols-2 md:items-center md:pt-10 md:pb-24">
         <div className="text-center md:text-left">
           <img
             src={logoLightFull}
             alt="Moura & Galindo Advogados Associados"
-            width={230}
-            height={77}
-            className="mx-auto h-auto w-48 object-contain md:mx-0"
+            width={288}
+            height={96}
+            className="mx-auto h-auto w-60 object-contain md:mx-0 md:w-72"
           />
 
           <div className="gold-divider mx-auto mt-8 mb-6 md:mx-0" />
 
-          <h1 className="font-serif text-3xl font-medium leading-tight text-[#5e2a3f] md:text-5xl">
+          <h1 className="font-serif text-3xl font-medium leading-tight text-ink md:text-5xl">
             Salário-Maternidade:{" "}
-            <span className="text-[#c06a85]">descubra se você tem direito</span>{" "}
+            <span className="text-rose">descubra se você tem direito</span>{" "}
             ao benefício do INSS
           </h1>
 
-          <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-[#5f3a48] md:mx-0 md:text-lg">
+          <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-ink-soft md:mx-0 md:text-lg">
             Nossa equipe pode analisar seu caso e orientar você sobre o
             recebimento do Salário-Maternidade, com atendimento rápido e
             especializado.

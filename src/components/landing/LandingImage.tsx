@@ -42,12 +42,12 @@ export function LandingImage({
 
   return (
     <div
-      className={`${shape} flex flex-col items-center justify-center gap-3 border-2 border-dashed border-[#e0aeba] bg-linear-to-br from-[#fbecef] to-[#f4d7df] text-center shadow-sm ${className}`.trim()}
+      className={`${shape} flex flex-col items-center justify-center gap-3 border-2 border-dashed border-petal bg-linear-to-br from-blush-soft to-rosewater text-center shadow-sm ${className}`.trim()}
     >
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/70">
-        <ImagePlus className="h-6 w-6 text-[#c06a85]" strokeWidth={1.5} />
+        <ImagePlus className="h-6 w-6 text-rose" strokeWidth={1.5} />
       </span>
-      <span className="px-6 text-sm font-medium text-[#8a3f5a]">
+      <span className="px-6 text-sm font-medium text-rose">
         {placeholderLabel}
       </span>
     </div>

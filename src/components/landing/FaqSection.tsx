@@ -36,9 +36,9 @@ const DUVIDAS: Duvida[] = [
 /** Seção "Dúvidas frequentes" com acordeão. */
 export function FaqSection() {
   return (
-    <section className="bg-[#fbecef] py-20 md:py-28">
+    <section className="bg-blush-soft py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="text-center font-serif text-2xl font-medium text-[#5e2a3f] md:text-4xl">
+        <h2 className="text-center font-serif text-2xl font-medium text-ink md:text-4xl">
           Dúvidas frequentes
         </h2>
         <div className="gold-divider mx-auto mt-6 mb-12" />
@@ -48,12 +48,12 @@ export function FaqSection() {
             <AccordionItem
               key={duvida.pergunta}
               value={`item-${index}`}
-              className="rounded-2xl border border-[#eccbd4] bg-white px-5"
+              className="rounded-2xl border border-petal bg-white px-5"
             >
-              <AccordionTrigger className="text-left font-serif text-base text-[#5e2a3f] md:text-lg">
+              <AccordionTrigger className="text-left font-serif text-base text-ink md:text-lg">
                 {duvida.pergunta}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-[#5f3a48]">
+              <AccordionContent className="text-sm leading-relaxed text-ink-soft">
                 {duvida.resposta}
               </AccordionContent>
             </AccordionItem>

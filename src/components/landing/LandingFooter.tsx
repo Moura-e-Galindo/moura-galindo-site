@@ -8,7 +8,7 @@ import { WhatsAppButton } from "./WhatsAppButton";
  */
 export function LandingFooter() {
   return (
-    <footer className="bg-[#4a2032] py-16">
+    <footer className="bg-ink-deep py-16">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <img
           src={logoDarkFull}
@@ -22,24 +22,24 @@ export function LandingFooter() {
 
         <ul className="mx-auto flex max-w-xl flex-col items-center gap-4 text-sm text-white/90">
           <li className="flex items-start gap-3 text-left">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#e8b5c4]" strokeWidth={1.5} />
+            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-blush" strokeWidth={1.5} />
             <span>
               Avenida Aracati, nº 382, Bairro Universitário, Caruaru - PE
             </span>
           </li>
           <li className="flex items-center gap-3">
-            <Phone className="h-5 w-5 shrink-0 text-[#e8b5c4]" strokeWidth={1.5} />
-            <a href="tel:+5581999290552" className="transition-colors hover:text-[#e8b5c4]">
+            <Phone className="h-5 w-5 shrink-0 text-blush" strokeWidth={1.5} />
+            <a href="tel:+5581999290552" className="transition-colors hover:text-blush">
               (81) 99929-0552
             </a>
           </li>
           <li className="flex items-center gap-3">
-            <Instagram className="h-5 w-5 shrink-0 text-[#e8b5c4]" strokeWidth={1.5} />
+            <Instagram className="h-5 w-5 shrink-0 text-blush" strokeWidth={1.5} />
             <a
               href="https://www.instagram.com/mouraegalindoadv"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-[#e8b5c4]"
+              className="transition-colors hover:text-blush"
             >
               @mouraegalindoadv
             </a>

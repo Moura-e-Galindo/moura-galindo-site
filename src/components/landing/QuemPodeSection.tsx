@@ -15,7 +15,7 @@ const SEGURADAS = [
 /** Seção "Quem pode solicitar o Salário-Maternidade?" — imagem + lista. */
 export function QuemPodeSection() {
   return (
-    <section className="bg-[#fdf7f4] py-20 md:py-28">
+    <section className="bg-cream py-20 md:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div className="order-2 md:order-1">
           <LandingImage
@@ -26,21 +26,21 @@ export function QuemPodeSection() {
         </div>
 
         <div className="order-1 md:order-2">
-          <h2 className="font-serif text-2xl font-medium text-[#5e2a3f] md:text-4xl">
+          <h2 className="font-serif text-2xl font-medium text-ink md:text-4xl">
             Quem pode solicitar o Salário-Maternidade?
           </h2>
           <div className="gold-divider mt-6" />
-          <p className="mt-6 text-[#5f3a48]">
+          <p className="mt-6 text-ink-soft">
             O benefício pode ser devido às seguradas do INSS, como:
           </p>
 
           <ul className="mt-8 space-y-3">
             {SEGURADAS.map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#c06a85]/15">
-                  <Check className="h-4 w-4 text-[#c06a85]" strokeWidth={2.5} />
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose/15">
+                  <Check className="h-4 w-4 text-rose" strokeWidth={2.5} />
                 </span>
-                <span className="text-sm leading-relaxed text-[#5e2a3f]">
+                <span className="text-sm leading-relaxed text-ink">
                   {item}
                 </span>
               </li>

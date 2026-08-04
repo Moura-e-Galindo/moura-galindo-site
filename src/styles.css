@@ -40,6 +40,27 @@
   --color-ring: var(--ring);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+
+  /* ── Marca institucional (Manual Moura & Galindo) ──
+   * Núcleo da identidade: dourado + preto + cinza.
+   * O dourado é o --gold (#BD9D3F, Pantone 11-14 C) já definido acima.
+   */
+  --color-gold-deep: #9a7f31;   /* dourado escuro — hover e realces */
+  --color-gold-soft: #e6d5a6;   /* dourado claro — bordas e detalhes */
+  --color-ink: #1e1917;         /* preto quente da marca — títulos e fundos escuros */
+  --color-ink-deep: #14100e;    /* variação profunda — rodapé */
+  --color-ink-soft: #4e453f;    /* grafite quente — texto corrido */
+  --color-graphite: #929497;    /* cinza institucional (Pantone 179-8 C) — apoio/muted */
+
+  /* ── Essência de maternidade (acentos e fundos quentes) ──
+   * Rosé mantido como camada afetiva sobre a base de marca.
+   */
+  --color-rose: #c06a85;        /* rosé — destaque afetivo pontual */
+  --color-blush: #e8b5c4;       /* rosé claro — ícones e brilhos */
+  --color-petal: #eccbd4;       /* rosé muito claro — bordas suaves */
+  --color-blush-soft: #f9edf0;  /* fundo rosé suave */
+  --color-cream: #faf6ee;       /* creme champagne — fundo quente (afinado ao dourado) */
+  --color-rosewater: #f4e2e5;   /* rosé claro — parada de gradiente */
 }
 
 :root {
