@@ -60,7 +60,7 @@ function HomePage() {
             href={buildWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/25 px-8 py-3.5 text-sm font-medium text-white hover:bg-gold hover:text-gold-foreground hover:border-gold transition-all shadow-card"
+            className="mt-10 inline-flex items-center gap-2 rounded-full hover:bg-white/10 backdrop-blur-md border hover:border-white/25 px-8 py-3.5 text-sm font-medium hover:text-white bg-gold text-gold-foreground border-gold transition-all shadow-card"
           >
             Agendar Atendimento
           </a>
@@ -143,21 +143,34 @@ function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {nucleos.map(({ slug, icon: Icon, title }) => (
-              <article key={slug} className="group bg-background border border-border p-8 hover:border-gold transition-colors">
-                <div className="flex h-14 w-14 items-center justify-center bg-muted group-hover:bg-gold/10 transition-colors">
-                  <Icon className="h-6 w-6 text-gold" strokeWidth={1.25} />
+            {nucleos.map(({ slug, icon: Icon, title, image }) => (
+              <article key={slug} className="group flex flex-col overflow-hidden bg-background border border-border hover:border-gold transition-colors">
+                {/* Banner temático do núcleo */}
+                <div className="relative h-28 overflow-hidden bg-ink">
+                  <img
+                    src={image}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Selo do ícone sobreposto ao banner */}
+                  <div className="absolute -bottom-5 left-6 flex h-12 w-12 items-center justify-center bg-background border border-gold/40 shadow-card group-hover:border-gold group-hover:bg-gold/10 transition-colors">
+                    <Icon className="h-5 w-5 text-gold" strokeWidth={1.25} />
+                  </div>
                 </div>
-                <h3 className="mt-6 font-serif text-xl font-medium text-foreground min-h-[3.5rem] leading-snug">
-                  {title}
-                </h3>
-                <Link
-                  to="/areas/$slug"
-                  params={{ slug }}
-                  className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2 text-xs font-medium uppercase tracking-wider text-gold-foreground hover:bg-foreground hover:text-background transition-colors"
-                >
-                  Saiba +
-                </Link>
+
+                <div className="flex flex-1 flex-col px-6 pb-8 pt-8">
+                  <h3 className="font-serif text-xl font-medium text-foreground min-h-[3.5rem] leading-snug">
+                    {title}
+                  </h3>
+                  <Link
+                    to="/areas/$slug"
+                    params={{ slug }}
+                    className="mt-4 inline-flex items-center justify-center self-start rounded-full bg-gold px-5 py-2 text-xs font-medium uppercase tracking-wider text-gold-foreground hover:bg-foreground hover:text-background transition-colors"
+                  >
+                    Saiba +
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
@@ -200,7 +213,7 @@ function HomePage() {
             href={buildWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 bg-foreground px-8 py-4 text-sm font-medium uppercase tracking-wider text-background transition-all hover:bg-gold hover:text-gold-foreground shadow-elegant"
+            className="mt-10 rounded-full inline-flex items-center gap-2 hover:bg-foreground px-8 py-4 text-sm font-medium uppercase tracking-wider hover:text-background transition-all bg-gold text-gold-foreground shadow-elegant"
           >
             Agende um contato <ArrowRight className="h-4 w-4" />
           </a>

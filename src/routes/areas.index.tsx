@@ -40,32 +40,41 @@ function Areas() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-8 md:grid-cols-2">
-            {nucleos.map(({ slug, icon: Icon, title, shortDesc }) => (
+            {nucleos.map(({ slug, icon: Icon, title, shortDesc, image }) => (
               <article
                 key={slug}
-                className="group relative border border-border bg-card p-10 hover:border-gold transition-colors shadow-card flex flex-col"
+                className="group relative flex flex-col overflow-hidden border border-border bg-card hover:border-gold transition-colors shadow-card"
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-gold/40 group-hover:border-gold group-hover:bg-gold/5 transition-colors">
+                {/* Banner temático do núcleo */}
+                <div className="relative h-40 overflow-hidden bg-ink">
+                  <img
+                    src={image}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Selo do ícone sobreposto ao banner */}
+                  <div className="absolute -bottom-6 left-8 flex h-14 w-14 items-center justify-center border border-gold/40 bg-card shadow-card group-hover:border-gold group-hover:bg-gold/5 transition-colors">
                     <Icon className="h-6 w-6 text-gold" strokeWidth={1.25} />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-serif text-2xl font-medium text-foreground">
-                      {title}
-                    </h3>
-                    <div className="gold-divider mt-3" />
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                      {shortDesc}
-                    </p>
+                </div>
 
-                    <Link
-                      to="/areas/$slug"
-                      params={{ slug }}
-                      className="mt-6 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-gold hover:gap-3 transition-all"
-                    >
-                      Saiba mais <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
+                <div className="flex flex-1 flex-col px-8 pb-10 pt-10">
+                  <h3 className="font-serif text-2xl font-medium text-foreground">
+                    {title}
+                  </h3>
+                  <div className="gold-divider mt-3" />
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {shortDesc}
+                  </p>
+
+                  <Link
+                    to="/areas/$slug"
+                    params={{ slug }}
+                    className="mt-6 inline-flex items-center gap-2 self-start text-xs font-medium uppercase tracking-[0.25em] text-gold hover:gap-3 transition-all"
+                  >
+                    Saiba mais <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </article>
             ))}

@@ -20,6 +20,26 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// Banners tematicos de cada nucleo (identidade dourado/preto/cinza)
+import imgDireitoCivilEContratual from "@/assets/nucleos/direito-civil-e-contratual.webp";
+import imgDireitoImobiliario from "@/assets/nucleos/direito-imobiliario.webp";
+import imgDireitoCriminal from "@/assets/nucleos/direito-criminal.webp";
+import imgDireitoTrabalhistaEmpresarial from "@/assets/nucleos/direito-trabalhista-empresarial.webp";
+import imgDireitoDaCriancaEAdolescente from "@/assets/nucleos/direito-da-crianca-e-adolescente.webp";
+import imgDireitoSucessorio from "@/assets/nucleos/direito-sucessorio.webp";
+import imgDireitoMedicoEDaSaude from "@/assets/nucleos/direito-medico-e-da-saude.webp";
+import imgDireitoDaFamilia from "@/assets/nucleos/direito-da-familia.webp";
+import imgDireitoTributario from "@/assets/nucleos/direito-tributario.webp";
+import imgDireitoEmpresarialESocietario from "@/assets/nucleos/direito-empresarial-e-societario.webp";
+import imgDireitoDoConsumidor from "@/assets/nucleos/direito-do-consumidor.webp";
+import imgDireitoDaModa from "@/assets/nucleos/direito-da-moda.webp";
+import imgDireitoPrevidenciario from "@/assets/nucleos/direito-previdenciario.webp";
+import imgDireitoPublicoAdministrativo from "@/assets/nucleos/direito-publico-administrativo.webp";
+import imgDireitoAmbiental from "@/assets/nucleos/direito-ambiental.webp";
+import imgDireitoBancario from "@/assets/nucleos/direito-bancario.webp";
+import imgContenciosoTrabalhista from "@/assets/nucleos/contencioso-trabalhista.webp";
+import imgDireitoEleitoral from "@/assets/nucleos/direito-eleitoral.webp";
+
 /**
  * Estrutura de dados de cada núcleo (área de atuação) do escritório.
  *
@@ -34,6 +54,8 @@ import {
 export interface Nucleo {
   slug: string;
   icon: LucideIcon;
+  /** Banner exibido no topo do card (imagem tematica). */
+  image: string;
   title: string;
   shortDesc: string;
   subtitle: string;
@@ -44,6 +66,7 @@ export interface Nucleo {
 export const nucleos: Nucleo[] = [
   {
     slug: "direito-civil-e-contratual",
+    image: imgDireitoCivilEContratual,
     icon: Scale,
     title: "Direito Civil e Contratual",
     shortDesc:
@@ -65,6 +88,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-imobiliario",
+    image: imgDireitoImobiliario,
     icon: HomeIcon,
     title: "Direito Imobiliário",
     shortDesc:
@@ -88,6 +112,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-criminal",
+    image: imgDireitoCriminal,
     icon: Gavel,
     title: "Direito Criminal",
     shortDesc:
@@ -110,6 +135,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-trabalhista-empresarial",
+    image: imgDireitoTrabalhistaEmpresarial,
     icon: Briefcase,
     title: "Direito Trabalhista Empresarial",
     shortDesc:
@@ -131,6 +157,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-da-crianca-e-adolescente",
+    image: imgDireitoDaCriancaEAdolescente,
     icon: Baby,
     title: "Direito da Criança e Adolescente",
     shortDesc:
@@ -152,6 +179,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-sucessorio",
+    image: imgDireitoSucessorio,
     icon: ScrollText,
     title: "Direito Sucessório",
     shortDesc:
@@ -173,6 +201,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-medico-e-da-saude",
+    image: imgDireitoMedicoEDaSaude,
     icon: Stethoscope,
     title: "Direito Médico e da Saúde",
     shortDesc:
@@ -195,6 +224,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-da-familia",
+    image: imgDireitoDaFamilia,
     icon: Users2,
     title: "Direito da Família",
     shortDesc:
@@ -217,6 +247,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-tributario",
+    image: imgDireitoTributario,
     icon: Landmark,
     title: "Direito Tributário",
     shortDesc:
@@ -239,6 +270,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-empresarial-e-societario",
+    image: imgDireitoEmpresarialESocietario,
     icon: Handshake,
     title: "Direito Empresarial e Societário",
     shortDesc:
@@ -261,6 +293,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-do-consumidor",
+    image: imgDireitoDoConsumidor,
     icon: ShoppingCart,
     title: "Direito do Consumidor",
     shortDesc:
@@ -282,6 +315,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-da-moda",
+    image: imgDireitoDaModa,
     icon: Shirt,
     title: "Direito da Moda",
     shortDesc:
@@ -304,6 +338,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-previdenciario",
+    image: imgDireitoPrevidenciario,
     icon: PiggyBank,
     title: "Direito Previdenciário",
     shortDesc:
@@ -326,6 +361,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-publico-administrativo",
+    image: imgDireitoPublicoAdministrativo,
     icon: Building2,
     title: "Direito Público/Administrativo",
     shortDesc:
@@ -348,6 +384,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-ambiental",
+    image: imgDireitoAmbiental,
     icon: Leaf,
     title: "Direito Ambiental",
     shortDesc:
@@ -370,6 +407,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-bancario",
+    image: imgDireitoBancario,
     icon: Banknote,
     title: "Direito Bancário",
     shortDesc:
@@ -392,6 +430,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "contencioso-trabalhista",
+    image: imgContenciosoTrabalhista,
     icon: HardHat,
     title: "Contencioso Trabalhista",
     shortDesc:
@@ -414,6 +453,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-eleitoral",
+    image: imgDireitoEleitoral,
     icon: Vote,
     title: "Direito Eleitoral",
     shortDesc:
