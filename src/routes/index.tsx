@@ -153,10 +153,6 @@ function HomePage() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Selo do ícone sobreposto ao banner */}
-                  <div className="absolute -bottom-5 left-6 flex h-12 w-12 items-center justify-center bg-background border border-gold/40 shadow-card group-hover:border-gold group-hover:bg-gold/10 transition-colors">
-                    <Icon className="h-5 w-5 text-gold" strokeWidth={1.25} />
-                  </div>
                 </div>
 
                 <div className="flex flex-1 flex-col px-6 pb-8 pt-8">
