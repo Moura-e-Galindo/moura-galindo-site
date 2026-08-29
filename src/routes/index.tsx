@@ -8,6 +8,7 @@ import { buildWhatsAppUrl } from "@/lib/contact";
 import { BrandBand } from "@/components/BrandBand";
 import { CompromissoOds } from "@/components/CompromissoOds";
 import { LatestNews } from "@/components/LatestNews";
+import { NucleoCard } from "@/components/NucleoCard";
 import { fetchLatestNoticias } from "@/lib/noticias-api";
 
 export const Route = createFileRoute("/")({
@@ -143,31 +144,14 @@ function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {nucleos.map(({ slug, icon: Icon, title, image }) => (
-              <article key={slug} className="group flex flex-col overflow-hidden bg-background border border-border hover:border-gold transition-colors">
-                {/* Banner temático do núcleo */}
-                <div className="relative h-28 overflow-hidden bg-ink">
-                  <img
-                    src={image}
-                    alt=""
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="flex flex-1 flex-col px-6 pb-8 pt-8">
-                  <h3 className="font-serif text-xl font-medium text-foreground min-h-[3.5rem] leading-snug">
-                    {title}
-                  </h3>
-                  <Link
-                    to="/areas/$slug"
-                    params={{ slug }}
-                    className="mt-4 inline-flex items-center justify-center self-start rounded-full bg-gold px-5 py-2 text-xs font-medium uppercase tracking-wider text-gold-foreground hover:bg-foreground hover:text-background transition-colors"
-                  >
-                    Saiba +
-                  </Link>
-                </div>
-              </article>
+            {nucleos.map(({ slug, title, image }) => (
+              <NucleoCard
+                key={slug}
+                slug={slug}
+                title={title}
+                image={image}
+                variant="compact"
+              />
             ))}
           </div>
         </div>
