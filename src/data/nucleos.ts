@@ -20,10 +20,9 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-// Banners tematicos de cada nucleo (identidade dourado/preto/cinza)
-import imgDireitoCivilEContratual from "@/assets/nucleos/direito-civil-e-contratual.webp";
-import imgDireitoImobiliario from "@/assets/nucleos/direito-imobiliario.webp";
-import imgDireitoCriminal from "@/assets/nucleos/direito-criminal.webp";
+// Banners de cada núcleo.
+// Civil, Criminal e Imobiliário usam imagens da pasta `public/` (referência por URL absoluta).
+// Os demais usam os banners temáticos em `src/assets/nucleos/` (importados abaixo).
 import imgDireitoTrabalhistaEmpresarial from "@/assets/nucleos/direito-trabalhista-empresarial.webp";
 import imgDireitoDaCriancaEAdolescente from "@/assets/nucleos/direito-da-crianca-e-adolescente.webp";
 import imgDireitoSucessorio from "@/assets/nucleos/direito-sucessorio.webp";
@@ -66,7 +65,7 @@ export interface Nucleo {
 export const nucleos: Nucleo[] = [
   {
     slug: "direito-civil-e-contratual",
-    image: imgDireitoCivilEContratual,
+    image: "/direito-civil.webp",
     icon: Scale,
     title: "Direito Civil e Contratual",
     shortDesc:
@@ -88,7 +87,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-imobiliario",
-    image: imgDireitoImobiliario,
+    image: "/direito-imobiliario.webp",
     icon: HomeIcon,
     title: "Direito Imobiliário",
     shortDesc:
@@ -112,7 +111,7 @@ export const nucleos: Nucleo[] = [
   },
   {
     slug: "direito-criminal",
-    image: imgDireitoCriminal,
+    image: "/direito-criminal.webp",
     icon: Gavel,
     title: "Direito Criminal",
     shortDesc:
