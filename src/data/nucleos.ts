@@ -17,12 +17,12 @@ import {
   Banknote,
   HardHat,
   Vote,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
 
-// Banners de cada núcleo.
-// Civil, Criminal e Imobiliário usam imagens da pasta `public/` (referência por URL absoluta).
-// Os demais usam os banners temáticos em `src/assets/nucleos/` (importados abaixo).
+import imgDireitoCivilEContratual from "@/assets/nucleos/direito-civil-e-contratual.webp";
+import imgDireitoImobiliario from "@/assets/nucleos/direito-imobiliario.webp";
+import imgDireitoCriminal from "@/assets/nucleos/direito-criminal.webp";
 import imgDireitoTrabalhistaEmpresarial from "@/assets/nucleos/direito-trabalhista-empresarial.webp";
 import imgDireitoDaCriancaEAdolescente from "@/assets/nucleos/direito-da-crianca-e-adolescente.webp";
 import imgDireitoSucessorio from "@/assets/nucleos/direito-sucessorio.webp";
@@ -39,21 +39,9 @@ import imgDireitoBancario from "@/assets/nucleos/direito-bancario.webp";
 import imgContenciosoTrabalhista from "@/assets/nucleos/contencioso-trabalhista.webp";
 import imgDireitoEleitoral from "@/assets/nucleos/direito-eleitoral.webp";
 
-/**
- * Estrutura de dados de cada núcleo (área de atuação) do escritório.
- *
- * - `slug`        : identificador na URL (ex.: /areas/direito-civil-e-contratual)
- * - `icon`        : ícone exibido nos cards e no hero
- * - `title`       : nome da área
- * - `shortDesc`   : descrição curta usada nos cards (página /areas)
- * - `description` : parágrafos detalhados exibidos na página individual
- * - `services`    : tópicos/serviços oferecidos dentro da área
- * - `subtitle`    : texto que aparece no hero da página individual
- */
 export interface Nucleo {
   slug: string;
   icon: LucideIcon;
-  /** Banner exibido no topo do card (imagem tematica). */
   image: string;
   title: string;
   shortDesc: string;
@@ -65,7 +53,7 @@ export interface Nucleo {
 export const nucleos: Nucleo[] = [
   {
     slug: "direito-civil-e-contratual",
-    image: "/direito-civil.webp",
+    image: imgDireitoCivilEContratual,
     icon: Scale,
     title: "Direito Civil e Contratual",
     shortDesc:
@@ -74,7 +62,7 @@ export const nucleos: Nucleo[] = [
       "Atuação preventiva e contenciosa em todas as relações jurídicas decorrentes do Código Civil e da legislação correlata.",
     description: [
       "O Direito Civil e Contratual é uma área do Direito que trata das relações jurídicas entre as pessoas e suas propriedades. O Escritório Moura & Galindo Advogados Associados atua com profissionais qualificados e experientes nas relações contratuais e de Direito Civil, seja na parte preventiva, por meio da revisão, formalização e celebração dos contratos, seja no contencioso diante dos litígios decorrentes de negócios jurídicos.",
-      "Nosso atendimento é orientado pela análise criteriosa de riscos e pelo cuidado na elaboração de cláusulas que reflitam, com precisão, a vontade das partes — assegurando a estabilidade da relação contratual e a defesa dos interesses do cliente em qualquer cenário.",
+      "Nosso atendimento é orientado pela análise criteriosa de riscos e pelo cuidado na elaboração de cláusulas que reflitam, com precisão, a vontade das partes — assegurando a estabilidade da relação contratual e a defesa dos interesses do cliente em qualquer cenário."
     ],
     services: [
       "Elaboração, revisão e negociação de contratos",
@@ -82,12 +70,12 @@ export const nucleos: Nucleo[] = [
       "Responsabilidade civil e indenizações",
       "Direitos reais, posse e propriedade",
       "Resolução de litígios contratuais",
-      "Consultoria preventiva em negócios jurídicos",
-    ],
+      "Consultoria preventiva em negócios jurídicos"
+    ]
   },
   {
     slug: "direito-imobiliario",
-    image: "/direito-imobiliario.webp",
+    image: imgDireitoImobiliario,
     icon: HomeIcon,
     title: "Direito Imobiliário",
     shortDesc:
@@ -97,7 +85,7 @@ export const nucleos: Nucleo[] = [
     description: [
       "O Direito Imobiliário envolve a regulação de diversos aspectos inerentes às relações de propriedade e posse de bens imóveis, na forma estabelecida no Código Civil Brasileiro e legislação extravagante. O Escritório Moura & Galindo Advogados Associados atua na prestação de serviços judiciais, a exemplo da ação de usucapião, reintegração de posse, manutenção de posse e interdito proibitório.",
       "Realiza, ainda, Ação de Adjudicação Compulsória, Ação de Consignação de Chaves do Imóvel, Ação de Despejo, Ação de Imissão na Posse, Ação Revisional de Contrato de Aluguel e Ação Revisional de Contrato de Financiamento Imobiliário.",
-      "No âmbito extrajudicial, o escritório atua prestando consultoria sobre a negociação em compra e venda de imóvel, elaborando e analisando cláusulas e condições do contrato de compra e venda, auxiliando o cliente na lavratura da escritura pública, realizando termo de compromisso de compra e venda, dentre outras atividades.",
+      "No âmbito extrajudicial, o escritório atua prestando consultoria sobre a negociação em compra e venda de imóvel, elaborando e analisando cláusulas e condições do contrato de compra e venda, auxiliando o cliente na lavratura da escritura pública, realizando termo de compromisso de compra e venda, dentre outras atividades."
     ],
     services: [
       "Ação de usucapião",
@@ -106,12 +94,12 @@ export const nucleos: Nucleo[] = [
       "Adjudicação compulsória e imissão na posse",
       "Análise e elaboração de contratos imobiliários",
       "Assessoria em escrituras e registros",
-      "Revisão de contratos de financiamento imobiliário",
-    ],
+      "Revisão de contratos de financiamento imobiliário"
+    ]
   },
   {
     slug: "direito-criminal",
-    image: "/direito-criminal.webp",
+    image: imgDireitoCriminal,
     icon: Gavel,
     title: "Direito Criminal",
     shortDesc:
@@ -120,7 +108,7 @@ export const nucleos: Nucleo[] = [
       "Defesa criminal qualificada em inquéritos, ações penais e medidas cautelares, em todas as instâncias.",
     description: [
       "O Núcleo de Direito Criminal do escritório Moura & Galindo Advogados Associados atua em defesa de pessoas físicas e jurídicas investigadas ou processadas criminalmente, com foco na preservação das garantias constitucionais, da presunção de inocência e da ampla defesa.",
-      "A atuação compreende desde a fase pré-processual — em investigações, inquéritos policiais e procedimentos administrativos — até o acompanhamento integral da ação penal, recursos em tribunais superiores e execução penal, sempre com sigilo absoluto e estratégia técnica orientada ao caso concreto.",
+      "A atuação compreende desde a fase pré-processual — em investigações, inquéritos policiais e procedimentos administrativos — até o acompanhamento integral da ação penal, recursos em tribunais superiores e execução penal, sempre com sigilo absoluto e estratégia técnica orientada ao caso concreto."
     ],
     services: [
       "Defesa em inquéritos policiais e investigações",
@@ -129,8 +117,8 @@ export const nucleos: Nucleo[] = [
       "Habeas corpus e medidas cautelares",
       "Crimes contra a ordem econômica e tributária",
       "Crimes empresariais e compliance criminal",
-      "Execução penal e progressão de regime",
-    ],
+      "Execução penal e progressão de regime"
+    ]
   },
   {
     slug: "direito-trabalhista-empresarial",
@@ -143,7 +131,7 @@ export const nucleos: Nucleo[] = [
       "Assessoria jurídica preventiva voltada à gestão de pessoas e à adequação das empresas à legislação trabalhista.",
     description: [
       "O Núcleo de Direito Trabalhista Empresarial atua na assessoria de empregadores, oferecendo soluções jurídicas que conciliam a observância da legislação trabalhista com as necessidades operacionais e estratégicas das empresas.",
-      "Prestamos consultoria preventiva em rotinas de Recursos Humanos, elaboração de políticas internas, análise de riscos, adequação à legislação trabalhista, sindical e previdenciária, além de apoio em negociações coletivas e em processos de reestruturação organizacional.",
+      "Prestamos consultoria preventiva em rotinas de Recursos Humanos, elaboração de políticas internas, análise de riscos, adequação à legislação trabalhista, sindical e previdenciária, além de apoio em negociações coletivas e em processos de reestruturação organizacional."
     ],
     services: [
       "Consultoria preventiva e auditoria trabalhista",
@@ -151,8 +139,8 @@ export const nucleos: Nucleo[] = [
       "Compliance trabalhista e LGPD aplicada ao RH",
       "Negociação coletiva e relações sindicais",
       "Assessoria em demissões, acordos e PDVs",
-      "Treinamentos e consultoria em SST",
-    ],
+      "Treinamentos e consultoria em SST"
+    ]
   },
   {
     slug: "direito-da-crianca-e-adolescente",
@@ -165,7 +153,7 @@ export const nucleos: Nucleo[] = [
       "Defesa dos direitos de crianças e adolescentes, com atuação humanizada e em estrita observância ao princípio da proteção integral.",
     description: [
       "O Núcleo de Direito da Criança e Adolescente atua na defesa dos direitos fundamentais previstos na Constituição Federal e no Estatuto da Criança e do Adolescente (ECA), assegurando a proteção integral em todas as suas dimensões — pessoal, familiar, social e patrimonial.",
-      "Conduzimos demandas envolvendo guarda, adoção, medidas protetivas, atos infracionais, alienação parental, regulamentação de convivência e questões relacionadas à educação e à saúde de menores, sempre com sensibilidade, sigilo e respeito ao melhor interesse da criança.",
+      "Conduzimos demandas envolvendo guarda, adoção, medidas protetivas, atos infracionais, alienação parental, regulamentação de convivência e questões relacionadas à educação e à saúde de menores, sempre com sensibilidade, sigilo e respeito ao melhor interesse da criança."
     ],
     services: [
       "Processos de adoção nacional e internacional",
@@ -173,8 +161,8 @@ export const nucleos: Nucleo[] = [
       "Defesa em atos infracionais",
       "Medidas protetivas e judiciais",
       "Alienação parental",
-      "Acompanhamento em conselhos tutelares e Varas da Infância",
-    ],
+      "Acompanhamento em conselhos tutelares e Varas da Infância"
+    ]
   },
   {
     slug: "direito-sucessorio",
@@ -187,7 +175,7 @@ export const nucleos: Nucleo[] = [
       "Soluções jurídicas para a transmissão de patrimônio entre gerações, com foco em prevenção de litígios e eficiência fiscal.",
     description: [
       "O Núcleo de Direito Sucessório atua no planejamento e na execução da transmissão de patrimônio entre gerações, oferecendo soluções que aliam segurança jurídica, redução de carga tributária e preservação do interesse familiar.",
-      "Conduzimos inventários judiciais e extrajudiciais, partilhas, testamentos, doações e estruturações patrimoniais — sempre com a preocupação de antecipar conflitos e proteger o legado dos clientes ao longo do tempo.",
+      "Conduzimos inventários judiciais e extrajudiciais, partilhas, testamentos, doações e estruturações patrimoniais — sempre com a preocupação de antecipar conflitos e proteger o legado dos clientes ao longo do tempo."
     ],
     services: [
       "Inventários judiciais e extrajudiciais",
@@ -195,8 +183,8 @@ export const nucleos: Nucleo[] = [
       "Testamentos e codicilos",
       "Planejamento sucessório familiar",
       "Doações e usufrutos",
-      "Holding patrimonial e proteção de bens",
-    ],
+      "Holding patrimonial e proteção de bens"
+    ]
   },
   {
     slug: "direito-medico-e-da-saude",
@@ -209,7 +197,7 @@ export const nucleos: Nucleo[] = [
       "Atuação especializada na proteção jurídica de médicos, clínicas, hospitais, operadoras e pacientes.",
     description: [
       "O Núcleo de Direito Médico e da Saúde do escritório Moura & Galindo presta assessoria a profissionais e instituições da área da saúde, com olhar técnico voltado tanto à prevenção de litígios quanto à defesa qualificada em processos administrativos e judiciais.",
-      "Atuamos em demandas de responsabilidade civil médica, processos ético-disciplinares perante os Conselhos Regionais e Federal de Medicina, elaboração de termos de consentimento informado, contratos hospitalares, demandas contra planos de saúde e auditorias documentais — sempre com sigilo absoluto e profundo respeito ao exercício das profissões da saúde.",
+      "Atuamos em demandas de responsabilidade civil médica, processos ético-disciplinares perante os Conselhos Regionais e Federal de Medicina, elaboração de termos de consentimento informado, contratos hospitalares, demandas contra planos de saúde e auditorias documentais — sempre com sigilo absoluto e profundo respeito ao exercício das profissões da saúde."
     ],
     services: [
       "Defesa em ações de erro médico",
@@ -218,8 +206,8 @@ export const nucleos: Nucleo[] = [
       "Contratos hospitalares e de plantão",
       "Consultoria a clínicas, hospitais e operadoras",
       "Demandas contra planos de saúde",
-      "Judicialização de medicamentos e tratamentos",
-    ],
+      "Judicialização de medicamentos e tratamentos"
+    ]
   },
   {
     slug: "direito-da-familia",
@@ -232,7 +220,7 @@ export const nucleos: Nucleo[] = [
       "Cuidado, técnica e sensibilidade em cada relação familiar e em cada decisão que envolve o núcleo afetivo.",
     description: [
       "O Núcleo de Direito da Família é conduzido por profissionais com sólida formação acadêmica e ampla experiência prática, atuando com sensibilidade às particularidades de cada núcleo familiar.",
-      "Conduzimos demandas envolvendo divórcio, dissolução de união estável, guarda e regulamentação de convivência, alimentos, partilha de bens, reconhecimento de paternidade e mediação familiar — sempre com foco em preservar relações e patrimônio, priorizando soluções consensuais sempre que possível.",
+      "Conduzimos demandas envolvendo divórcio, dissolução de união estável, guarda e regulamentação de convivência, alimentos, partilha de bens, reconhecimento de paternidade e mediação familiar — sempre com foco em preservar relações e patrimônio, priorizando soluções consensuais sempre que possível."
     ],
     services: [
       "Divórcio e dissolução de união estável",
@@ -241,8 +229,8 @@ export const nucleos: Nucleo[] = [
       "Reconhecimento e dissolução de uniões",
       "Reconhecimento de paternidade",
       "Pactos antenupciais e contratos de convivência",
-      "Mediação familiar",
-    ],
+      "Mediação familiar"
+    ]
   },
   {
     slug: "direito-tributario",
@@ -255,7 +243,7 @@ export const nucleos: Nucleo[] = [
       "Planejamento tributário e defesa em todas as esferas — federal, estadual e municipal.",
     description: [
       "O Núcleo de Direito Tributário atua na consultoria preventiva e no contencioso administrativo e judicial em todas as esferas, oferecendo soluções para reduzir a carga tributária e mitigar riscos fiscais dentro dos limites da legislação.",
-      "Acompanhamos de perto as constantes alterações da legislação tributária, em especial as decorrentes da Reforma Tributária, e oferecemos pareceres, planejamentos e teses tributárias adaptadas à realidade de cada cliente.",
+      "Acompanhamos de perto as constantes alterações da legislação tributária, em especial as decorrentes da Reforma Tributária, e oferecemos pareceres, planejamentos e teses tributárias adaptadas à realidade de cada cliente."
     ],
     services: [
       "Planejamento tributário",
@@ -264,8 +252,8 @@ export const nucleos: Nucleo[] = [
       "Consultoria em ICMS, ISS, PIS, COFINS, IRPJ e CSLL",
       "Acompanhamento em processos administrativos",
       "Pareceres e teses tributárias",
-      "Adequação à Reforma Tributária",
-    ],
+      "Adequação à Reforma Tributária"
+    ]
   },
   {
     slug: "direito-empresarial-e-societario",
@@ -278,7 +266,7 @@ export const nucleos: Nucleo[] = [
       "Soluções jurídicas estratégicas para a estruturação, operação e crescimento de empresas.",
     description: [
       "O Núcleo de Direito Empresarial e Societário oferece assessoria completa para sociedades empresárias, desde a constituição da empresa até operações complexas de reorganização societária, planejamento sucessório empresarial e governança.",
-      "Atuamos com profissionais que aliam formação jurídica de excelência ao conhecimento das dinâmicas de gestão empresarial, prestando atendimento próximo, estratégico e voltado à longevidade dos negócios dos nossos clientes.",
+      "Atuamos com profissionais que aliam formação jurídica de excelência ao conhecimento das dinâmicas de gestão empresarial, prestando atendimento próximo, estratégico e voltado à longevidade dos negócios dos nossos clientes."
     ],
     services: [
       "Constituição e reorganização societária",
@@ -287,8 +275,8 @@ export const nucleos: Nucleo[] = [
       "Governança corporativa e compliance",
       "Recuperação judicial e extrajudicial",
       "Planejamento sucessório empresarial",
-      "Consultoria contratual contínua",
-    ],
+      "Consultoria contratual contínua"
+    ]
   },
   {
     slug: "direito-do-consumidor",
@@ -301,7 +289,7 @@ export const nucleos: Nucleo[] = [
       "Soluções jurídicas para todas as relações de consumo — judiciais, extrajudiciais e administrativas.",
     description: [
       "O Núcleo de Direito do Consumidor atua tanto na defesa de consumidores quanto na assessoria de fornecedores de produtos e serviços, sempre orientado pelos princípios do Código de Defesa do Consumidor e pela busca de soluções equilibradas e eficientes.",
-      "Conduzimos demandas envolvendo cobranças indevidas, vícios e defeitos em produtos e serviços, contratos de adesão, práticas abusivas, planos de saúde, transporte aéreo e responsabilidade civil — além de prestar consultoria preventiva para empresas que desejam adequar suas práticas comerciais.",
+      "Conduzimos demandas envolvendo cobranças indevidas, vícios e defeitos em produtos e serviços, contratos de adesão, práticas abusivas, planos de saúde, transporte aéreo e responsabilidade civil — além de prestar consultoria preventiva para empresas que desejam adequar suas práticas comerciais."
     ],
     services: [
       "Ações por vícios e defeitos em produtos e serviços",
@@ -309,8 +297,8 @@ export const nucleos: Nucleo[] = [
       "Revisão de contratos de adesão",
       "Defesa em PROCON e órgãos administrativos",
       "Indenizações por danos morais e materiais",
-      "Compliance consumerista para empresas",
-    ],
+      "Compliance consumerista para empresas"
+    ]
   },
   {
     slug: "direito-da-moda",
@@ -323,7 +311,7 @@ export const nucleos: Nucleo[] = [
       "Atendimento jurídico exclusivo para todos os elos da cadeia produtiva da moda.",
     description: [
       "O Núcleo de Direito da Moda (Fashion Law) é coordenado por profissional com especialização específica na área e presença ativa em comissões da OAB, atendendo estilistas, marcas, indústrias têxteis, lojistas e influenciadores digitais.",
-      "Atuamos em todas as etapas da cadeia produtiva da moda — proteção de marcas e desenhos industriais, contratos com fornecedores, compliance trabalhista e ambiental, contratos com modelos e influenciadores, e‑commerce, sustentabilidade e combate à contrafação.",
+      "Atuamos em todas as etapas da cadeia produtiva da moda — proteção de marcas e desenhos industriais, contratos com fornecedores, compliance trabalhista e ambiental, contratos com modelos e influenciadores, e‑commerce, sustentabilidade e combate à contrafação."
     ],
     services: [
       "Registro e proteção de marcas e desenhos industriais",
@@ -332,8 +320,8 @@ export const nucleos: Nucleo[] = [
       "Compliance trabalhista e ambiental na cadeia da moda",
       "Contratos com fornecedores e franquias",
       "Assessoria em e‑commerce e marketplaces",
-      "Sustentabilidade e moda circular",
-    ],
+      "Sustentabilidade e moda circular"
+    ]
   },
   {
     slug: "direito-previdenciario",
@@ -346,7 +334,7 @@ export const nucleos: Nucleo[] = [
       "Atuação técnica em benefícios do INSS, regimes próprios e planejamento previdenciário.",
     description: [
       "O Núcleo de Direito Previdenciário atua na orientação de segurados do Regime Geral de Previdência Social (RGPS) e dos Regimes Próprios (RPPS), tanto na via administrativa quanto na judicial, com foco na obtenção e revisão de benefícios e na elaboração de planejamentos previdenciários personalizados.",
-      "Acompanhamos as constantes mudanças legislativas — em especial as Reformas da Previdência — para oferecer ao cliente a melhor estratégia de concessão, revisão ou complementação de benefícios.",
+      "Acompanhamos as constantes mudanças legislativas — em especial as Reformas da Previdência — para oferecer ao cliente a melhor estratégia de concessão, revisão ou complementação de benefícios."
     ],
     services: [
       "Aposentadoria por idade, tempo de contribuição e especial",
@@ -355,8 +343,8 @@ export const nucleos: Nucleo[] = [
       "Revisão de benefícios e RMI",
       "Planejamento previdenciário personalizado",
       "Recursos administrativos junto ao INSS",
-      "Ações judiciais previdenciárias",
-    ],
+      "Ações judiciais previdenciárias"
+    ]
   },
   {
     slug: "direito-publico-administrativo",
@@ -369,7 +357,7 @@ export const nucleos: Nucleo[] = [
       "Defesa de direitos e interesses em relações com a Administração Pública direta e indireta.",
     description: [
       "O Núcleo de Direito Público e Administrativo atua na defesa de pessoas físicas, empresas privadas e entes públicos em suas relações com a Administração Pública, abrangendo procedimentos licitatórios, contratos administrativos, servidores públicos, processos disciplinares e responsabilização do Estado.",
-      "Oferecemos atuação consultiva e contenciosa pautada pela observância dos princípios constitucionais que regem a Administração — legalidade, impessoalidade, moralidade, publicidade e eficiência — e pela busca de soluções tecnicamente sólidas.",
+      "Oferecemos atuação consultiva e contenciosa pautada pela observância dos princípios constitucionais que regem a Administração — legalidade, impessoalidade, moralidade, publicidade e eficiência — e pela busca de soluções tecnicamente sólidas."
     ],
     services: [
       "Licitações e contratos administrativos",
@@ -378,8 +366,8 @@ export const nucleos: Nucleo[] = [
       "Processos administrativos disciplinares (PAD)",
       "Responsabilidade civil do Estado",
       "Improbidade administrativa (defesa)",
-      "Concursos públicos",
-    ],
+      "Concursos públicos"
+    ]
   },
   {
     slug: "direito-ambiental",
@@ -392,7 +380,7 @@ export const nucleos: Nucleo[] = [
       "Assessoria preventiva e contenciosa em todas as dimensões do Direito Ambiental, com foco em sustentabilidade e conformidade legal.",
     description: [
       "O Núcleo de Direito Ambiental atua na consultoria preventiva e na defesa em processos administrativos e judiciais envolvendo licenciamento, responsabilidade civil ambiental, infrações e termos de ajustamento de conduta (TACs).",
-      "Auxiliamos empresas, produtores rurais e empreendimentos a se adequarem às normas ambientais aplicáveis, mitigando riscos regulatórios e estruturando políticas internas de sustentabilidade alinhadas às melhores práticas de ESG.",
+      "Auxiliamos empresas, produtores rurais e empreendimentos a se adequarem às normas ambientais aplicáveis, mitigando riscos regulatórios e estruturando políticas internas de sustentabilidade alinhadas às melhores práticas de ESG."
     ],
     services: [
       "Licenciamento ambiental",
@@ -401,8 +389,8 @@ export const nucleos: Nucleo[] = [
       "Responsabilidade civil ambiental",
       "Compliance ambiental e ESG",
       "Consultoria para o agronegócio",
-      "Defesa em ações civis públicas",
-    ],
+      "Defesa em ações civis públicas"
+    ]
   },
   {
     slug: "direito-bancario",
@@ -415,7 +403,7 @@ export const nucleos: Nucleo[] = [
       "Defesa qualificada em discussões com instituições financeiras e consultoria em operações bancárias.",
     description: [
       "O Núcleo de Direito Bancário atua na defesa de clientes pessoa física e jurídica em discussões envolvendo contratos bancários, financiamentos, cédulas de crédito, execuções de dívida e relações com instituições financeiras.",
-      "Oferecemos análise técnica de cláusulas contratuais, revisão de juros e encargos abusivos, defesa em ações de busca e apreensão, execuções e renegociação de dívidas — sempre orientados pela busca de soluções equilibradas e juridicamente sustentáveis.",
+      "Oferecemos análise técnica de cláusulas contratuais, revisão de juros e encargos abusivos, defesa em ações de busca e apreensão, execuções e renegociação de dívidas — sempre orientados pela busca de soluções equilibradas e juridicamente sustentáveis."
     ],
     services: [
       "Revisão de contratos bancários e financiamentos",
@@ -424,8 +412,8 @@ export const nucleos: Nucleo[] = [
       "Discussão de juros e encargos abusivos",
       "Renegociação e repactuação de dívidas",
       "Recuperação de crédito (lado credor)",
-      "Consultoria em operações bancárias",
-    ],
+      "Consultoria em operações bancárias"
+    ]
   },
   {
     slug: "contencioso-trabalhista",
@@ -438,7 +426,7 @@ export const nucleos: Nucleo[] = [
       "Atuação contenciosa qualificada em todas as fases e instâncias do processo do trabalho.",
     description: [
       "O Núcleo de Contencioso Trabalhista atua exclusivamente na defesa de empresas em reclamações trabalhistas, conduzindo audiências, recursos e execuções com técnica processual aprofundada e visão estratégica sobre cada demanda.",
-      "Acompanhamos os processos desde a fase inicial até os tribunais superiores, com elaboração de defesas, recursos ordinários e extraordinários, embargos e ações rescisórias, sempre alinhados à política de gestão de passivo trabalhista do cliente.",
+      "Acompanhamos os processos desde a fase inicial até os tribunais superiores, com elaboração de defesas, recursos ordinários e extraordinários, embargos e ações rescisórias, sempre alinhados à política de gestão de passivo trabalhista do cliente."
     ],
     services: [
       "Defesa em reclamações trabalhistas",
@@ -447,8 +435,8 @@ export const nucleos: Nucleo[] = [
       "Execuções trabalhistas e cálculos",
       "Ações rescisórias",
       "Gestão de passivo e provisionamento",
-      "Acordos judiciais e extrajudiciais",
-    ],
+      "Acordos judiciais e extrajudiciais"
+    ]
   },
   {
     slug: "direito-eleitoral",
@@ -461,7 +449,7 @@ export const nucleos: Nucleo[] = [
       "Atuação técnica e estratégica em campanhas, prestação de contas e contencioso eleitoral.",
     description: [
       "O Núcleo de Direito Eleitoral presta assessoria a candidatos, partidos políticos, coligações e federações partidárias em todas as fases do processo eleitoral, atuando de forma preventiva e contenciosa perante a Justiça Eleitoral.",
-      "Conduzimos prestações de contas, registros de candidatura, propaganda eleitoral, ações de impugnação, investigações judiciais eleitorais (AIJE), ações de investigação de mandato eletivo (AIME) e recursos junto aos Tribunais Regionais Eleitorais e ao Tribunal Superior Eleitoral.",
+      "Conduzimos prestações de contas, registros de candidatura, propaganda eleitoral, ações de impugnação, investigações judiciais eleitorais (AIJE), ações de investigação de mandato eletivo (AIME) e recursos junto aos Tribunais Regionais Eleitorais e ao Tribunal Superior Eleitoral."
     ],
     services: [
       "Registro de candidatura e propaganda eleitoral",
@@ -470,9 +458,9 @@ export const nucleos: Nucleo[] = [
       "AIJE e AIME",
       "Recursos eleitorais",
       "Consultoria a partidos e coligações",
-      "Defesa em ações por captação ilícita de sufrágio",
-    ],
-  },
+      "Defesa em ações por captação ilícita de sufrágio"
+    ]
+  }
 ];
 
 /**
