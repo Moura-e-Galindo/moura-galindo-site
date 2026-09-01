@@ -105,7 +105,7 @@ function NoticiaPage() {
               href={buildWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 bg-foreground px-8 py-4 text-sm font-medium uppercase tracking-wider text-background transition-all hover:bg-gold hover:text-gold-foreground shadow-elegant"
+              className="mt-8 rounded-full inline-flex items-center gap-2 hover:bg-foreground px-8 py-4 text-sm font-medium uppercase tracking-wider hover:text-background transition-all bg-gold text-gold-foreground shadow-elegant"
             >
               Agendar atendimento <ArrowRight className="h-4 w-4" />
             </a>
