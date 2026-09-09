@@ -1,0 +1,14 @@
+# robots.txt — Moura & Galindo Advogados Associados
+# Observação: o Cloudflare pode "prepender" um bloco gerenciado (Content
+# Signals / controle de bots de IA) antes deste conteúdo, combinando os dois
+# numa única resposta. As regras abaixo valem para os buscadores tradicionais
+# e, principalmente, expõem os sitemaps do domínio.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /login
+
+# Sitemaps do domínio (site principal + landing de captação /salario-maternidade)
+Sitemap: https://mouraegalindoadvogados.com.br/sitemap.xml
+Sitemap: https://mouraegalindoadvogados.com.br/salario-maternidade/sitemap.xml

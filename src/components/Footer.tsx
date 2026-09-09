@@ -31,6 +31,20 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              {/*
+                Landing de captação servida por outro Worker do Cloudflare em
+                /salario-maternidade/. Precisa ser um <a> normal (navegação
+                full-page): não é uma rota deste app, então <Link> não serve.
+                Este link torna a landing descobrível em todo o site (SEO).
+              */}
+              <li>
+                <a
+                  href="/salario-maternidade/"
+                  className="text-muted-foreground hover:text-gold transition-colors"
+                >
+                  Salário-Maternidade
+                </a>
+              </li>
             </ul>
           </div>
 
