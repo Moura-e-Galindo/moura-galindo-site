@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as LandingPageRouteImport } from './routes/landing-page'
 import { Route as InstitucionalRouteImport } from './routes/institucional'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -34,11 +33,6 @@ const NoticiasRoute = NoticiasRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LandingPageRoute = LandingPageRouteImport.update({
-  id: '/landing-page',
-  path: '/landing-page',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InstitucionalRoute = InstitucionalRouteImport.update({
@@ -114,7 +108,6 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
-  '/landing-page': typeof LandingPageRoute
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/admin/nova': typeof AdminNovaRoute
@@ -130,7 +123,6 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
-  '/landing-page': typeof LandingPageRoute
   '/login': typeof LoginRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
@@ -148,7 +140,6 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
-  '/landing-page': typeof LandingPageRoute
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/admin/nova': typeof AdminNovaRoute
@@ -168,7 +159,6 @@ export interface FileRouteTypes {
     | '/contato'
     | '/equipe'
     | '/institucional'
-    | '/landing-page'
     | '/login'
     | '/noticias'
     | '/admin/nova'
@@ -184,7 +174,6 @@ export interface FileRouteTypes {
     | '/contato'
     | '/equipe'
     | '/institucional'
-    | '/landing-page'
     | '/login'
     | '/admin/nova'
     | '/areas/$slug'
@@ -201,7 +190,6 @@ export interface FileRouteTypes {
     | '/contato'
     | '/equipe'
     | '/institucional'
-    | '/landing-page'
     | '/login'
     | '/noticias'
     | '/admin/nova'
@@ -220,7 +208,6 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   EquipeRoute: typeof EquipeRoute
   InstitucionalRoute: typeof InstitucionalRoute
-  LandingPageRoute: typeof LandingPageRoute
   LoginRoute: typeof LoginRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
 }
@@ -239,13 +226,6 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/landing-page': {
-      id: '/landing-page'
-      path: '/landing-page'
-      fullPath: '/landing-page'
-      preLoaderRoute: typeof LandingPageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/institucional': {
@@ -389,7 +369,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   EquipeRoute: EquipeRoute,
   InstitucionalRoute: InstitucionalRoute,
-  LandingPageRoute: LandingPageRoute,
   LoginRoute: LoginRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
 }

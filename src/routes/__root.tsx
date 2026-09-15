@@ -69,12 +69,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { location } = useRouterState();
-  // Rotas standalone (sem Header/Footer do site): área administrativa,
-  // login e landing pages de captação — que têm layout próprio.
+  // Rotas standalone (sem Header/Footer do site): área administrativa
+  // e login — que têm layout próprio.
   const isStandalone =
-    location.pathname.startsWith("/admin") ||
-    location.pathname === "/login" ||
-    location.pathname.startsWith("/landing-page");
+    location.pathname.startsWith("/admin") || location.pathname === "/login";
 
   if (isStandalone) {
     return (
