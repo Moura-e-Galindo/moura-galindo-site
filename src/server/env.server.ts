@@ -4,8 +4,6 @@ export interface ServerEnv {
   supabaseUrl: string;
   supabaseServiceRoleKey: string;
   brevoApiKey: string;
-  newsletterFrom: string;
-  newsletterReplyTo: string | undefined;
   siteUrl: string;
 }
 
@@ -31,8 +29,6 @@ export function getServerEnv(): ServerEnv {
     supabaseUrl: source.SUPABASE_URL?.trim() || import.meta.env.VITE_SUPABASE_URL || "",
     supabaseServiceRoleKey: required(source, "SUPABASE_SERVICE_ROLE_KEY"),
     brevoApiKey: required(source, "BREVO_API_KEY"),
-    newsletterFrom: required(source, "NEWSLETTER_FROM"),
-    newsletterReplyTo: source.NEWSLETTER_REPLY_TO?.trim() || undefined,
     siteUrl: (source.SITE_URL?.trim() || DEFAULT_SITE_URL).replace(/\/+$/, "")
   };
 }

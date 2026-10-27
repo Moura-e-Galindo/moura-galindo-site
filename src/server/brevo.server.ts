@@ -1,4 +1,5 @@
 import { getServerEnv } from "./env.server";
+import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from "@/lib/newsletter/sender";
 
 const BREVO_API_URL = "https://api.brevo.com/v3";
 
@@ -12,22 +13,9 @@ export interface EmailMessage {
   headers?: Record<string, string>;
 }
 
-interface BrevoContact {
-  email: string;
-  name?: string;
-}
-
 interface BrevoErrorBody {
   code?: string;
   message?: string;
-}
-
-function parseAddress(address: string): BrevoContact {
-  const match = address.match(/^\s*"?([^"<]*?)"?\s*<([^>]+)>\s*$/);
-  if (!match) return { email: address.trim() };
-
-  const name = match[1].trim();
-  return name ? { name, email: match[2].trim() } : { email: match[2].trim() };
 }
 
 async function postToBrevo(body: unknown): Promise<void> {
@@ -50,11 +38,9 @@ async function postToBrevo(body: unknown): Promise<void> {
 }
 
 function baseEnvelope() {
-  const env = getServerEnv();
-
   return {
-    sender: parseAddress(env.newsletterFrom),
-    ...(env.newsletterReplyTo ? { replyTo: parseAddress(env.newsletterReplyTo) } : {})
+    sender: NEWSLETTER_SENDER,
+    replyTo: NEWSLETTER_REPLY_TO
   };
 }
 
