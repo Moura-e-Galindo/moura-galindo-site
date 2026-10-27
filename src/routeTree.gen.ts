@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RegularizacaoDeImoveisRouteImport } from './routes/regularizacao-de-imoveis'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as InstitucionalRouteImport } from './routes/institucional'
@@ -21,10 +22,21 @@ import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as AreasIndexRouteImport } from './routes/areas.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as NewsletterDescadastrarRouteImport } from './routes/newsletter.descadastrar'
+import { Route as NewsletterConfirmarRouteImport } from './routes/newsletter.confirmar'
 import { Route as AreasSlugRouteImport } from './routes/areas.$slug'
 import { Route as AdminNovaRouteImport } from './routes/admin.nova'
+import { Route as AdminNewsletterIndexRouteImport } from './routes/admin.newsletter.index'
+import { Route as AdminNewsletterNovaRouteImport } from './routes/admin.newsletter.nova'
+import { Route as AdminNewsletterInscritosRouteImport } from './routes/admin.newsletter.inscritos'
+import { Route as AdminNewsletterIdRouteImport } from './routes/admin.newsletter.$id'
 import { Route as AdminEditarIdRouteImport } from './routes/admin.editar.$id'
 
+const RegularizacaoDeImoveisRoute = RegularizacaoDeImoveisRouteImport.update({
+  id: '/regularizacao-de-imoveis',
+  path: '/regularizacao-de-imoveis',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NoticiasRoute = NoticiasRouteImport.update({
   id: '/noticias',
   path: '/noticias',
@@ -85,6 +97,16 @@ const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NoticiasRoute,
 } as any)
+const NewsletterDescadastrarRoute = NewsletterDescadastrarRouteImport.update({
+  id: '/newsletter/descadastrar',
+  path: '/newsletter/descadastrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterConfirmarRoute = NewsletterConfirmarRouteImport.update({
+  id: '/newsletter/confirmar',
+  path: '/newsletter/confirmar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AreasSlugRoute = AreasSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -93,6 +115,27 @@ const AreasSlugRoute = AreasSlugRouteImport.update({
 const AdminNovaRoute = AdminNovaRouteImport.update({
   id: '/nova',
   path: '/nova',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminNewsletterIndexRoute = AdminNewsletterIndexRouteImport.update({
+  id: '/newsletter/',
+  path: '/newsletter/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminNewsletterNovaRoute = AdminNewsletterNovaRouteImport.update({
+  id: '/newsletter/nova',
+  path: '/newsletter/nova',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminNewsletterInscritosRoute =
+  AdminNewsletterInscritosRouteImport.update({
+    id: '/newsletter/inscritos',
+    path: '/newsletter/inscritos',
+    getParentRoute: () => AdminRoute,
+  } as any)
+const AdminNewsletterIdRoute = AdminNewsletterIdRouteImport.update({
+  id: '/newsletter/$id',
+  path: '/newsletter/$id',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminEditarIdRoute = AdminEditarIdRouteImport.update({
@@ -110,13 +153,20 @@ export interface FileRoutesByFullPath {
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
+  '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/newsletter/confirmar': typeof NewsletterConfirmarRoute
+  '/newsletter/descadastrar': typeof NewsletterDescadastrarRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/admin/editar/$id': typeof AdminEditarIdRoute
+  '/admin/newsletter/$id': typeof AdminNewsletterIdRoute
+  '/admin/newsletter/inscritos': typeof AdminNewsletterInscritosRoute
+  '/admin/newsletter/nova': typeof AdminNewsletterNovaRoute
+  '/admin/newsletter/': typeof AdminNewsletterIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -124,13 +174,20 @@ export interface FileRoutesByTo {
   '/equipe': typeof EquipeRoute
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
+  '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/newsletter/confirmar': typeof NewsletterConfirmarRoute
+  '/newsletter/descadastrar': typeof NewsletterDescadastrarRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/admin': typeof AdminIndexRoute
   '/areas': typeof AreasIndexRoute
   '/noticias': typeof NoticiasIndexRoute
   '/admin/editar/$id': typeof AdminEditarIdRoute
+  '/admin/newsletter/$id': typeof AdminNewsletterIdRoute
+  '/admin/newsletter/inscritos': typeof AdminNewsletterInscritosRoute
+  '/admin/newsletter/nova': typeof AdminNewsletterNovaRoute
+  '/admin/newsletter': typeof AdminNewsletterIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -142,13 +199,20 @@ export interface FileRoutesById {
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
+  '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/newsletter/confirmar': typeof NewsletterConfirmarRoute
+  '/newsletter/descadastrar': typeof NewsletterDescadastrarRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/admin/': typeof AdminIndexRoute
   '/areas/': typeof AreasIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/admin/editar/$id': typeof AdminEditarIdRoute
+  '/admin/newsletter/$id': typeof AdminNewsletterIdRoute
+  '/admin/newsletter/inscritos': typeof AdminNewsletterInscritosRoute
+  '/admin/newsletter/nova': typeof AdminNewsletterNovaRoute
+  '/admin/newsletter/': typeof AdminNewsletterIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -161,13 +225,20 @@ export interface FileRouteTypes {
     | '/institucional'
     | '/login'
     | '/noticias'
+    | '/regularizacao-de-imoveis'
     | '/admin/nova'
     | '/areas/$slug'
+    | '/newsletter/confirmar'
+    | '/newsletter/descadastrar'
     | '/noticias/$slug'
     | '/admin/'
     | '/areas/'
     | '/noticias/'
     | '/admin/editar/$id'
+    | '/admin/newsletter/$id'
+    | '/admin/newsletter/inscritos'
+    | '/admin/newsletter/nova'
+    | '/admin/newsletter/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -175,13 +246,20 @@ export interface FileRouteTypes {
     | '/equipe'
     | '/institucional'
     | '/login'
+    | '/regularizacao-de-imoveis'
     | '/admin/nova'
     | '/areas/$slug'
+    | '/newsletter/confirmar'
+    | '/newsletter/descadastrar'
     | '/noticias/$slug'
     | '/admin'
     | '/areas'
     | '/noticias'
     | '/admin/editar/$id'
+    | '/admin/newsletter/$id'
+    | '/admin/newsletter/inscritos'
+    | '/admin/newsletter/nova'
+    | '/admin/newsletter'
   id:
     | '__root__'
     | '/'
@@ -192,13 +270,20 @@ export interface FileRouteTypes {
     | '/institucional'
     | '/login'
     | '/noticias'
+    | '/regularizacao-de-imoveis'
     | '/admin/nova'
     | '/areas/$slug'
+    | '/newsletter/confirmar'
+    | '/newsletter/descadastrar'
     | '/noticias/$slug'
     | '/admin/'
     | '/areas/'
     | '/noticias/'
     | '/admin/editar/$id'
+    | '/admin/newsletter/$id'
+    | '/admin/newsletter/inscritos'
+    | '/admin/newsletter/nova'
+    | '/admin/newsletter/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -210,10 +295,20 @@ export interface RootRouteChildren {
   InstitucionalRoute: typeof InstitucionalRoute
   LoginRoute: typeof LoginRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
+  RegularizacaoDeImoveisRoute: typeof RegularizacaoDeImoveisRoute
+  NewsletterConfirmarRoute: typeof NewsletterConfirmarRoute
+  NewsletterDescadastrarRoute: typeof NewsletterDescadastrarRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/regularizacao-de-imoveis': {
+      id: '/regularizacao-de-imoveis'
+      path: '/regularizacao-de-imoveis'
+      fullPath: '/regularizacao-de-imoveis'
+      preLoaderRoute: typeof RegularizacaoDeImoveisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/noticias': {
       id: '/noticias'
       path: '/noticias'
@@ -298,6 +393,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NoticiasSlugRouteImport
       parentRoute: typeof NoticiasRoute
     }
+    '/newsletter/descadastrar': {
+      id: '/newsletter/descadastrar'
+      path: '/newsletter/descadastrar'
+      fullPath: '/newsletter/descadastrar'
+      preLoaderRoute: typeof NewsletterDescadastrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter/confirmar': {
+      id: '/newsletter/confirmar'
+      path: '/newsletter/confirmar'
+      fullPath: '/newsletter/confirmar'
+      preLoaderRoute: typeof NewsletterConfirmarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas/$slug': {
       id: '/areas/$slug'
       path: '/$slug'
@@ -310,6 +419,34 @@ declare module '@tanstack/react-router' {
       path: '/nova'
       fullPath: '/admin/nova'
       preLoaderRoute: typeof AdminNovaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/newsletter/': {
+      id: '/admin/newsletter/'
+      path: '/newsletter'
+      fullPath: '/admin/newsletter/'
+      preLoaderRoute: typeof AdminNewsletterIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/newsletter/nova': {
+      id: '/admin/newsletter/nova'
+      path: '/newsletter/nova'
+      fullPath: '/admin/newsletter/nova'
+      preLoaderRoute: typeof AdminNewsletterNovaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/newsletter/inscritos': {
+      id: '/admin/newsletter/inscritos'
+      path: '/newsletter/inscritos'
+      fullPath: '/admin/newsletter/inscritos'
+      preLoaderRoute: typeof AdminNewsletterInscritosRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/newsletter/$id': {
+      id: '/admin/newsletter/$id'
+      path: '/newsletter/$id'
+      fullPath: '/admin/newsletter/$id'
+      preLoaderRoute: typeof AdminNewsletterIdRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/editar/$id': {
@@ -326,12 +463,20 @@ interface AdminRouteChildren {
   AdminNovaRoute: typeof AdminNovaRoute
   AdminIndexRoute: typeof AdminIndexRoute
   AdminEditarIdRoute: typeof AdminEditarIdRoute
+  AdminNewsletterIdRoute: typeof AdminNewsletterIdRoute
+  AdminNewsletterInscritosRoute: typeof AdminNewsletterInscritosRoute
+  AdminNewsletterNovaRoute: typeof AdminNewsletterNovaRoute
+  AdminNewsletterIndexRoute: typeof AdminNewsletterIndexRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminNovaRoute: AdminNovaRoute,
   AdminIndexRoute: AdminIndexRoute,
   AdminEditarIdRoute: AdminEditarIdRoute,
+  AdminNewsletterIdRoute: AdminNewsletterIdRoute,
+  AdminNewsletterInscritosRoute: AdminNewsletterInscritosRoute,
+  AdminNewsletterNovaRoute: AdminNewsletterNovaRoute,
+  AdminNewsletterIndexRoute: AdminNewsletterIndexRoute,
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
@@ -371,6 +516,9 @@ const rootRouteChildren: RootRouteChildren = {
   InstitucionalRoute: InstitucionalRoute,
   LoginRoute: LoginRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
+  RegularizacaoDeImoveisRoute: RegularizacaoDeImoveisRoute,
+  NewsletterConfirmarRoute: NewsletterConfirmarRoute,
+  NewsletterDescadastrarRoute: NewsletterDescadastrarRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

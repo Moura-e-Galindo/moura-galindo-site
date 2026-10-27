@@ -19,13 +19,11 @@ export function Header() {
     <header className="sticky top-4 md:top-6 z-50 w-full px-4">
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center justify-between gap-4 rounded-full border border-border bg-card/95 backdrop-blur-md pl-3 pr-3 py-2 shadow-card">
-          <Link
-            to="/"
-            aria-label="Início"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-gold hover:bg-gold/10 transition-colors"
-          >
-            <Logo compact height={30} />
-          </Link>
+          <Logo
+            compact
+            height={30}
+            className="h-9 w-9 justify-center rounded-full text-gold hover:bg-gold/10 transition-colors"
+          />
 
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (

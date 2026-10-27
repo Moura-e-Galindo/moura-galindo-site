@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { fetchNoticiaBySlug, fetchAllNoticias, type NoticiaCard } from "@/lib/noticias-api";
 import { formatNoticiaDate } from "@/lib/format-date";
 import { buildWhatsAppUrl } from "@/lib/contact";
+import { NewsletterArticleCta } from "@/components/newsletter/NewsletterArticleCta";
 
 /**
  * Página individual de uma notícia: foto, data/hora e texto completo.
@@ -110,6 +111,8 @@ function NoticiaPage() {
               Agendar atendimento <ArrowRight className="h-4 w-4" />
             </a>
           </div>
+
+          <NewsletterArticleCta />
         </div>
       </section>
 

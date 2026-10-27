@@ -10,6 +10,7 @@ import { CompromissoOds } from "@/components/CompromissoOds";
 import { LatestNews } from "@/components/LatestNews";
 import { NucleoCard } from "@/components/NucleoCard";
 import { fetchLatestNoticias } from "@/lib/noticias-api";
+import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
 
 export const Route = createFileRoute("/")({
   loader: () => fetchLatestNoticias(3),
@@ -178,6 +179,8 @@ function HomePage() {
 
       {/* Últimas Notícias */}
       <LatestNews noticias={latestNoticias} />
+
+      <NewsletterSection />
 
       <section className="py-24 md:py-32 bg-background">
         <div className="mx-auto max-w-3xl px-6 text-center">

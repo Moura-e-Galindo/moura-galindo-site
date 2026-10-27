@@ -51,6 +51,15 @@
   --color-ink-deep: #14100e;    /* variação profunda — rodapé */
   --color-ink-soft: #4e453f;    /* grafite quente — texto corrido */
   --color-graphite: #929497;    /* cinza institucional (Pantone 179-8 C) — apoio/muted */
+
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-inter: "Inter", "Helvetica Neue", sans-serif;
+  --color-gold-ink: #5e4c17;
+  --color-sand: #f5f4f0;
+  --color-sand-soft: #fafaf8;
+  --color-sand-line: #e6e3da;
+  --color-whatsapp: #1f8f4e;
+  --color-whatsapp-deep: #176e3c;
 }
 
 :root {

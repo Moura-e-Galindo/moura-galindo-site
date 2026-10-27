@@ -72,7 +72,9 @@ function RootComponent() {
   // Rotas standalone (sem Header/Footer do site): área administrativa
   // e login — que têm layout próprio.
   const isStandalone =
-    location.pathname.startsWith("/admin") || location.pathname === "/login";
+    location.pathname.startsWith("/admin") ||
+    location.pathname === "/login" ||
+    location.pathname.startsWith("/regularizacao-de-imoveis");
 
   if (isStandalone) {
     return (
