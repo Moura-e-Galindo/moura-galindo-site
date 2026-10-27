@@ -15,7 +15,7 @@ export function buildRegularizacaoStructuredData() {
         "@type": "LegalService",
         name: `${escritorio.nome} · Núcleo de Direito Imobiliário`,
         url: LANDING_URL,
-        telephone: [escritorio.telefone.href.replace("tel:", ""), `+${WHATSAPP_NUMBER}`],
+        telephone: `+${WHATSAPP_NUMBER}`,
         areaServed: ["Caruaru", "Agreste de Pernambuco"],
         address: {
           "@type": "PostalAddress",

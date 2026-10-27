@@ -34,11 +34,6 @@ export function LandingFooter() {
 
         <ul className="min-w-0 flex-[1_1_240px] text-[14px] leading-[1.9]">
           <li>
-            <a href={escritorio.telefone.href} className={footerLink}>
-              {escritorio.telefone.display}
-            </a>
-          </li>
-          <li>
             <a href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className={footerLink}>
               WhatsApp {WHATSAPP_DISPLAY}
             </a>

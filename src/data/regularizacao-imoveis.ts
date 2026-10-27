@@ -197,10 +197,6 @@ export const escritorio = {
     uf: "PE",
     cep: "55016-590"
   },
-  telefone: {
-    display: "(81) 2103.4353",
-    href: "tel:+558121034353"
-  },
   instagram: {
     display: "@mouraegalindoadv",
     href: "https://www.instagram.com/mouraegalindoadv"

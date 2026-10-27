@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LANDING_URL } from "@/data/regularizacao-imoveis";
 import { buildRegularizacaoStructuredData } from "@/lib/regularizacao-imoveis/structured-data";
-import { LandingHeader } from "@/components/landing-imoveis/LandingHeader";
+import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/landing-imoveis/HeroSection";
 import { SituacoesSection } from "@/components/landing-imoveis/SituacoesSection";
 import { ConfusoesSection } from "@/components/landing-imoveis/ConfusoesSection";
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/regularizacao-de-imoveis")({
 function RegularizacaoImoveisPage() {
   return (
     <div className="bg-white font-inter text-[17px] leading-[1.6] text-neutral-900 [color-scheme:light]">
-      <LandingHeader />
+      <Header />
       <main>
         <HeroSection />
         <SituacoesSection />

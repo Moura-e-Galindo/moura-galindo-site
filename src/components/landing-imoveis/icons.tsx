@@ -58,27 +58,3 @@ export function WhatsAppGlyph(props: IconProps) {
     </svg>
   );
 }
-
-/** Duplo chevron dourado + preto usado ao lado do nome do núcleo. */
-export function BrandChevrons() {
-  return (
-    <svg width="22" height="30" viewBox="0 0 22 30" fill="none" aria-hidden="true" className="flex-none">
-      <polyline
-        points="3,3 15,15 3,27"
-        className="stroke-gold"
-        strokeWidth="4"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
-      <polyline
-        points="10,3 22,15 10,27"
-        stroke="black"
-        strokeWidth="4"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        transform="translate(-2 0)"
-        opacity="0.9"
-      />
-    </svg>
-  );
-}

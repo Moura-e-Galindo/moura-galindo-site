@@ -5,7 +5,10 @@ import { buttonGold, focusRing } from "./classes";
 
 export function HeroSection() {
   return (
-    <section id="topo" className="relative overflow-hidden border-b-4 border-gold bg-black text-white">
+    <section
+      id="topo"
+      className="relative -mt-20 overflow-hidden border-b-4 border-gold bg-black text-white md:-mt-24"
+    >
       <img
         src={heroImage}
         alt="Ambientes do escritório Moura & Galindo em Caruaru"
@@ -19,7 +22,7 @@ export function HeroSection() {
         className="absolute inset-0 bg-linear-to-b from-black/86 to-black/90 md:bg-linear-to-r md:from-black/92 md:via-black/84 md:via-45% md:to-black/50"
       />
 
-      <LandingContainer className="relative flex min-h-[420px] flex-wrap items-center gap-12 pt-30 pb-32">
+      <LandingContainer className="relative flex min-h-[420px] flex-wrap items-center gap-12 pt-50 pb-32 md:pt-54">
         <div className="min-w-0 max-w-[660px] flex-[1_1_480px]">
           <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.14em] text-gold">
             Regularização de imóveis em Caruaru e no Agreste
