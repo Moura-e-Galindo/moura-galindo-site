@@ -5,7 +5,7 @@ export interface EmailContact {
 
 export const NEWSLETTER_SENDER: EmailContact = {
   name: "Moura & Galindo",
-  email: "newsletter@mouraegalindoadvogados.com.br"
+  email: "atendimento@mouraegalindoadvogados.com.br"
 };
 
 export const NEWSLETTER_REPLY_TO: EmailContact = {
