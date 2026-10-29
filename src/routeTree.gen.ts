@@ -13,6 +13,7 @@ import { Route as RegularizacaoDeImoveisRouteImport } from './routes/regularizac
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as InstitucionalRouteImport } from './routes/institucional'
+import { Route as Escala5x2RouteImport } from './routes/escala-5x2'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as AreasRouteImport } from './routes/areas'
@@ -52,6 +53,11 @@ const LoginRoute = LoginRouteImport.update({
 const InstitucionalRoute = InstitucionalRouteImport.update({
   id: '/institucional',
   path: '/institucional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Escala5x2Route = Escala5x2RouteImport.update({
+  id: '/escala-5x2',
+  path: '/escala-5x2',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EquipeRoute = EquipeRouteImport.update({
@@ -163,6 +169,7 @@ export interface FileRoutesByFullPath {
   '/areas': typeof AreasRouteWithChildren
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
+  '/escala-5x2': typeof Escala5x2Route
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
@@ -187,6 +194,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
+  '/escala-5x2': typeof Escala5x2Route
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
@@ -213,6 +221,7 @@ export interface FileRoutesById {
   '/areas': typeof AreasRouteWithChildren
   '/contato': typeof ContatoRoute
   '/equipe': typeof EquipeRoute
+  '/escala-5x2': typeof Escala5x2Route
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
@@ -241,6 +250,7 @@ export interface FileRouteTypes {
     | '/areas'
     | '/contato'
     | '/equipe'
+    | '/escala-5x2'
     | '/institucional'
     | '/login'
     | '/noticias'
@@ -265,6 +275,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/equipe'
+    | '/escala-5x2'
     | '/institucional'
     | '/login'
     | '/regularizacao-de-imoveis'
@@ -290,6 +301,7 @@ export interface FileRouteTypes {
     | '/areas'
     | '/contato'
     | '/equipe'
+    | '/escala-5x2'
     | '/institucional'
     | '/login'
     | '/noticias'
@@ -317,6 +329,7 @@ export interface RootRouteChildren {
   AreasRoute: typeof AreasRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   EquipeRoute: typeof EquipeRoute
+  Escala5x2Route: typeof Escala5x2Route
   InstitucionalRoute: typeof InstitucionalRoute
   LoginRoute: typeof LoginRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
@@ -354,6 +367,13 @@ declare module '@tanstack/react-router' {
       path: '/institucional'
       fullPath: '/institucional'
       preLoaderRoute: typeof InstitucionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escala-5x2': {
+      id: '/escala-5x2'
+      path: '/escala-5x2'
+      fullPath: '/escala-5x2'
+      preLoaderRoute: typeof Escala5x2RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/equipe': {
@@ -555,6 +575,7 @@ const rootRouteChildren: RootRouteChildren = {
   AreasRoute: AreasRouteWithChildren,
   ContatoRoute: ContatoRoute,
   EquipeRoute: EquipeRoute,
+  Escala5x2Route: Escala5x2Route,
   InstitucionalRoute: InstitucionalRoute,
   LoginRoute: LoginRoute,
   NoticiasRoute: NoticiasRouteWithChildren,

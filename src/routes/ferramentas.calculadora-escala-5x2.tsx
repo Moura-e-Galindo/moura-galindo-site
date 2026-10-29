@@ -1,4 +1,5 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowLeft } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Calculadora5x2 } from "@/components/escala-5x2/Calculadora5x2";
 import { AccessBanner } from "@/components/ferramentas/AccessBanner";
@@ -53,6 +54,13 @@ function CalculadoraEscalaPage() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Link
+            to="/escala-5x2"
+            className="mb-8 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-gold hover:gap-3 transition-all"
+          >
+            <ArrowLeft className="h-4 w-4" /> Entenda o que muda com a escala 5x2
+          </Link>
+
           {fase === "aberta" ? (
             <>
               <AccessBanner ferramenta={ferramenta} now={now} />

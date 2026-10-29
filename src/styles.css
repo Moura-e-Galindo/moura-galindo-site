@@ -60,6 +60,26 @@
   --color-sand-line: #e6e3da;
   --color-whatsapp: #1f8f4e;
   --color-whatsapp-deep: #176e3c;
+
+  /* ── Landing Escala 5x2 (Núcleo Trabalhista Empresarial) ──
+   * Tipografia e acentos de apoio derivados do manual da marca.
+   */
+  --font-spectral: "Spectral", Georgia, "Times New Roman", serif;
+  --font-montserrat: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --color-trab-papel: #fbfaf7;
+  --color-trab-linha: #e4dfd2;
+  --color-trab-ouro-texto: #7e661f;
+  --color-trab-ouro-fundo: #f7f1e1;
+  --color-trab-creme: #f7f0de;
+  --color-trab-azul: #1e3a4c;
+  --color-trab-azul-fundo: #e8eff3;
+  --color-trab-noite: #12262f;
+  --color-trab-verde: #2c5e49;
+  --color-trab-verde-fundo: #e7f0eb;
+  --color-trab-vinho: #8e2f4c;
+  --color-trab-vinho-fundo: #f7e9ed;
+  --color-trab-grafite: #1c1c1c;
+  --color-trab-grafite-fundo: #efede8;
 }
 
 :root {

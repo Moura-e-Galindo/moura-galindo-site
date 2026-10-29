@@ -24,6 +24,7 @@ export function Footer() {
                 { to: "/equipe" as const, label: "Equipe" },
                 // { to: "/noticias" as const, label: "Notícias" },
                 { to: "/contato" as const, label: "Contato" },
+                { to: "/escala-5x2" as const, label: "Escala 5x2" }
               ].map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-muted-foreground hover:text-gold transition-colors">
