@@ -24,8 +24,10 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as NewsletterDescadastrarRouteImport } from './routes/newsletter.descadastrar'
 import { Route as NewsletterConfirmarRouteImport } from './routes/newsletter.confirmar'
+import { Route as FerramentasCalculadoraEscala5x2RouteImport } from './routes/ferramentas.calculadora-escala-5x2'
 import { Route as AreasSlugRouteImport } from './routes/areas.$slug'
 import { Route as AdminNovaRouteImport } from './routes/admin.nova'
+import { Route as AdminFerramentasRouteImport } from './routes/admin.ferramentas'
 import { Route as AdminNewsletterIndexRouteImport } from './routes/admin.newsletter.index'
 import { Route as AdminNewsletterNovaRouteImport } from './routes/admin.newsletter.nova'
 import { Route as AdminNewsletterInscritosRouteImport } from './routes/admin.newsletter.inscritos'
@@ -107,6 +109,12 @@ const NewsletterConfirmarRoute = NewsletterConfirmarRouteImport.update({
   path: '/newsletter/confirmar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FerramentasCalculadoraEscala5x2Route =
+  FerramentasCalculadoraEscala5x2RouteImport.update({
+    id: '/ferramentas/calculadora-escala-5x2',
+    path: '/ferramentas/calculadora-escala-5x2',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AreasSlugRoute = AreasSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -115,6 +123,11 @@ const AreasSlugRoute = AreasSlugRouteImport.update({
 const AdminNovaRoute = AdminNovaRouteImport.update({
   id: '/nova',
   path: '/nova',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminFerramentasRoute = AdminFerramentasRouteImport.update({
+  id: '/ferramentas',
+  path: '/ferramentas',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminNewsletterIndexRoute = AdminNewsletterIndexRouteImport.update({
@@ -154,8 +167,10 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
+  '/admin/ferramentas': typeof AdminFerramentasRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/ferramentas/calculadora-escala-5x2': typeof FerramentasCalculadoraEscala5x2Route
   '/newsletter/confirmar': typeof NewsletterConfirmarRoute
   '/newsletter/descadastrar': typeof NewsletterDescadastrarRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
@@ -175,8 +190,10 @@ export interface FileRoutesByTo {
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
+  '/admin/ferramentas': typeof AdminFerramentasRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/ferramentas/calculadora-escala-5x2': typeof FerramentasCalculadoraEscala5x2Route
   '/newsletter/confirmar': typeof NewsletterConfirmarRoute
   '/newsletter/descadastrar': typeof NewsletterDescadastrarRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
@@ -200,8 +217,10 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
+  '/admin/ferramentas': typeof AdminFerramentasRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
+  '/ferramentas/calculadora-escala-5x2': typeof FerramentasCalculadoraEscala5x2Route
   '/newsletter/confirmar': typeof NewsletterConfirmarRoute
   '/newsletter/descadastrar': typeof NewsletterDescadastrarRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
@@ -226,8 +245,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/noticias'
     | '/regularizacao-de-imoveis'
+    | '/admin/ferramentas'
     | '/admin/nova'
     | '/areas/$slug'
+    | '/ferramentas/calculadora-escala-5x2'
     | '/newsletter/confirmar'
     | '/newsletter/descadastrar'
     | '/noticias/$slug'
@@ -247,8 +268,10 @@ export interface FileRouteTypes {
     | '/institucional'
     | '/login'
     | '/regularizacao-de-imoveis'
+    | '/admin/ferramentas'
     | '/admin/nova'
     | '/areas/$slug'
+    | '/ferramentas/calculadora-escala-5x2'
     | '/newsletter/confirmar'
     | '/newsletter/descadastrar'
     | '/noticias/$slug'
@@ -271,8 +294,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/noticias'
     | '/regularizacao-de-imoveis'
+    | '/admin/ferramentas'
     | '/admin/nova'
     | '/areas/$slug'
+    | '/ferramentas/calculadora-escala-5x2'
     | '/newsletter/confirmar'
     | '/newsletter/descadastrar'
     | '/noticias/$slug'
@@ -296,6 +321,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
   RegularizacaoDeImoveisRoute: typeof RegularizacaoDeImoveisRoute
+  FerramentasCalculadoraEscala5x2Route: typeof FerramentasCalculadoraEscala5x2Route
   NewsletterConfirmarRoute: typeof NewsletterConfirmarRoute
   NewsletterDescadastrarRoute: typeof NewsletterDescadastrarRoute
 }
@@ -407,6 +433,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsletterConfirmarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ferramentas/calculadora-escala-5x2': {
+      id: '/ferramentas/calculadora-escala-5x2'
+      path: '/ferramentas/calculadora-escala-5x2'
+      fullPath: '/ferramentas/calculadora-escala-5x2'
+      preLoaderRoute: typeof FerramentasCalculadoraEscala5x2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas/$slug': {
       id: '/areas/$slug'
       path: '/$slug'
@@ -419,6 +452,13 @@ declare module '@tanstack/react-router' {
       path: '/nova'
       fullPath: '/admin/nova'
       preLoaderRoute: typeof AdminNovaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/ferramentas': {
+      id: '/admin/ferramentas'
+      path: '/ferramentas'
+      fullPath: '/admin/ferramentas'
+      preLoaderRoute: typeof AdminFerramentasRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/newsletter/': {
@@ -460,6 +500,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface AdminRouteChildren {
+  AdminFerramentasRoute: typeof AdminFerramentasRoute
   AdminNovaRoute: typeof AdminNovaRoute
   AdminIndexRoute: typeof AdminIndexRoute
   AdminEditarIdRoute: typeof AdminEditarIdRoute
@@ -470,6 +511,7 @@ interface AdminRouteChildren {
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminFerramentasRoute: AdminFerramentasRoute,
   AdminNovaRoute: AdminNovaRoute,
   AdminIndexRoute: AdminIndexRoute,
   AdminEditarIdRoute: AdminEditarIdRoute,
@@ -517,6 +559,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
   RegularizacaoDeImoveisRoute: RegularizacaoDeImoveisRoute,
+  FerramentasCalculadoraEscala5x2Route: FerramentasCalculadoraEscala5x2Route,
   NewsletterConfirmarRoute: NewsletterConfirmarRoute,
   NewsletterDescadastrarRoute: NewsletterDescadastrarRoute,
 }

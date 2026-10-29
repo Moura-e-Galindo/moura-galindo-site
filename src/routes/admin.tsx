@@ -2,7 +2,7 @@ import { createFileRoute, Link, Outlet, useNavigate } from "@tanstack/react-rout
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Logo } from "@/components/Logo";
-import { LogOut, Plus, List, Mail } from "lucide-react";
+import { LogOut, Plus, List, Mail, Timer } from "lucide-react";
 
 export const Route = createFileRoute("/admin")({
   component: AdminLayout
@@ -77,6 +77,13 @@ function AdminLayout() {
                 className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-accent transition-colors rounded"
               >
                 <Mail className="h-3.5 w-3.5" /> Newsletter
+              </Link>
+              <Link
+                to="/admin/ferramentas"
+                activeProps={{ className: "bg-accent text-foreground" }}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-accent transition-colors rounded"
+              >
+                <Timer className="h-3.5 w-3.5" /> Ferramentas
               </Link>
             </nav>
           </div>
