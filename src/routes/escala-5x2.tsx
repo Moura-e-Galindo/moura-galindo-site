@@ -19,6 +19,9 @@ const TITLE = "Escala 5x2: o que muda com a EC 141/2026 · Moura & Galindo";
 const DESCRIPTION =
   "Jornada, quadro de pessoal e custo da folha na transição para a escala 5x2. O essencial da Emenda Constitucional 141/2026 e as dúvidas de empresas, contadores, RH e advogados, pelo Núcleo Trabalhista Empresarial do Moura & Galindo.";
 
+const SHARE_DESCRIPTION =
+  "O essencial da EC 141/2026: jornada, quadro de pessoal e custo da folha na transição.";
+
 const FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap";
 
@@ -33,11 +36,11 @@ export const Route = createFileRoute("/escala-5x2")({
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
+      { property: "og:description", content: SHARE_DESCRIPTION },
       { property: "og:url", content: LANDING_URL },
       { property: "og:type", content: "website" },
       { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:description", content: SHARE_DESCRIPTION },
       ...buildOgImageMeta(OG_IMAGE_URL, OG_IMAGE_ALT)
     ],
     links: [

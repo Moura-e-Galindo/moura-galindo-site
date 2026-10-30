@@ -7,7 +7,7 @@ export const LANDING_PATH = "/escala-5x2";
 export const LANDING_URL = `https://mouraegalindoadvogados.com.br${LANDING_PATH}`;
 
 /** Imagem de pré-visualização do link (1200x630), servida de /public/og. */
-export const OG_IMAGE_URL = "https://mouraegalindoadvogados.com.br/og/escala-5x2.jpg";
+export const OG_IMAGE_URL = "https://mouraegalindoadvogados.com.br/og/escala-5x2.jpg?v=2";
 export const OG_IMAGE_ALT =
   "Escala 5x2: o que muda na jornada, no quadro de pessoal e no custo da folha. Núcleo Trabalhista Empresarial do Moura & Galindo.";
 
