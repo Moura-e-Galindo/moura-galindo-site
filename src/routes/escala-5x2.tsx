@@ -10,9 +10,10 @@ import { PontosSection } from "@/components/landing-escala-5x2/PontosSection";
 import { RodapeSection } from "@/components/landing-escala-5x2/RodapeSection";
 import { TopoSection } from "@/components/landing-escala-5x2/TopoSection";
 import { WhatsAppFlutuante } from "@/components/landing-escala-5x2/WhatsAppFlutuante";
-import { CALCULADORA_SLUG, LANDING_URL } from "@/data/escala-5x2";
+import { CALCULADORA_SLUG, LANDING_URL, OG_IMAGE_ALT, OG_IMAGE_URL } from "@/data/escala-5x2";
 import { useNow } from "@/hooks/use-now";
 import { fetchFerramenta } from "@/lib/ferramentas/api";
+import { buildOgImageMeta } from "@/lib/seo";
 
 const TITLE = "Escala 5x2: o que muda com a EC 141/2026 · Moura & Galindo";
 const DESCRIPTION =
@@ -34,8 +35,10 @@ export const Route = createFileRoute("/escala-5x2")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: LANDING_URL },
+      { property: "og:type", content: "website" },
       { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESCRIPTION }
+      { name: "twitter:description", content: DESCRIPTION },
+      ...buildOgImageMeta(OG_IMAGE_URL, OG_IMAGE_ALT)
     ],
     links: [
       { rel: "canonical", href: LANDING_URL },

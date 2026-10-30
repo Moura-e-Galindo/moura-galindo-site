@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollToTopButton } from "@/components/ScrollToTopButton";
+import { DEFAULT_OG_IMAGE_ALT, DEFAULT_OG_IMAGE_URL, buildOgImageMeta } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -40,11 +41,9 @@ export const Route = createRootRoute({
       { property: "og:title", content: "Moura & Galindo — Advogados Associados" },
       { property: "og:description", content: "Escritório de advocacia com tradição e excelência. Soluções jurídicas estratégicas em direito empresarial, tributário, trabalhista e mais." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Moura & Galindo — Advogados Associados" },
       { name: "twitter:description", content: "Escritório de advocacia com tradição e excelência. Soluções jurídicas estratégicas em direito empresarial, tributário, trabalhista e mais." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b931bae2-caab-455c-856d-1f7b2b12c8fc/id-preview-2b574724--bad6df25-4cdc-4346-aea6-a25b3a39dcf6.lovable.app-1776526215825.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b931bae2-caab-455c-856d-1f7b2b12c8fc/id-preview-2b574724--bad6df25-4cdc-4346-aea6-a25b3a39dcf6.lovable.app-1776526215825.png" },
+      ...buildOgImageMeta(DEFAULT_OG_IMAGE_URL, DEFAULT_OG_IMAGE_ALT),
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
