@@ -74,7 +74,8 @@ function RootComponent() {
     location.pathname.startsWith("/admin") ||
     location.pathname === "/login" ||
     location.pathname.startsWith("/regularizacao-de-imoveis") ||
-    location.pathname.startsWith("/escala-5x2");
+    location.pathname.startsWith("/escala-5x2") ||
+    location.pathname.startsWith("/rescisao-indireta");
 
   if (isStandalone) {
     return (

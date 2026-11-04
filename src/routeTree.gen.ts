@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RescisaoIndiretaRouteImport } from './routes/rescisao-indireta'
 import { Route as RegularizacaoDeImoveisRouteImport } from './routes/regularizacao-de-imoveis'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as LoginRouteImport } from './routes/login'
@@ -35,6 +36,11 @@ import { Route as AdminNewsletterInscritosRouteImport } from './routes/admin.new
 import { Route as AdminNewsletterIdRouteImport } from './routes/admin.newsletter.$id'
 import { Route as AdminEditarIdRouteImport } from './routes/admin.editar.$id'
 
+const RescisaoIndiretaRoute = RescisaoIndiretaRouteImport.update({
+  id: '/rescisao-indireta',
+  path: '/rescisao-indireta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegularizacaoDeImoveisRoute = RegularizacaoDeImoveisRouteImport.update({
   id: '/regularizacao-de-imoveis',
   path: '/regularizacao-de-imoveis',
@@ -174,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
+  '/rescisao-indireta': typeof RescisaoIndiretaRoute
   '/admin/ferramentas': typeof AdminFerramentasRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
@@ -198,6 +205,7 @@ export interface FileRoutesByTo {
   '/institucional': typeof InstitucionalRoute
   '/login': typeof LoginRoute
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
+  '/rescisao-indireta': typeof RescisaoIndiretaRoute
   '/admin/ferramentas': typeof AdminFerramentasRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
@@ -226,6 +234,7 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/noticias': typeof NoticiasRouteWithChildren
   '/regularizacao-de-imoveis': typeof RegularizacaoDeImoveisRoute
+  '/rescisao-indireta': typeof RescisaoIndiretaRoute
   '/admin/ferramentas': typeof AdminFerramentasRoute
   '/admin/nova': typeof AdminNovaRoute
   '/areas/$slug': typeof AreasSlugRoute
@@ -255,6 +264,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/noticias'
     | '/regularizacao-de-imoveis'
+    | '/rescisao-indireta'
     | '/admin/ferramentas'
     | '/admin/nova'
     | '/areas/$slug'
@@ -279,6 +289,7 @@ export interface FileRouteTypes {
     | '/institucional'
     | '/login'
     | '/regularizacao-de-imoveis'
+    | '/rescisao-indireta'
     | '/admin/ferramentas'
     | '/admin/nova'
     | '/areas/$slug'
@@ -306,6 +317,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/noticias'
     | '/regularizacao-de-imoveis'
+    | '/rescisao-indireta'
     | '/admin/ferramentas'
     | '/admin/nova'
     | '/areas/$slug'
@@ -334,6 +346,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   NoticiasRoute: typeof NoticiasRouteWithChildren
   RegularizacaoDeImoveisRoute: typeof RegularizacaoDeImoveisRoute
+  RescisaoIndiretaRoute: typeof RescisaoIndiretaRoute
   FerramentasCalculadoraEscala5x2Route: typeof FerramentasCalculadoraEscala5x2Route
   NewsletterConfirmarRoute: typeof NewsletterConfirmarRoute
   NewsletterDescadastrarRoute: typeof NewsletterDescadastrarRoute
@@ -341,6 +354,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/rescisao-indireta': {
+      id: '/rescisao-indireta'
+      path: '/rescisao-indireta'
+      fullPath: '/rescisao-indireta'
+      preLoaderRoute: typeof RescisaoIndiretaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/regularizacao-de-imoveis': {
       id: '/regularizacao-de-imoveis'
       path: '/regularizacao-de-imoveis'
@@ -580,6 +600,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   NoticiasRoute: NoticiasRouteWithChildren,
   RegularizacaoDeImoveisRoute: RegularizacaoDeImoveisRoute,
+  RescisaoIndiretaRoute: RescisaoIndiretaRoute,
   FerramentasCalculadoraEscala5x2Route: FerramentasCalculadoraEscala5x2Route,
   NewsletterConfirmarRoute: NewsletterConfirmarRoute,
   NewsletterDescadastrarRoute: NewsletterDescadastrarRoute,

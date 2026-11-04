@@ -80,6 +80,33 @@
   --color-trab-vinho-fundo: #f7e9ed;
   --color-trab-grafite: #1c1c1c;
   --color-trab-grafite-fundo: #efede8;
+
+  --color-resc-tinta: #111110;
+  --color-resc-noite: #0e0e0d;
+  --color-resc-texto: #3a3832;
+  --color-resc-apoio: #55524a;
+  --color-resc-apoio-escuro: #c9c6bc;
+  --color-resc-borda-escura: #34332e;
+  --color-resc-linha: #ece7d8;
+  --color-resc-faq-linha: #e3decf;
+  --color-resc-creme: #f6f0df;
+  --color-resc-creme-linha: #e3d3a8;
+  --color-resc-petroleo: #0f4c5c;
+  --color-resc-petroleo-claro: #5fb3c4;
+  --color-resc-petroleo-nevoa: #dcebee;
+  --color-resc-petroleo-fundo: #e4f0f2;
+  --color-resc-petroleo-linha: #bfd9de;
+  --color-resc-petroleo-texto: #24343a;
+  --color-resc-terracota: #9a3a22;
+  --color-resc-terracota-fundo: #fbe7e0;
+  --color-resc-terracota-linha: #f1c4b6;
+  --color-resc-terracota-texto: #3e2a24;
+  --animate-resc-flutua: resc-flutua 7s ease-in-out infinite;
+
+  @keyframes resc-flutua {
+    0%, 100% { transform: perspective(1100px) rotateX(12deg) translateY(0); }
+    50% { transform: perspective(1100px) rotateX(8deg) translateY(-14px); }
+  }
 }
 
 :root {
