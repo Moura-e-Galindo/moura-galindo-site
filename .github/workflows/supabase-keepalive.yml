@@ -1,0 +1,29 @@
+# Mantém o projeto Supabase (plano Free) ativo.
+# O Supabase pausa projetos grátis após 7 dias sem atividade no banco;
+# esta consulta diária e leve evita a pausa.
+name: Supabase keep-alive
+
+on:
+  schedule:
+    # Todo dia às 06:17 (horário de Fortaleza / 09:17 UTC)
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Consulta leve ao banco
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          curl --fail-with-body -sS -o /dev/null -w "HTTP %{http_code}\n" \
+            --retry 3 --retry-delay 15 --retry-all-errors \
+            "$SUPABASE_URL/rest/v1/noticias?select=id&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY"

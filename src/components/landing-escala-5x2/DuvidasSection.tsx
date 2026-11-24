@@ -1,100 +1,88 @@
-import { useRef, useState, type KeyboardEvent } from "react";
-import { perfisDuvidas, type Pergunta, type Tom } from "@/data/escala-5x2";
+import simboloNegativo from "@/assets/escala-5x2/simbolo-negativo.webp";
+import { BASE_NORMATIVA, WHATSAPP_MENSAGEM, duvidas, type Pergunta } from "@/data/escala-5x2";
+import { buildWhatsAppUrl } from "@/lib/contact";
 import { SectionIntro } from "./SectionIntro";
-import { containerClass, focusRing, tomClasses } from "./classes";
+import { buttonOuro, containerClass, focusRing, notaClass, sectionClass } from "./classes";
 
-function PerguntaItem({ item, tom, aberta }: { item: Pergunta; tom: Tom; aberta: boolean }) {
-  const cores = tomClasses[tom];
-
+function PerguntaItem({ item, aberta }: { item: Pergunta; aberta: boolean }) {
   return (
-    <details open={aberta} className={`group rounded-[3px] border border-l-4 border-trab-linha bg-white ${cores.borda}`}>
+    <details
+      open={aberta}
+      className="group mb-2.75 rounded-2xl border border-trab-linha bg-white transition-all duration-180 open:border-gold open:shadow-[0_8px_26px_rgba(0,0,0,0.05)]"
+    >
       <summary
-        className={`relative cursor-pointer list-none py-4.25 pr-12 pl-5 text-[16.8px] font-semibold leading-[1.4] text-neutral-900 [&::-webkit-details-marker]:hidden ${focusRing}`}
+        className={`flex cursor-pointer list-none items-center justify-between gap-4 px-5.5 py-4.75 text-[16.5px] font-bold [&::-webkit-details-marker]:hidden ${focusRing}`}
       >
         {item.pergunta}
         <span
           aria-hidden="true"
-          className={`absolute top-6 right-5 size-2.75 rotate-45 border-r-2 border-b-2 transition-transform group-open:top-7 group-open:-rotate-135 ${cores.borda}`}
-        />
+          className="size-6.5 flex-none rounded-full bg-trab-ouro-veu text-center text-[17px] font-black leading-6 text-trab-ouro-escuro group-open:bg-gold group-open:text-black"
+        >
+          <span className="group-open:hidden">+</span>
+          <span className="hidden group-open:inline">−</span>
+        </span>
       </summary>
-      <div className="px-5 pb-4.5">
+      <div className="px-5.5 pb-5 text-[15.2px] text-trab-cinza">
         {item.respostas.map((resposta) => (
-          <p key={resposta} className="mb-2.75 text-[15.6px] leading-[1.62] text-neutral-600">
+          <p key={resposta} className="mb-3.75 last:mb-0">
             {resposta}
           </p>
         ))}
-        <p className="border-t border-trab-linha pt-2.75 text-[12px] leading-normal text-neutral-500">
-          {item.base}
-        </p>
       </div>
     </details>
   );
 }
 
-export function DuvidasSection() {
-  const [ativo, setAtivo] = useState(0);
-  const abasRef = useRef<Array<HTMLButtonElement | null>>([]);
-
-  function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>, indice: number) {
-    const passo = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-    if (!passo) return;
-    event.preventDefault();
-    const proximo = (indice + passo + perfisDuvidas.length) % perfisDuvidas.length;
-    setAtivo(proximo);
-    abasRef.current[proximo]?.focus();
-  }
-
+/** Chamada final para quem ainda tem dúvida, com o símbolo da marca ao fundo. */
+function ChamadaDuvida() {
   return (
-    <section id="duvidas" className="scroll-mt-24 border-t border-trab-linha">
+    <div className="relative mt-7.5 overflow-hidden rounded-[22px] rounded-tl-[52px] bg-black px-8 py-8.5 text-white">
+      <img
+        src={simboloNegativo}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-7.5 -right-7.5 size-52.5 object-contain opacity-[0.07]"
+      />
+      <h3 className="relative z-[2] mb-2 font-playfair text-[24px] font-bold leading-[1.3] text-white">
+        Ainda com dúvida?
+      </h3>
+      <p className="relative z-[2] mb-3.75 max-w-[70ch] text-trab-pedra-clara">
+        Se a dúvida for sobre como montar a escala da equipe, redigir os aditivos contratuais,
+        ajustar cláusulas de compensação ou organizar a gestão da jornada de trabalho, o Núcleo
+        Trabalhista Empresarial pode esclarecer.
+      </p>
+      <div className="relative z-[2] mt-7 flex flex-wrap gap-3">
+        <a
+          href={buildWhatsAppUrl(WHATSAPP_MENSAGEM)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonOuro}
+        >
+          Enviar mensagem
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export function DuvidasSection() {
+  return (
+    <section id="duvidas" className={`${sectionClass} scroll-mt-16`}>
       <div className={containerClass}>
-        <SectionIntro eyebrow="Orientações" title="Dúvidas frequentes por perfil profissional">
-          A mesma mudança chega de forma diferente a cada função. Selecione o perfil e abra as
-          perguntas. Cada resposta traz a base normativa que a sustenta.
+        <SectionIntro rotulo="Orientações" title="Dúvidas frequentes">
+          Respostas gerais, de caráter informativo. A solução de cada caso depende da atividade,
+          da convenção coletiva aplicável e da forma como a jornada é organizada na empresa.
         </SectionIntro>
 
-        <div role="tablist" aria-label="Perfis" className="mt-6.5 mb-5 flex flex-wrap gap-2">
-          {perfisDuvidas.map((perfil, indice) => {
-            const selecionado = indice === ativo;
-            return (
-              <button
-                key={perfil.id}
-                ref={(elemento) => {
-                  abasRef.current[indice] = elemento;
-                }}
-                id={`aba-${perfil.id}`}
-                type="button"
-                role="tab"
-                aria-selected={selecionado}
-                aria-controls={`painel-${perfil.id}`}
-                tabIndex={selecionado ? 0 : -1}
-                onClick={() => setAtivo(indice)}
-                onKeyDown={(event) => handleKeyDown(event, indice)}
-                className={`cursor-pointer rounded-[3px] border px-4.5 py-2.75 text-[14px] font-semibold transition-colors ${focusRing} ${
-                  selecionado
-                    ? "border-black bg-black text-trab-papel"
-                    : "border-trab-linha bg-white text-neutral-600 hover:border-gold"
-                }`}
-              >
-                {perfil.rotulo}
-              </button>
-            );
-          })}
+        <div className="mt-8">
+          {duvidas.map((item, indice) => (
+            <PerguntaItem key={item.pergunta} item={item} aberta={indice === 0} />
+          ))}
         </div>
 
-        {perfisDuvidas.map((perfil, indice) => (
-          <div
-            key={perfil.id}
-            id={`painel-${perfil.id}`}
-            role="tabpanel"
-            aria-labelledby={`aba-${perfil.id}`}
-            hidden={indice !== ativo}
-            className="grid gap-2.5"
-          >
-            {perfil.perguntas.map((item, posicao) => (
-              <PerguntaItem key={item.pergunta} item={item} tom={perfil.tom} aberta={posicao === 0} />
-            ))}
-          </div>
-        ))}
+        <p className={`${notaClass} mt-5.5 max-w-[92ch]`}>{BASE_NORMATIVA}</p>
+
+        <ChamadaDuvida />
       </div>
     </section>
   );

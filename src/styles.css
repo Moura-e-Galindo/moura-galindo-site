@@ -62,24 +62,31 @@
   --color-whatsapp-deep: #176e3c;
 
   /* ── Landing Escala 5x2 (Núcleo Trabalhista Empresarial) ──
-   * Tipografia e acentos de apoio derivados do manual da marca.
+   * Tipografia e tons derivados do manual da marca (ouro #BD9D3F, preto, cinza #929497).
    */
-  --font-spectral: "Spectral", Georgia, "Times New Roman", serif;
+  --font-roboto: "Roboto", Arial, Helvetica, sans-serif;
   --font-montserrat: "Montserrat", "Segoe UI", system-ui, sans-serif;
-  --color-trab-papel: #fbfaf7;
-  --color-trab-linha: #e4dfd2;
-  --color-trab-ouro-texto: #7e661f;
-  --color-trab-ouro-fundo: #f7f1e1;
-  --color-trab-creme: #f7f0de;
-  --color-trab-azul: #1e3a4c;
-  --color-trab-azul-fundo: #e8eff3;
-  --color-trab-noite: #12262f;
-  --color-trab-verde: #2c5e49;
-  --color-trab-verde-fundo: #e7f0eb;
-  --color-trab-vinho: #8e2f4c;
-  --color-trab-vinho-fundo: #f7e9ed;
-  --color-trab-grafite: #1c1c1c;
-  --color-trab-grafite-fundo: #efede8;
+  --color-trab-ouro-claro: #d8c287;
+  --color-trab-ouro-escuro: #8e7524;
+  --color-trab-ouro-veu: #f2ebd8;
+  --color-trab-creme: #f8f5ee;
+  --color-trab-creme-2: #efe9db;
+  --color-trab-creme-tabela: #fcfaf5;
+  --color-trab-carvao: #0e0e10;
+  --color-trab-carvao-2: #17171a;
+  --color-trab-tinta: #121214;
+  --color-trab-cinza: #5b5b5e;
+  --color-trab-linha: #e2dbc8;
+  --color-trab-linha-escura: #2e2e33;
+  --color-trab-borda-botao: #4a4a50;
+  --color-trab-nevoa: #ede9e0;
+  --color-trab-pedra: #b9b5ac;
+  --color-trab-pedra-clara: #c6c1b6;
+  --color-trab-fumo: #8e8a82;
+  --color-trab-papel-foto: #e9e7e2;
+  --color-trab-rodape-texto: #8c8880;
+  --color-trab-rodape-destaque: #cfcabf;
+  --color-trab-zap: #25d366;
 
   --color-resc-tinta: #111110;
   --color-resc-noite: #0e0e0d;

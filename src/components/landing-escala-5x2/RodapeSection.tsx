@@ -1,21 +1,33 @@
+import logoHorizontal from "@/assets/escala-5x2/logo-horizontal-negativo.webp";
+import { ATUALIZADO_EM } from "@/data/escala-5x2";
+import { containerClass } from "./classes";
+
 export function RodapeSection() {
   return (
-    <footer className="border-t border-trab-linha bg-white">
-      <div className="mx-auto max-w-[1120px] space-y-2.25 px-4 pt-7.5 pb-23 text-[12.8px] leading-[1.6] text-neutral-500 sm:px-6">
-        <p className="max-w-[86ch]">
-          <b className="text-neutral-900">Moura &amp; Galindo Advogados Associados.</b> Núcleo
-          Trabalhista Empresarial. Avenida Aracati, 382, bairro Universitário, Caruaru, Pernambuco.
+    <footer className="bg-black pt-10 pb-11.5 text-[13.5px] text-trab-rodape-texto">
+      <div className={containerClass}>
+        <img
+          src={logoHorizontal}
+          alt="Moura & Galindo Advogados Associados"
+          width={763}
+          height={130}
+          loading="lazy"
+          className="mb-5.5 h-14.5 w-auto"
+        />
+        <p className="mb-2">
+          <b className="font-medium text-trab-rodape-destaque">Moura &amp; Galindo Advogados Associados</b>{" "}
+          · Avenida Aracati, 382, bairro Universitário, Caruaru, Pernambuco.
         </p>
-        <p className="max-w-[86ch]">
-          Esta página tem finalidade informativa e educativa, nos termos do Código de Ética e
-          Disciplina da OAB e do Provimento nº 205/2021 do Conselho Federal da OAB. O conteúdo não
-          constitui parecer jurídico, não configura consulta e não substitui a análise
-          individualizada do caso concreto, que deve considerar a convenção coletiva aplicável, a
-          realidade operacional da empresa e eventuais alterações normativas supervenientes.
+        <p>
+          Conteúdo de caráter informativo, elaborado pelo Núcleo Trabalhista Empresarial. Não
+          substitui a análise do caso concreto nem a leitura da convenção coletiva aplicável à
+          atividade.
         </p>
-        <p className="max-w-[86ch]">
-          Informações referentes à Emenda Constitucional nº 141, de 16 de outubro de 2026, e à
-          legislação e jurisprudência vigentes em outubro de 2026.
+        <p className="mt-4.5 border-t border-trab-linha-escura pt-4">
+          Informações atualizadas em{" "}
+          <b className="font-medium text-trab-rodape-destaque">{ATUALIZADO_EM}</b>. A regulamentação
+          da Emenda Constitucional nº 141/2026 segue em edição, e esta página é revista a cada nova
+          publicação.
         </p>
       </div>
     </footer>

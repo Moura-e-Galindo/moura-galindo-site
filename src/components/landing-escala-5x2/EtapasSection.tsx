@@ -1,28 +1,25 @@
-import { etapasProjeto } from "@/data/escala-5x2";
+import { etapasMetodo } from "@/data/escala-5x2";
 import { SectionIntro } from "./SectionIntro";
-import { containerClass, tomClasses } from "./classes";
+import { containerClass, h3Class, sectionClass } from "./classes";
 
+/** Método do Núcleo em quatro etapas numeradas. */
 export function EtapasSection() {
   return (
-    <section className="border-t border-trab-linha">
+    <section className={`${sectionClass} bg-trab-creme`}>
       <div className={containerClass}>
-        <SectionIntro eyebrow="Como o Núcleo conduz" title="A adequação tratada como projeto">
-          Tem prazo definido, envolve várias áreas e produz entregáveis verificáveis. As etapas
-          abaixo descrevem a forma de condução adotada.
-        </SectionIntro>
+        <SectionIntro rotulo="Método" title="Como o Núcleo conduz a adequação" />
 
-        <ol className="mt-6.5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {etapasProjeto.map((etapa, indice) => (
-            <li key={etapa.titulo} className="min-w-0 rounded-[4px] border border-trab-linha bg-white px-4.5 py-5">
-              <span
-                className={`mb-3 inline-flex size-8.5 items-center justify-center rounded-full text-[13px] font-bold text-white ${tomClasses[etapa.tom].solido}`}
-              >
-                {String(indice + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-1.75 text-[17px] font-semibold leading-[1.35] text-neutral-900">
-                {etapa.titulo}
-              </h3>
-              <p className="text-[14.3px] leading-[1.55] text-neutral-600">{etapa.texto}</p>
+        <ol className="mt-8.5 grid gap-4 min-[681px]:grid-cols-2 min-[981px]:grid-cols-4">
+          {etapasMetodo.map((etapa, indice) => (
+            <li
+              key={etapa.titulo}
+              className="rounded-[22px] rounded-tl-[40px] border border-trab-linha bg-white px-5.5 py-6.5"
+            >
+              <div className="mb-5 flex size-10 rotate-45 items-center justify-center rounded-md bg-gold font-black text-black">
+                <span className="-rotate-45">{indice + 1}</span>
+              </div>
+              <h3 className={h3Class}>{etapa.titulo}</h3>
+              <p className="text-[14.3px] text-trab-cinza">{etapa.texto}</p>
             </li>
           ))}
         </ol>

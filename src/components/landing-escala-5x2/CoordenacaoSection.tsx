@@ -1,49 +1,65 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
 import fotoKilma from "@/assets/escala-5x2/kilma-galindo.webp";
-import { NUCLEO_SLUG, coordenadora } from "@/data/escala-5x2";
-import { containerClass, eyebrowClass, focusRing, h2Class, paragraphClass } from "./classes";
+import { WHATSAPP_MENSAGEM_COORDENACAO, coordenadora } from "@/data/escala-5x2";
+import { buildWhatsAppUrl } from "@/lib/contact";
+import { SectionIntro } from "./SectionIntro";
+import { buttonPreto, containerClass, marcadorLosango, sectionClass } from "./classes";
 
-const linkClass = `inline-flex items-center gap-1.5 text-[14px] font-semibold text-trab-ouro-texto underline decoration-gold underline-offset-4 hover:text-neutral-900 ${focusRing}`;
+/** Cartão escuro com a foto e os dados da coordenadora. */
+function CartaoCoordenadora() {
+  return (
+    <div className="max-w-80 overflow-hidden rounded-[22px] rounded-tr-[52px] bg-black text-center text-white">
+      <div className="relative bg-trab-papel-foto after:absolute after:inset-x-0 after:bottom-0 after:h-0.75 after:bg-gold after:content-['']">
+        <img
+          src={fotoKilma}
+          alt={`${coordenadora.nome}, coordenadora do Núcleo Trabalhista Empresarial`}
+          width={720}
+          height={900}
+          loading="lazy"
+          className="block h-auto w-full"
+        />
+      </div>
+      <div className="px-5 pt-6 pb-7">
+        <div className="mx-auto mb-4 size-2.75 rotate-45 bg-gold" />
+        <div className="mb-2 font-playfair text-[21px] font-bold leading-[1.22]">{coordenadora.nome}</div>
+        <div className="text-[13px] font-bold tracking-[0.12em] text-gold">{coordenadora.oab}</div>
+        <div className="mt-3.25 text-[13.5px] leading-normal text-trab-pedra">
+          {coordenadora.funcao}
+          <br />
+          {coordenadora.escritorio}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function CoordenacaoSection() {
   return (
-    <section className="border-t border-trab-linha bg-white">
+    <section className={sectionClass}>
       <div className={containerClass}>
-        <div className="grid items-start gap-6.5 md:grid-cols-[minmax(0,0.52fr)_minmax(0,1.48fr)] md:gap-10">
-          <div className="relative ml-2.75 mt-2.75 max-w-[218px]">
-            <span aria-hidden="true" className="absolute -top-2.75 right-5.5 bottom-5.5 -left-2.75 rounded-[3px] bg-gold" />
-            <img
-              src={fotoKilma}
-              alt="Kilma Galindo, coordenadora do Núcleo Trabalhista Empresarial"
-              width={456}
-              height={570}
-              loading="lazy"
-              className="relative block w-full rounded-[3px]"
-            />
-          </div>
+        <SectionIntro rotulo="Coordenação do Núcleo" title="Quem responde por este conteúdo" />
 
+        <div className="mt-7.5 grid items-start gap-9.5 min-[981px]:grid-cols-[0.62fr_1.38fr]">
+          <CartaoCoordenadora />
           <div>
-            <span className={eyebrowClass}>Coordenação do Núcleo</span>
-            <h2 className={h2Class}>{coordenadora.nome}</h2>
-            <p className={paragraphClass}>{coordenadora.apresentacao}</p>
-            <ul className="mt-4.5 grid gap-2.5">
+            <ul>
               {coordenadora.curriculo.map((item) => (
                 <li
-                  key={item.texto}
-                  className="relative pl-5 text-[14.2px] leading-[1.55] text-neutral-600 before:absolute before:top-2.25 before:left-0 before:h-0.5 before:w-2.25 before:bg-gold"
+                  key={item}
+                  className={`relative border-b border-trab-linha py-2.75 pl-7 text-[15.2px] text-trab-cinza last:border-b-0 before:top-4.75 before:size-2.25 ${marcadorLosango}`}
                 >
-                  <b className="font-semibold text-neutral-900">{item.destaque}</b> {item.texto}
+                  {item}
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
-              <Link to="/areas/$slug" params={{ slug: NUCLEO_SLUG }} className={linkClass}>
-                Conheça o Núcleo Trabalhista Empresarial <ArrowRight className="size-4" />
-              </Link>
-              <Link to="/equipe" className={linkClass}>
-                Ver a equipe do escritório <ArrowRight className="size-4" />
-              </Link>
+            <div className="mt-6.5 flex flex-wrap gap-3">
+              <a
+                href={buildWhatsAppUrl(WHATSAPP_MENSAGEM_COORDENACAO)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonPreto}
+              >
+                Falar com a coordenação
+              </a>
             </div>
           </div>
         </div>

@@ -1,62 +1,45 @@
-import type { Tom } from "@/data/escala-5x2";
-
 /** Classes compartilhadas entre as seções da landing da Escala 5x2. */
 
 export const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-gold";
 
-export const containerClass =
-  "mx-auto max-w-[1120px] px-4 py-[clamp(40px,6vw,74px)] sm:px-6";
+export const containerClass = "mx-auto max-w-[1120px] px-6";
 
-export const eyebrowClass =
-  "mb-3.5 block text-[11px] font-bold uppercase tracking-[0.2em] text-trab-ouro-texto";
+export const sectionClass = "relative py-13.5 min-[681px]:py-18";
+
+/** Rótulo em caixa-alta precedido do losango dourado. */
+const rotuloBase =
+  "mb-3.5 flex items-center gap-2.5 text-[11.5px] font-bold uppercase tracking-[0.22em] before:size-2.25 before:flex-none before:rotate-45 before:bg-gold before:content-['']";
+
+export const rotuloClass = `${rotuloBase} text-trab-ouro-escuro`;
+export const rotuloClaroClass = `${rotuloBase} text-trab-ouro-claro`;
 
 export const h2Class =
-  "mb-3 font-spectral text-[clamp(25px,3.7vw,37px)] font-semibold leading-[1.18] text-balance text-neutral-900";
+  "mb-3 font-playfair text-[clamp(26px,3.6vw,40px)] font-bold leading-[1.14] tracking-[-0.01em]";
 
-export const paragraphClass = "mb-3.5 text-neutral-600";
+export const h3Class = "mb-2 font-playfair text-[19px] font-bold leading-[1.3]";
+
+const ledeBase = "mb-3.75 max-w-[66ch] text-[clamp(16px,1.9vw,18.5px)] font-light";
+
+export const ledeClass = `${ledeBase} text-trab-cinza`;
+export const ledeEscuroClass = `${ledeBase} text-trab-pedra`;
+
+export const notaClass = "text-[13.5px] leading-[1.6] text-graphite";
+
+export const botoesClass = "mt-7 flex flex-wrap gap-3";
 
 const buttonBase =
-  `inline-flex items-center justify-center gap-2 rounded-[3px] border-[1.5px] px-5.5 py-3 text-[15px] font-semibold no-underline transition-colors ${focusRing}`;
+  `inline-flex items-center gap-2.25 rounded-full border-2 px-6.5 py-3.5 text-[15px] font-bold no-underline transition-all duration-180 ${focusRing}`;
 
-export const buttonGold = `${buttonBase} border-gold bg-gold text-ink-deep hover:bg-gold-soft`;
+export const buttonOuro = `${buttonBase} border-transparent bg-gold text-black hover:bg-trab-ouro-claro`;
 
-export const buttonOutline =
-  `${buttonBase} border-trab-linha bg-transparent text-neutral-900 hover:border-gold`;
+export const buttonContorno =
+  `${buttonBase} border-trab-borda-botao text-white hover:border-gold hover:text-trab-ouro-claro`;
 
-export const buttonPill =
-  `inline-flex items-center justify-center rounded-full bg-gold font-bold text-ink-deep no-underline transition-colors hover:bg-gold-soft ${focusRing}`;
+export const buttonPreto = `${buttonBase} border-transparent bg-black text-white hover:bg-trab-carvao-2`;
 
-/** Cores de cada tom (borda/acento, fundo suave, texto do rótulo e fundo sólido). */
-export const tomClasses: Record<Tom, { borda: string; fundo: string; texto: string; solido: string }> = {
-  ouro: {
-    borda: "border-gold",
-    fundo: "bg-trab-ouro-fundo",
-    texto: "text-trab-ouro-texto",
-    solido: "bg-gold"
-  },
-  azul: {
-    borda: "border-trab-azul",
-    fundo: "bg-trab-azul-fundo",
-    texto: "text-trab-azul",
-    solido: "bg-trab-azul"
-  },
-  verde: {
-    borda: "border-trab-verde",
-    fundo: "bg-trab-verde-fundo",
-    texto: "text-trab-verde",
-    solido: "bg-trab-verde"
-  },
-  vinho: {
-    borda: "border-trab-vinho",
-    fundo: "bg-trab-vinho-fundo",
-    texto: "text-trab-vinho",
-    solido: "bg-trab-vinho"
-  },
-  grafite: {
-    borda: "border-trab-grafite",
-    fundo: "bg-trab-grafite-fundo",
-    texto: "text-trab-grafite",
-    solido: "bg-trab-grafite"
-  }
-};
+export const buttonZap = `${buttonBase} border-transparent bg-trab-zap text-white`;
+
+/** Losango dourado usado como marcador das listas. */
+export const marcadorLosango =
+  "before:absolute before:left-0 before:rotate-45 before:bg-gold before:content-['']";
